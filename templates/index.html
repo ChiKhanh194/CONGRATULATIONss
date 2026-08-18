@@ -1,4436 +1,4199 @@
+```html
 <!DOCTYPE html>
 <html lang="vi">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>🎓 Chúc Mừng Tốt Nghiệp - {{ name }}</title>
-
-<style>
-
-/* =========================================================
-   FONT
-========================================================= */
-
-@import url(
-'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&family=Playfair+Display:wght@700;800&display=swap'
-);
-
-
-/* =========================================================
-   RESET
-========================================================= */
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-html,
-body{
-    min-height:100%;
-    font-family:'Be Vietnam Pro',sans-serif;
-}
-
-body{
-    overflow-x:hidden;
-    color:white;
-
-    background:
-
-        radial-gradient(
-            circle at 15% 10%,
-            #fff6a8 0,
-            transparent 20%
-        ),
-
-        radial-gradient(
-            circle at 85% 10%,
-            #ffb9e8 0,
-            transparent 24%
-        ),
-
-        radial-gradient(
-            circle at 50% 85%,
-            #9ee8ff 0,
-            transparent 28%
-        ),
-
-        linear-gradient(
-            135deg,
-            #25063e,
-            #67147d 42%,
-            #ef4388
-        );
-}
-
-
-/* =========================================================
-   ÁNH SÁNG
-========================================================= */
-
-.glow{
-    position:fixed;
-    width:500px;
-    height:500px;
-    border-radius:50%;
-    filter:blur(100px);
-    opacity:.18;
-    pointer-events:none;
-    z-index:0;
-}
-
-.glow.one{
-    background:#ffe56b;
-    left:-180px;
-    top:10%;
-}
-
-.glow.two{
-    background:#ff76cf;
-    right:-180px;
-    top:35%;
-}
-
-.glow.three{
-    background:#69ddff;
-    left:35%;
-    bottom:-300px;
-}
-
-
-/* =========================================================
-   SAO
-========================================================= */
-
-#stars{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:1;
-}
-
-.star{
-    position:absolute;
-    width:4px;
-    height:4px;
-    border-radius:50%;
-    background:white;
-
-    box-shadow:
-        0 0 15px white;
-
-    animation:
-        twinkle 2s infinite alternate;
-}
-
-@keyframes twinkle{
-
-    from{
-        opacity:.15;
-        transform:scale(.5);
-    }
-
-    to{
-        opacity:1;
-        transform:scale(1.5);
-    }
-
-}
-
-
-/* =========================================================
-   🌸 HOA + ẢNH RƠI
-========================================================= */
-
-#flowers{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    overflow:hidden;
-    z-index:2;
-}
-
-.falling-item{
-    position:absolute;
-    top:-100px;
-    left:0;
-    pointer-events:none;
-    user-select:none;
-
-    will-change:
-        transform,
-        opacity;
-
-    animation:
-        fallingDown linear infinite;
-}
-
-.falling-flower{
-    font-family:
-        "Apple Color Emoji",
-        "Segoe UI Emoji",
-        sans-serif;
-
-    filter:
-        drop-shadow(
-            0 0 8px #ffffff55
-        );
-}
-
-.falling-image{
-    width:65px;
-    height:65px;
-    object-fit:cover;
-    border-radius:18px;
-    padding:3px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ff4d8d,
-            #ffe477,
-            #63ffd2,
-            #61a8ff,
-            #d66cff
-        );
-
-    box-shadow:
-        0 5px 20px #0008,
-        0 0 12px #fff8,
-        0 0 30px #ff8edc66;
-}
-
-@keyframes fallingDown{
-
-    0%{
-        transform:
-            translate3d(
-                0,
-                -100px,
-                0
-            );
-
-        opacity:0;
-    }
-
-    8%{
-        opacity:1;
-    }
-
-    25%{
-        transform:
-            translate3d(
-                var(--move1),
-                25vh,
-                0
-            );
-    }
-
-    50%{
-        transform:
-            translate3d(
-                var(--move2),
-                50vh,
-                0
-            );
-    }
-
-    75%{
-        transform:
-            translate3d(
-                var(--move3),
-                75vh,
-                0
-            );
-    }
-
-    92%{
-        opacity:1;
-    }
-
-    100%{
-        transform:
-            translate3d(
-                var(--move4),
-                115vh,
-                0
-            );
-
-        opacity:.15;
-    }
-}
-
-
-/* =========================================================
-   MAIN
-========================================================= */
-
-.container{
-    position:relative;
-    z-index:3;
-
-    max-width:1200px;
-
-    margin:auto;
-
-    padding:
-        25px
-        18px
-        70px;
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero{
-    text-align:center;
-    padding:
-        55px
-        10px
-        35px;
-}
-
-.badge{
-    display:inline-block;
-
-    padding:
-        10px
-        22px;
-
-    border:
-        1px solid #ffffff55;
-
-    border-radius:999px;
-
-    background:#ffffff16;
-
-    backdrop-filter:blur(15px);
-
-    letter-spacing:2px;
-
-    font-weight:800;
-
-    box-shadow:
-        0 0 35px #ffb1ed33;
-}
-
-h1{
-    font-family:'Playfair Display',serif;
-
-    font-size:
-        clamp(
-            52px,
-            9vw,
-            110px
-        );
+    <title>🎓 Chúc Mừng Tốt Nghiệp - {{ name }}</title>
 
-    line-height:1.02;
-
-    margin:
-        25px
-        0
-        12px;
+    <meta name="theme-color" content="#67147d">
+    <meta name="description" content="Trang chúc mừng tốt nghiệp dành cho {{ name }}">
 
-    background:
-        linear-gradient(
-            90deg,
-            #fff,
-            #ffe788,
-            #fff,
-            #ffb8e8,
-            #fff
-        );
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    background-size:300% auto;
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap"
+          rel="stylesheet">
 
-    color:transparent;
+    <style>
 
-    background-clip:text;
-    -webkit-background-clip:text;
+        /* =========================================================
+           RESET
+        ========================================================= */
 
-    animation:
-        shine 4s linear infinite;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    text-shadow:
-        0 0 40px #ffd9fa44;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-@keyframes shine{
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
 
-    to{
-        background-position:
-            300% center;
-    }
+            font-family: "Be Vietnam Pro", sans-serif;
 
-}
+            color: white;
 
-.subtitle{
-    font-size:
-        clamp(
-            17px,
-            2.5vw,
-            25px
-        );
-}
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(255, 246, 168, .35),
+                    transparent 20%
+                ),
 
+                radial-gradient(
+                    circle at 90% 15%,
+                    rgba(255, 130, 215, .35),
+                    transparent 25%
+                ),
 
-/* =========================================================
-   GLASS CARD
-========================================================= */
+                radial-gradient(
+                    circle at 50% 90%,
+                    rgba(91, 222, 255, .25),
+                    transparent 30%
+                ),
 
-.glass{
+                linear-gradient(
+                    135deg,
+                    #210436 0%,
+                    #55105f 38%,
+                    #9e247d 68%,
+                    #ee4388 100%
+                );
 
-    background:
-        linear-gradient(
-            135deg,
-            #ffffff20,
-            #ffffff08
-        );
+            background-attachment: fixed;
+        }
 
-    border:
-        1px solid #ffffff35;
+        button {
+            font-family: inherit;
+        }
 
-    backdrop-filter:
-        blur(20px);
+        ::selection {
+            background: #ff9bdc;
+            color: #32103c;
+        }
 
-    box-shadow:
 
-        0 30px 100px #10001f66,
+        /* =========================================================
+           BACKGROUND GLOW
+        ========================================================= */
 
-        inset 0 1px #ffffff33;
+        .glow {
+            position: fixed;
 
-    border-radius:32px;
-}
+            width: 500px;
+            height: 500px;
 
-.card{
+            border-radius: 50%;
 
-    padding:
-        45px
-        30px;
+            filter: blur(100px);
 
-    text-align:center;
+            opacity: .18;
 
-    overflow:hidden;
+            pointer-events: none;
 
-    position:relative;
-}
+            z-index: 0;
 
-.card:before{
+            animation: glowMove 10s ease-in-out infinite alternate;
+        }
 
-    content:"";
+        .glow.one {
+            background: #ffe66d;
 
-    position:absolute;
+            left: -220px;
+            top: 5%;
+        }
 
-    inset:12px;
+        .glow.two {
+            background: #ff61cf;
 
-    border:
-        1px solid #ffe68666;
+            right: -220px;
+            top: 30%;
 
-    border-radius:25px;
+            animation-delay: -3s;
+        }
 
-    pointer-events:none;
-}
+        .glow.three {
+            background: #57ddff;
 
-.ribbon{
+            left: 35%;
+            bottom: -350px;
 
-    position:absolute;
+            animation-delay: -6s;
+        }
 
-    right:-65px;
+        @keyframes glowMove {
 
-    top:30px;
+            from {
+                transform: translate3d(0, 0, 0) scale(1);
+            }
 
-    transform:rotate(35deg);
+            to {
+                transform: translate3d(30px, -20px, 0) scale(1.15);
+            }
+        }
 
-    padding:
-        9px
-        70px;
 
-    color:#46144d;
+        /* =========================================================
+           STARS
+        ========================================================= */
 
-    font-weight:900;
+        #stars {
+            position: fixed;
+            inset: 0;
 
-    background:
-        linear-gradient(
-            90deg,
-            #ffe075,
-            #ff89d1
-        );
+            pointer-events: none;
 
-    box-shadow:
-        0 0 25px #ffb3e755;
-}
+            z-index: 1;
+        }
 
+        .star {
+            position: absolute;
 
-/* =========================================================
-   BUTTON
-========================================================= */
+            width: 3px;
+            height: 3px;
 
-.effect-buttons{
+            border-radius: 50%;
 
-    position:relative;
+            background: white;
 
-    z-index:20;
+            box-shadow:
+                0 0 8px white,
+                0 0 18px #ffeaa0;
 
-    display:flex;
+            animation: twinkle 2s infinite alternate;
+        }
 
-    flex-wrap:wrap;
+        @keyframes twinkle {
 
-    justify-content:center;
+            from {
+                opacity: .1;
+                transform: scale(.5);
+            }
 
-    gap:12px;
+            to {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
 
-    margin:
-        0
-        auto
-        30px;
-}
 
-.effect-btn{
+        /* =========================================================
+           FALLING EFFECT
+           ẢNH RƠI KHÔNG XOAY
+        ========================================================= */
 
-    border:
-        1px solid #ffffff55;
+        #flowers {
+            position: fixed;
+            inset: 0;
 
-    border-radius:999px;
+            overflow: hidden;
 
-    padding:
-        12px
-        20px;
+            pointer-events: none;
 
-    color:#43134e;
+            z-index: 2;
+        }
 
-    background:
-        linear-gradient(
-            90deg,
-            #ffe477,
-            #ff9ddc
-        );
+        .falling-item {
+            position: absolute;
 
-    font-family:inherit;
+            top: -100px;
 
-    font-weight:800;
+            user-select: none;
 
-    cursor:pointer;
+            will-change: transform, opacity;
 
-    box-shadow:
+            animation: fallingDown linear infinite;
+        }
 
-        0 8px 25px #ff9fdd44,
+        .falling-flower {
+            font-family:
+                "Apple Color Emoji",
+                "Segoe UI Emoji",
+                sans-serif;
 
-        inset 0 1px #fff9;
+            filter:
+                drop-shadow(
+                    0 0 8px rgba(255,255,255,.5)
+                );
+        }
 
-    transition:.25s;
-}
+        .falling-image {
+            width: 65px;
+            height: 65px;
 
-.effect-btn:hover{
+            object-fit: cover;
 
-    transform:
-        translateY(-3px)
-        scale(1.04);
+            border-radius: 18px;
 
-    box-shadow:
-        0 12px 35px #ff9fdd66;
-}
+            padding: 3px;
 
-.effect-btn.active{
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff4d8d,
+                    #ffe477,
+                    #63ffd2,
+                    #61a8ff,
+                    #d66cff
+                );
 
-    background:
-        linear-gradient(
-            90deg,
-            #8ff3ff,
-            #b8a2ff
-        );
-}
+            box-shadow:
+                0 5px 20px rgba(0,0,0,.5),
+                0 0 12px rgba(255,255,255,.5),
+                0 0 30px rgba(255,142,220,.4);
+        }
 
+        /*
+         * QUAN TRỌNG:
+         * Không sử dụng rotate() ở bất kỳ keyframe nào.
+         * Vì vậy ảnh sẽ luôn giữ nguyên hướng.
+         */
 
-/* =========================================================
-   GRADUATION
-========================================================= */
+        @keyframes fallingDown {
 
-.graduation-icon{
+            0% {
+                transform:
+                    translate3d(0, -100px, 0);
 
-    font-size:70px;
+                opacity: 0;
+            }
 
-    animation:
-        float 2.5s ease-in-out infinite;
-}
+            8% {
+                opacity: 1;
+            }
 
-@keyframes float{
+            25% {
+                transform:
+                    translate3d(var(--move1), 25vh, 0);
+            }
 
-    50%{
-        transform:
-            translateY(-12px)
-            rotate(3deg);
-    }
-}
+            50% {
+                transform:
+                    translate3d(var(--move2), 50vh, 0);
+            }
 
-.small-title{
+            75% {
+                transform:
+                    translate3d(var(--move3), 75vh, 0);
+            }
 
-    color:#ffe58c;
+            100% {
+                transform:
+                    translate3d(var(--move4), 115vh, 0);
 
-    font-weight:900;
+                opacity: .1;
+            }
+        }
 
-    letter-spacing:4px;
 
-    margin-top:5px;
-}
+        /* =========================================================
+           MAIN
+        ========================================================= */
 
-.name{
+        .container {
+            position: relative;
 
-    font-family:'Playfair Display',serif;
+            z-index: 3;
 
-    font-size:
-        clamp(
-            42px,
-            7vw,
-            75px
-        );
+            width: 100%;
+            max-width: 1250px;
 
-    margin:
-        8px
-        0;
+            margin: auto;
 
-    color:#ffe37b;
+            padding:
+                25px
+                18px
+                80px;
+        }
 
-    text-shadow:
 
-        0 0 12px #ffd95788,
+        /* =========================================================
+           HERO
+        ========================================================= */
 
-        0 0 45px #ffb3ea44;
-}
+        .hero {
+            text-align: center;
 
+            padding:
+                70px 10px 45px;
+        }
 
-/* =========================================================
-   GALLERY
-========================================================= */
+        .badge {
+            display: inline-flex;
 
-.rainbow-gallery{
+            align-items: center;
+            justify-content: center;
 
-    width:100%;
+            padding:
+                11px 24px;
 
-    max-width:1100px;
+            border:
+                1px solid rgba(255,255,255,.35);
 
-    margin:
-        65px
-        auto
-        45px;
-}
+            border-radius: 999px;
 
-.rainbow-title{
+            background:
+                rgba(255,255,255,.1);
 
-    display:flex;
+            backdrop-filter: blur(15px);
 
-    justify-content:center;
+            font-size: 14px;
 
-    align-items:center;
+            font-weight: 800;
 
-    gap:18px;
+            letter-spacing: 2px;
 
-    margin-bottom:20px;
-}
+            box-shadow:
+                0 0 35px rgba(255,177,237,.2);
 
-.rainbow-title h2{
+            animation:
+                badgeFloat 3s ease-in-out infinite;
+        }
 
-    font-family:'Playfair Display',serif;
+        @keyframes badgeFloat {
 
-    font-size:
-        clamp(
-            25px,
-            4vw,
-            42px
-        );
+            50% {
+                transform: translateY(-5px);
+            }
+        }
 
-    color:#ffe58c;
+        h1 {
+            font-family:
+                "Playfair Display",
+                serif;
 
-    text-shadow:
+            font-size:
+                clamp(52px, 9vw, 110px);
 
-        0 0 12px #ffe58c,
+            line-height: 1.02;
 
-        0 0 30px #ff7dd7;
-}
+            margin:
+                28px 0 15px;
 
-.rainbow-title span{
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #ffe788,
+                    #ffffff,
+                    #ffb8e8,
+                    #ffffff
+                );
 
-    font-size:28px;
+            background-size: 300% auto;
 
-    animation:
-        titleFlower 2s ease-in-out infinite;
-}
+            color: transparent;
 
-@keyframes titleFlower{
+            background-clip: text;
+            -webkit-background-clip: text;
 
-    50%{
-        transform:
-            translateY(-8px)
-            rotate(8deg);
-    }
-}
+            animation:
+                shine 4s linear infinite;
 
+            text-shadow:
+                0 0 45px rgba(255,217,250,.25);
+        }
 
-/* =========================================================
-   RAINBOW STAGE
-========================================================= */
+        @keyframes shine {
 
-.rainbow-stage{
+            to {
+                background-position: 300% center;
+            }
+        }
 
-    position:relative;
+        .subtitle {
+            font-size:
+                clamp(17px, 2.5vw, 25px);
 
-    width:100%;
+            line-height: 1.6;
+        }
 
-    max-width:1100px;
 
-    height:620px;
+        /* =========================================================
+           GLASS CARD
+        ========================================================= */
 
-    margin:auto;
-}
+        .glass {
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,.15),
+                    rgba(255,255,255,.045)
+                );
 
+            border:
+                1px solid rgba(255,255,255,.25);
 
-/* =========================================================
-   SVG
-========================================================= */
+            backdrop-filter:
+                blur(22px);
 
-.connection-lines{
+            -webkit-backdrop-filter:
+                blur(22px);
 
-    position:absolute;
+            box-shadow:
+                0 30px 100px rgba(16,0,31,.45),
+                inset 0 1px rgba(255,255,255,.25);
 
-    inset:0;
+            border-radius: 35px;
+        }
 
-    width:100%;
+        .card {
+            position: relative;
 
-    height:100%;
+            padding:
+                45px 30px;
 
-    z-index:2;
+            text-align: center;
 
-    pointer-events:none;
+            overflow: hidden;
+        }
 
-    overflow:visible;
-}
+        .card::before {
+            content: "";
 
-.connect-main{
+            position: absolute;
 
-    fill:none;
+            inset: 12px;
 
-    stroke:url(#rainbowGradient);
+            border:
+                1px solid rgba(255,230,134,.35);
 
-    stroke-width:7;
+            border-radius: 27px;
 
-    stroke-linecap:round;
+            pointer-events: none;
+        }
 
-    stroke-linejoin:round;
 
-    filter:
+        /* =========================================================
+           RIBBON
+        ========================================================= */
 
-        drop-shadow(
-            0 0 5px white
-        )
+        .ribbon {
+            position: absolute;
 
-        drop-shadow(
-            0 0 12px #ff8de2
-        )
+            right: -70px;
+            top: 35px;
 
-        drop-shadow(
-            0 0 25px #ffe477
-        );
+            transform: rotate(35deg);
 
-    stroke-dasharray:18 12;
+            padding:
+                10px 75px;
 
-    animation:
-        lineMove 1.8s linear infinite;
-}
+            color: #46144d;
 
-@keyframes lineMove{
+            font-size: 12px;
 
-    to{
-        stroke-dashoffset:-60;
-    }
-}
+            font-weight: 900;
 
-.connect-inner{
+            letter-spacing: 1px;
 
-    fill:none;
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffe075,
+                    #ff89d1
+                );
 
-    stroke:white;
+            box-shadow:
+                0 0 25px rgba(255,179,231,.35);
+        }
 
-    stroke-width:2;
 
-    stroke-linecap:round;
+        /* =========================================================
+           EFFECT BUTTONS
+        ========================================================= */
 
-    stroke-dasharray:5 15;
+        .effect-buttons {
+            position: relative;
 
-    animation:
-        innerMove .8s linear infinite;
-}
+            z-index: 20;
 
-@keyframes innerMove{
+            display: flex;
 
-    to{
-        stroke-dashoffset:-40;
-    }
-}
+            flex-wrap: wrap;
 
+            justify-content: center;
 
-/* =========================================================
-   POINT
-========================================================= */
+            gap: 12px;
 
-.connection-point{
+            margin:
+                0 auto 35px;
+        }
 
-    position:absolute;
+        .effect-btn {
+            border:
+                1px solid rgba(255,255,255,.5);
 
-    width:20px;
+            border-radius: 999px;
 
-    height:20px;
+            padding:
+                12px 21px;
 
-    border-radius:50%;
+            color: #43134e;
 
-    background:white;
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffe477,
+                    #ff9ddc
+                );
 
-    z-index:12;
+            font-weight: 800;
 
-    box-shadow:
+            cursor: pointer;
 
-        0 0 5px white,
+            box-shadow:
+                0 8px 25px rgba(255,159,221,.25),
+                inset 0 1px rgba(255,255,255,.8);
 
-        0 0 15px #ffe477,
+            transition:
+                transform .25s ease,
+                box-shadow .25s ease;
+        }
 
-        0 0 30px #ff72d2,
+        .effect-btn:hover {
+            transform:
+                translateY(-4px)
+                scale(1.04);
 
-        0 0 55px #6fdcff;
+            box-shadow:
+                0 14px 35px rgba(255,159,221,.45);
+        }
 
-    animation:
-        pointPulse 1.3s ease-in-out infinite;
-}
+        .effect-btn:active {
+            transform: scale(.95);
+        }
 
-@keyframes pointPulse{
+        .effect-btn.active {
+            background:
+                linear-gradient(
+                    90deg,
+                    #8ff3ff,
+                    #b8a2ff
+                );
+        }
 
-    0%,100%{
 
-        transform:scale(.75);
+        /* =========================================================
+           GRADUATION
+        ========================================================= */
 
-        opacity:.7;
-    }
+        .graduation-icon {
+            display: inline-block;
 
-    50%{
+            font-size: 72px;
 
-        transform:scale(1.35);
+            animation:
+                graduationFloat 2.5s ease-in-out infinite;
 
-        opacity:1;
-    }
-}
+            filter:
+                drop-shadow(
+                    0 0 20px rgba(255,226,120,.45)
+                );
+        }
 
-.point-1{
-    left:18%;
-    top:68%;
-}
+        @keyframes graduationFloat {
 
-.point-2{
-    left:35%;
-    top:38%;
-}
+            50% {
+                transform:
+                    translateY(-13px)
+                    rotate(4deg);
+            }
+        }
 
-.point-3{
-    left:50%;
-    top:22%;
-}
+        .small-title {
+            margin-top: 7px;
 
-.point-4{
-    left:65%;
-    top:38%;
-}
+            color: #ffe58c;
 
-.point-5{
-    left:82%;
-    top:68%;
-}
+            font-weight: 900;
 
+            letter-spacing: 4px;
 
-/* =========================================================
-   FLYING LIGHT
-========================================================= */
+            font-size: 13px;
+        }
 
-.flying-light{
+        .name {
+            font-family:
+                "Playfair Display",
+                serif;
 
-    position:absolute;
+            font-size:
+                clamp(42px, 7vw, 75px);
 
-    width:12px;
+            margin: 8px 0;
 
-    height:12px;
+            color: #ffe37b;
 
-    border-radius:50%;
+            text-shadow:
+                0 0 12px rgba(255,217,87,.5),
+                0 0 45px rgba(255,179,234,.25);
+        }
 
-    background:white;
 
-    z-index:15;
+        /* =========================================================
+           GALLERY
+        ========================================================= */
 
-    pointer-events:none;
+        .rainbow-gallery {
+            width: 100%;
 
-    box-shadow:
+            max-width: 1100px;
 
-        0 0 8px white,
+            margin:
+                70px auto 45px;
+        }
 
-        0 0 18px #ffe477,
+        .rainbow-title {
+            display: flex;
 
-        0 0 35px #ff58ce,
+            justify-content: center;
 
-        0 0 60px #67ddff;
-}
+            align-items: center;
 
-.fly-1{
-    animation:
-        fly1 2.8s linear infinite;
-}
+            gap: 18px;
 
-@keyframes fly1{
+            margin-bottom: 25px;
+        }
 
-    0%{
-        left:18%;
-        top:68%;
-        opacity:0;
-    }
+        .rainbow-title h2 {
+            font-family:
+                "Playfair Display",
+                serif;
 
-    50%{
-        left:35%;
-        top:38%;
-        opacity:1;
-    }
+            font-size:
+                clamp(25px, 4vw, 42px);
 
-    100%{
-        left:35%;
-        top:38%;
-        opacity:0;
-    }
-}
+            color: #ffe58c;
 
-.fly-2{
-    animation:
-        fly2 2.8s linear infinite 1s;
-}
+            text-shadow:
+                0 0 12px #ffe58c,
+                0 0 30px #ff7dd7;
 
-@keyframes fly2{
+            text-align: center;
+        }
 
-    0%{
-        left:35%;
-        top:38%;
-        opacity:0;
-    }
+        .rainbow-title span {
+            font-size: 28px;
 
-    50%{
-        left:50%;
-        top:22%;
-        opacity:1;
-    }
+            animation:
+                titleFlower 2s ease-in-out infinite;
+        }
 
-    100%{
-        left:50%;
-        top:22%;
-        opacity:0;
-    }
-}
+        @keyframes titleFlower {
 
-.fly-3{
-    animation:
-        fly3 2.8s linear infinite 2s;
-}
+            50% {
+                transform:
+                    translateY(-8px)
+                    rotate(8deg);
+            }
+        }
 
-@keyframes fly3{
 
-    0%{
-        left:50%;
-        top:22%;
-        opacity:0;
-    }
+        /* =========================================================
+           RAINBOW STAGE
+        ========================================================= */
 
-    50%{
-        left:65%;
-        top:38%;
-        opacity:1;
-    }
+        .rainbow-stage {
+            position: relative;
 
-    100%{
-        left:65%;
-        top:38%;
-        opacity:0;
-    }
-}
+            width: 100%;
 
-.fly-4{
-    animation:
-        fly4 2.8s linear infinite 3s;
-}
+            height: 620px;
 
-@keyframes fly4{
+            margin: auto;
+        }
 
-    0%{
-        left:65%;
-        top:38%;
-        opacity:0;
-    }
 
-    50%{
-        left:82%;
-        top:68%;
-        opacity:1;
-    }
+        /* =========================================================
+           SVG CONNECTION
+        ========================================================= */
 
-    100%{
-        left:82%;
-        top:68%;
-        opacity:0;
-    }
-}
+        .connection-lines {
+            position: absolute;
 
+            inset: 0;
 
-/* =========================================================
-   PHOTO
-========================================================= */
+            width: 100%;
+            height: 100%;
 
-.rainbow-photo{
+            z-index: 2;
 
-    position:absolute;
+            pointer-events: none;
 
-    width:190px;
+            overflow: visible;
+        }
 
-    height:190px;
+        .connect-main {
+            fill: none;
 
-    padding:5px;
+            stroke: url(#rainbowGradient);
 
-    border-radius:30px;
+            stroke-width: 7;
 
-    z-index:10;
+            stroke-linecap: round;
+            stroke-linejoin: round;
 
-    background:
-        linear-gradient(
-            135deg,
-            #ff4d8d,
-            #ffd84d,
-            #6cffd0,
-            #61a8ff,
-            #d66cff
-        );
+            filter:
+                drop-shadow(0 0 5px white)
+                drop-shadow(0 0 12px #ff8de2)
+                drop-shadow(0 0 25px #ffe477);
 
-    box-shadow:
+            stroke-dasharray: 18 12;
 
-        0 15px 40px #17002599,
+            animation:
+                lineMove 1.8s linear infinite;
+        }
 
-        0 0 25px #ffb1e855;
+        @keyframes lineMove {
+            to {
+                stroke-dashoffset: -60;
+            }
+        }
 
-    transition:
+        .connect-inner {
+            fill: none;
 
-        transform .5s ease,
+            stroke: white;
 
-        box-shadow .5s ease;
-}
+            stroke-width: 2;
 
-.rainbow-photo:before{
+            stroke-linecap: round;
 
-    content:"";
+            stroke-dasharray: 5 15;
 
-    position:absolute;
+            animation:
+                innerMove .8s linear infinite;
+        }
 
-    inset:-5px;
+        @keyframes innerMove {
+            to {
+                stroke-dashoffset: -40;
+            }
+        }
 
-    border-radius:34px;
 
-    background:
-        linear-gradient(
-            45deg,
-            #ff4d8d,
-            #ffe477,
-            #63ffd2,
-            #6ba8ff,
-            #e266ff,
-            #ff4d8d
-        );
+        /* =========================================================
+           POINTS
+        ========================================================= */
 
-    background-size:300% 300%;
+        .connection-point {
+            position: absolute;
 
-    animation:
-        borderMove 4s linear infinite;
+            width: 20px;
+            height: 20px;
 
-    z-index:-1;
+            border-radius: 50%;
 
-    filter:blur(7px);
+            background: white;
 
-    opacity:.8;
-}
+            z-index: 12;
 
-@keyframes borderMove{
+            box-shadow:
+                0 0 5px white,
+                0 0 15px #ffe477,
+                0 0 30px #ff72d2,
+                0 0 55px #6fdcff;
 
-    0%{
-        background-position:0% 50%;
-    }
+            animation:
+                pointPulse 1.3s ease-in-out infinite;
+        }
 
-    50%{
-        background-position:100% 50%;
-    }
+        @keyframes pointPulse {
 
-    100%{
-        background-position:0% 50%;
-    }
-}
+            0%,100% {
+                transform: scale(.75);
+                opacity: .7;
+            }
 
-.rainbow-photo img{
+            50% {
+                transform: scale(1.35);
+                opacity: 1;
+            }
+        }
 
-    width:100%;
+        .point-1 {
+            left: 18%;
+            top: 68%;
+        }
 
-    height:100%;
+        .point-2 {
+            left: 35%;
+            top: 38%;
+        }
 
-    display:block;
+        .point-3 {
+            left: 50%;
+            top: 22%;
+        }
 
-    object-fit:cover;
+        .point-4 {
+            left: 65%;
+            top: 38%;
+        }
 
-    border-radius:25px;
+        .point-5 {
+            left: 82%;
+            top: 68%;
+        }
 
-    transition:
-        transform .6s ease;
-}
 
+        /* =========================================================
+           FLYING LIGHT
+        ========================================================= */
 
-/* =========================================================
-   5 ẢNH
-========================================================= */
+        .flying-light {
+            position: absolute;
 
-.photo-1{
+            width: 12px;
+            height: 12px;
 
-    left:8%;
+            border-radius: 50%;
 
-    top:57%;
+            background: white;
 
-    transform:rotate(-8deg);
-}
+            z-index: 15;
 
-.photo-2{
+            pointer-events: none;
 
-    left:25%;
+            box-shadow:
+                0 0 8px white,
+                0 0 18px #ffe477,
+                0 0 35px #ff58ce,
+                0 0 60px #67ddff;
+        }
 
-    top:27%;
+        .fly-1 {
+            animation:
+                fly1 2.8s linear infinite;
+        }
 
-    transform:rotate(-5deg);
-}
+        @keyframes fly1 {
 
-.photo-3{
+            0% {
+                left: 18%;
+                top: 68%;
+                opacity: 0;
+            }
 
-    left:50%;
+            50% {
+                left: 35%;
+                top: 38%;
+                opacity: 1;
+            }
 
-    top:5%;
+            100% {
+                left: 35%;
+                top: 38%;
+                opacity: 0;
+            }
+        }
 
-    transform:
-        translateX(-50%);
-}
+        .fly-2 {
+            animation:
+                fly2 2.8s linear infinite 1s;
+        }
 
-.photo-4{
+        @keyframes fly2 {
 
-    right:25%;
+            0% {
+                left: 35%;
+                top: 38%;
+                opacity: 0;
+            }
 
-    top:27%;
+            50% {
+                left: 50%;
+                top: 22%;
+                opacity: 1;
+            }
 
-    transform:rotate(5deg);
-}
+            100% {
+                left: 50%;
+                top: 22%;
+                opacity: 0;
+            }
+        }
 
-.photo-5{
+        .fly-3 {
+            animation:
+                fly3 2.8s linear infinite 2s;
+        }
 
-    right:8%;
+        @keyframes fly3 {
 
-    top:57%;
+            0% {
+                left: 50%;
+                top: 22%;
+                opacity: 0;
+            }
 
-    transform:rotate(8deg);
-}
+            50% {
+                left: 65%;
+                top: 38%;
+                opacity: 1;
+            }
 
+            100% {
+                left: 65%;
+                top: 38%;
+                opacity: 0;
+            }
+        }
 
-/* =========================================================
-   HOVER
-========================================================= */
+        .fly-4 {
+            animation:
+                fly4 2.8s linear infinite 3s;
+        }
 
-.rainbow-photo:hover{
+        @keyframes fly4 {
 
-    transform:
-        translateY(-18px)
-        scale(1.12)
-        rotate(0deg) !important;
+            0% {
+                left: 65%;
+                top: 38%;
+                opacity: 0;
+            }
 
-    z-index:30;
+            50% {
+                left: 82%;
+                top: 68%;
+                opacity: 1;
+            }
 
-    box-shadow:
+            100% {
+                left: 82%;
+                top: 68%;
+                opacity: 0;
+            }
+        }
 
-        0 25px 70px #000b,
 
-        0 0 20px #fff,
+        /* =========================================================
+           PHOTO
+        ========================================================= */
 
-        0 0 45px #ffe477,
+        .rainbow-photo {
+            position: absolute;
 
-        0 0 80px #ff62d1,
+            width: 190px;
+            height: 190px;
 
-        0 0 110px #62dfff;
-}
+            padding: 5px;
 
-.rainbow-photo:hover img{
+            border-radius: 30px;
 
-    transform:scale(1.08);
-}
+            z-index: 10;
 
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff4d8d,
+                    #ffd84d,
+                    #6cffd0,
+                    #61a8ff,
+                    #d66cff
+                );
 
-/* =========================================================
-   CAPTION
-========================================================= */
+            box-shadow:
+                0 15px 40px rgba(23,0,37,.6),
+                0 0 25px rgba(255,177,232,.3);
 
-.photo-caption{
+            transition:
+                transform .5s ease,
+                box-shadow .5s ease;
+        }
 
-    position:absolute;
+        .rainbow-photo::before {
+            content: "";
 
-    left:10px;
-    right:10px;
-    bottom:10px;
+            position: absolute;
 
-    padding:9px;
+            inset: -5px;
 
-    border-radius:15px;
+            border-radius: 34px;
 
-    color:white;
+            background:
+                linear-gradient(
+                    45deg,
+                    #ff4d8d,
+                    #ffe477,
+                    #63ffd2,
+                    #6ba8ff,
+                    #e266ff,
+                    #ff4d8d
+                );
 
-    font-size:13px;
+            background-size: 300% 300%;
 
-    font-weight:800;
+            animation:
+                borderMove 4s linear infinite;
 
-    background:
-        rgba(40,5,60,.75);
+            z-index: -1;
 
-    backdrop-filter:blur(8px);
+            filter: blur(7px);
 
-    opacity:0;
+            opacity: .8;
+        }
 
-    transform:translateY(15px);
+        @keyframes borderMove {
 
-    transition:.4s;
-}
+            0% {
+                background-position: 0% 50%;
+            }
 
-.rainbow-photo:hover .photo-caption{
+            50% {
+                background-position: 100% 50%;
+            }
 
-    opacity:1;
+            100% {
+                background-position: 0% 50%;
+            }
+        }
 
-    transform:translateY(0);
-}
+        .rainbow-photo img {
+            display: block;
 
+            width: 100%;
+            height: 100%;
 
-/* =========================================================
-   MESSAGE LOCK
-========================================================= */
+            object-fit: cover;
 
-.message-lock{
+            border-radius: 25px;
 
-    max-width:900px;
+            transition:
+                transform .6s ease;
+        }
 
-    margin:
-        55px
-        auto
-        35px;
+        .photo-1 {
+            left: 8%;
+            top: 57%;
 
-    text-align:center;
+            transform: rotate(-8deg);
+        }
 
-    position:relative;
-}
+        .photo-2 {
+            left: 25%;
+            top: 27%;
 
-.lock-title{
+            transform: rotate(-5deg);
+        }
 
-    font-family:'Playfair Display',serif;
+        .photo-3 {
+            left: 50%;
+            top: 5%;
 
-    color:#ffe58c;
+            transform:
+                translateX(-50%);
+        }
 
-    font-size:
-        clamp(
-            22px,
-            3vw,
-            32px
-        );
+        .photo-4 {
+            right: 25%;
+            top: 27%;
 
-    margin-bottom:25px;
+            transform: rotate(5deg);
+        }
 
-    text-shadow:
+        .photo-5 {
+            right: 8%;
+            top: 57%;
 
-        0 0 10px #ffe58c,
+            transform: rotate(8deg);
+        }
 
-        0 0 30px #ff78cf;
-}
+        .rainbow-photo:hover {
+            transform:
+                translateY(-18px)
+                scale(1.12)
+                rotate(0deg) !important;
 
+            z-index: 30;
 
-/* =========================================================
-   LOCKED MESSAGE
-========================================================= */
+            box-shadow:
+                0 25px 70px rgba(0,0,0,.7),
+                0 0 20px white,
+                0 0 45px #ffe477,
+                0 0 80px #ff62d1,
+                0 0 110px #62dfff;
+        }
 
-.locked-message{
+        .rainbow-photo:hover img {
+            transform: scale(1.08);
+        }
 
-    padding:
-        35px
-        20px;
 
-    border-radius:25px;
+        /* =========================================================
+           CAPTION
+        ========================================================= */
 
-    background:#ffffff12;
+        .photo-caption {
+            position: absolute;
 
-    border:
-        1px solid #ffffff35;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
 
-    backdrop-filter:blur(15px);
+            padding: 9px;
 
-    font-size:45px;
+            border-radius: 15px;
 
-    box-shadow:
+            color: white;
 
-        0 15px 50px #16001f55,
+            font-size: 13px;
 
-        inset 0 1px #ffffff22;
+            font-weight: 800;
 
-    cursor:pointer;
+            background:
+                rgba(40,5,60,.78);
 
-    transition:.3s;
-}
+            backdrop-filter:
+                blur(8px);
 
-.locked-message:hover{
+            opacity: 0;
 
-    transform:
-        translateY(-5px);
-}
+            transform: translateY(15px);
 
-.locked-message span{
+            transition: .4s;
+        }
 
-    display:block;
+        .rainbow-photo:hover .photo-caption {
+            opacity: 1;
 
-    margin-top:10px;
+            transform: translateY(0);
+        }
 
-    font-family:'Be Vietnam Pro',sans-serif;
 
-    font-size:16px;
+        /* =========================================================
+           MESSAGE
+        ========================================================= */
 
-    color:#ffffffcc;
-}
+        .message-lock {
+            max-width: 900px;
 
+            margin:
+                55px auto 35px;
 
-/* =========================================================
-   PASSWORD
-========================================================= */
+            text-align: center;
 
-.password-area{
+            position: relative;
+        }
 
-    margin-top:25px;
+        .lock-title {
+            font-family:
+                "Playfair Display",
+                serif;
 
-    display:flex;
+            color: #ffe58c;
 
-    flex-direction:column;
+            font-size:
+                clamp(22px, 3vw, 32px);
 
-    align-items:center;
+            margin-bottom: 25px;
 
-    justify-content:center;
-}
+            text-shadow:
+                0 0 10px #ffe58c,
+                0 0 30px #ff78cf;
+        }
 
-.passcode-title{
+        .locked-message {
+            padding:
+                35px 20px;
 
-    font-size:16px;
+            border-radius: 25px;
 
-    font-weight:700;
+            background:
+                rgba(255,255,255,.08);
 
-    color:#fff;
+            border:
+                1px solid rgba(255,255,255,.25);
 
-    margin-bottom:20px;
+            backdrop-filter:
+                blur(15px);
 
-    text-shadow:
-        0 0 10px #ffb6e6;
-}
+            font-size: 45px;
 
-.passcode-dots{
+            box-shadow:
+                0 15px 50px rgba(22,0,31,.35),
+                inset 0 1px rgba(255,255,255,.2);
 
-    display:flex;
+            cursor: pointer;
 
-    justify-content:center;
+            transition: .3s;
+        }
 
-    gap:18px;
+        .locked-message:hover {
+            transform: translateY(-5px);
 
-    margin-bottom:25px;
-}
+            background:
+                rgba(255,255,255,.12);
+        }
 
-.passcode-dot{
+        .locked-message span {
+            display: block;
 
-    width:15px;
+            margin-top: 10px;
 
-    height:15px;
+            font-size: 16px;
 
-    border-radius:50%;
+            color: rgba(255,255,255,.8);
+        }
 
-    background:
-        rgba(255,255,255,.25);
 
-    border:
-        2px solid
-        rgba(255,255,255,.7);
+        /* =========================================================
+           PASSWORD
+        ========================================================= */
 
-    transition:.2s ease;
+        .password-area {
+            margin-top: 25px;
 
-    box-shadow:
-        0 0 10px
-        rgba(255,150,220,.2);
-}
+            display: flex;
 
-.passcode-dot.filled{
+            flex-direction: column;
 
-    background:#fff;
+            align-items: center;
+        }
 
-    border-color:#fff;
+        .passcode-title {
+            margin-bottom: 20px;
 
-    box-shadow:
+            font-size: 15px;
 
-        0 0 8px #fff,
+            font-weight: 700;
 
-        0 0 20px #ff9cda,
+            color: rgba(255,255,255,.85);
+        }
 
-        0 0 35px #c7a2ff;
+        .passcode-dots {
+            display: flex;
 
-    transform:scale(1.12);
-}
+            justify-content: center;
 
+            gap: 18px;
 
-/* =========================================================
-   KEYPAD
-========================================================= */
+            margin-bottom: 25px;
+        }
 
-.passcode-keypad{
+        .passcode-dot {
+            width: 15px;
+            height: 15px;
 
-    display:grid;
+            border-radius: 50%;
 
-    grid-template-columns:
-        repeat(3,75px);
+            background:
+                rgba(255,255,255,.25);
 
-    gap:14px;
+            border:
+                2px solid rgba(255,255,255,.7);
 
-    justify-content:center;
-}
+            transition: .2s;
+        }
 
-.passcode-key{
+        .passcode-dot.filled {
+            background: white;
 
-    width:75px;
+            border-color: white;
 
-    height:75px;
+            box-shadow:
+                0 0 8px white,
+                0 0 20px #ff9cda,
+                0 0 35px #c7a2ff;
 
-    border-radius:50%;
+            transform: scale(1.12);
+        }
 
-    border:
-        1px solid
-        rgba(255,255,255,.55);
 
-    color:white;
+        /* =========================================================
+           KEYPAD
+        ========================================================= */
 
-    font-family:
-        'Be Vietnam Pro',
-        sans-serif;
+        .passcode-keypad {
+            display: grid;
 
-    font-size:25px;
+            grid-template-columns:
+                repeat(3, 75px);
 
-    font-weight:700;
+            gap: 14px;
 
-    cursor:pointer;
+            justify-content: center;
+        }
 
-    background:
+        .passcode-key {
+            width: 75px;
+            height: 75px;
 
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.25),
-            rgba(220,170,255,.16)
-        );
+            border-radius: 50%;
 
-    backdrop-filter:blur(15px);
+            border:
+                1px solid rgba(255,255,255,.5);
 
-    box-shadow:
+            color: white;
 
-        0 8px 25px
-        rgba(60,0,80,.25),
+            font-size: 25px;
 
-        inset 0 1px
-        rgba(255,255,255,.35);
+            font-weight: 700;
 
-    transition:
+            cursor: pointer;
 
-        transform .12s ease,
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.25),
+                    rgba(220,170,255,.16)
+                );
 
-        background .15s ease,
+            backdrop-filter:
+                blur(15px);
 
-        box-shadow .15s ease;
+            box-shadow:
+                0 8px 25px rgba(60,0,80,.25),
+                inset 0 1px rgba(255,255,255,.35);
 
-    user-select:none;
+            transition:
+                transform .12s,
+                background .15s,
+                box-shadow .15s;
 
-    -webkit-tap-highlight-color:
-        transparent;
-}
+            user-select: none;
 
-.passcode-key:hover{
+            -webkit-tap-highlight-color: transparent;
+        }
 
-    background:
+        .passcode-key:hover {
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,180,225,.45),
+                    rgba(190,160,255,.35)
+                );
 
-        linear-gradient(
-            145deg,
-            rgba(255,180,225,.45),
-            rgba(190,160,255,.35)
-        );
+            box-shadow:
+                0 8px 30px rgba(255,140,220,.35),
+                0 0 20px rgba(200,160,255,.25);
+        }
 
-    box-shadow:
+        .passcode-key:active {
+            transform: scale(.88);
 
-        0 8px 30px
-        rgba(255,140,220,.35),
+            background:
+                linear-gradient(
+                    145deg,
+                    #ffb5dc,
+                    #c9adff
+                );
 
-        0 0 20px
-        rgba(200,160,255,.25);
-}
+            box-shadow:
+                0 0 25px #ff9fd9;
+        }
 
-.passcode-key:active{
+        .passcode-delete {
+            background:
+                rgba(255,255,255,.1);
 
-    transform:scale(.88);
+            font-size: 20px;
+        }
 
-    background:
+        .passcode-zero {
+            grid-column: 2;
+        }
 
-        linear-gradient(
-            145deg,
-            #ffb5dc,
-            #c9adff
-        );
 
-    box-shadow:
-        0 0 25px #ff9fd9;
-}
+        /* =========================================================
+           ERROR
+        ========================================================= */
 
-.passcode-delete{
+        #messageError {
+            min-height: 25px;
 
-    background:
-        rgba(255,255,255,.10);
+            margin-top: 20px;
 
-    font-size:20px;
-}
+            color: #ffd0ed;
 
-.passcode-zero{
-    grid-column:2;
-}
+            font-weight: 700;
 
+            font-size: 14px;
 
-/* =========================================================
-   ERROR
-========================================================= */
+            text-shadow:
+                0 0 10px #ff8dca;
+        }
 
-#messageError{
+        @keyframes passcodeShake {
 
-    min-height:25px;
+            0%,100% {
+                transform: translateX(0);
+            }
 
-    margin-top:20px;
+            20% {
+                transform: translateX(-12px);
+            }
 
-    color:#ffd0ed;
+            40% {
+                transform: translateX(12px);
+            }
 
-    font-weight:700;
+            60% {
+                transform: translateX(-8px);
+            }
 
-    font-size:14px;
+            80% {
+                transform: translateX(8px);
+            }
+        }
 
-    text-shadow:
-        0 0 10px #ff8dca;
-}
+        .passcode-shake {
+            animation:
+                passcodeShake .45s ease;
+        }
 
 
-/* =========================================================
-   RUNG
-========================================================= */
+        /* =========================================================
+           ENVELOPE
+        ========================================================= */
 
-@keyframes passcodeShake{
+        .envelope-wrapper {
+            position: relative;
 
-    0%,100%{
-        transform:translateX(0);
-    }
+            width:
+                min(700px, 92vw);
 
-    20%{
-        transform:translateX(-12px);
-    }
+            height: 430px;
 
-    40%{
-        transform:translateX(12px);
-    }
+            margin: 30px auto;
 
-    60%{
-        transform:translateX(-8px);
-    }
+            perspective: 1200px;
 
-    80%{
-        transform:translateX(8px);
-    }
-}
+            transition:
+                opacity .6s,
+                transform .6s;
+        }
 
-.passcode-shake{
+        .envelope {
+            position: absolute;
 
-    animation:
-        passcodeShake .45s ease;
-}
+            inset: 0;
 
+            border-radius: 18px;
 
-/* =========================================================
-   💌 PHONG BÌ
-========================================================= */
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff1d2,
+                    #ffdcb7 45%,
+                    #ffc6df
+                );
 
-.envelope-wrapper{
+            box-shadow:
+                0 30px 80px rgba(23,0,31,.6),
+                0 0 35px rgba(255,158,217,.35),
+                inset 0 0 0 3px rgba(255,255,255,.5);
 
-    position:relative;
+            overflow: hidden;
 
-    width:
-        min(
-            700px,
-            92vw
-        );
+            transform-style: preserve-3d;
+        }
 
-    height:430px;
+        .envelope::after {
+            content: "";
 
-    margin:30px auto;
+            position: absolute;
 
-    perspective:1200px;
+            inset: 12px;
 
-    transition:
+            border:
+                2px dashed rgba(217,140,157,.6);
 
-        opacity .6s ease,
+            border-radius: 12px;
 
-        transform .6s ease;
-}
+            pointer-events: none;
+        }
 
+        .envelope-left,
+        .envelope-right,
+        .envelope-bottom {
+            position: absolute;
 
-/* =========================================================
-   PHONG BÌ
-========================================================= */
+            inset: 0;
+        }
 
-.envelope{
+        .envelope-left {
+            background:
+                linear-gradient(
+                    135deg,
+                    transparent 49%,
+                    #f7b5c9 50%
+                );
 
-    position:absolute;
+            clip-path:
+                polygon(
+                    0 0,
+                    50% 50%,
+                    0 100%
+                );
 
-    inset:0;
+            z-index: 5;
+        }
 
-    border-radius:18px;
+        .envelope-right {
+            background:
+                linear-gradient(
+                    225deg,
+                    transparent 49%,
+                    #efa9c0 50%
+                );
 
-    background:
-        linear-gradient(
-            135deg,
-            #fff1d2,
-            #ffdcb7 45%,
-            #ffc6df
-        );
+            clip-path:
+                polygon(
+                    100% 0,
+                    50% 50%,
+                    100% 100%
+                );
 
-    box-shadow:
+            z-index: 5;
+        }
 
-        0 30px 80px #17001f99,
+        .envelope-bottom {
+            background:
+                linear-gradient(
+                    180deg,
+                    transparent 48%,
+                    #efabc1 49%,
+                    #f8bfd0 100%
+                );
 
-        0 0 35px #ff9ed955,
+            clip-path:
+                polygon(
+                    0 100%,
+                    50% 50%,
+                    100% 100%
+                );
 
-        inset 0 0 0 3px #fff8;
+            z-index: 6;
+        }
 
-    overflow:hidden;
 
-    transform-style:preserve-3d;
-}
+        /* =========================================================
+           FLAP
+        ========================================================= */
 
-.envelope::after{
+        .envelope-flap {
+            position: absolute;
 
-    content:"";
+            top: 0;
+            left: 0;
 
-    position:absolute;
+            width: 100%;
+            height: 55%;
 
-    inset:12px;
+            background:
+                linear-gradient(
+                    145deg,
+                    #ffe7c8,
+                    #ffc8d9
+                );
 
-    border:
-        2px dashed #d98c9d99;
+            clip-path:
+                polygon(
+                    0 0,
+                    100% 0,
+                    50% 100%
+                );
 
-    border-radius:12px;
+            transform-origin: top center;
 
-    pointer-events:none;
-}
+            transition:
+                transform 1s cubic-bezier(.2,.8,.2,1);
 
-.envelope-left{
+            z-index: 10;
 
-    position:absolute;
+            filter:
+                drop-shadow(
+                    0 5px 8px rgba(184,93,125,.25)
+                );
+        }
 
-    inset:0;
 
-    background:
-        linear-gradient(
-            135deg,
-            transparent 49%,
-            #f7b5c9 50%
-        );
+        /* =========================================================
+           SEAL
+        ========================================================= */
 
-    clip-path:
-        polygon(
-            0 0,
-            50% 50%,
-            0 100%
-        );
+        .envelope-seal {
+            position: absolute;
 
-    z-index:5;
-}
+            left: 50%;
+            top: 43%;
 
-.envelope-right{
+            transform:
+                translate(-50%,-50%);
 
-    position:absolute;
+            width: 70px;
+            height: 70px;
 
-    inset:0;
+            border-radius: 50%;
 
-    background:
-        linear-gradient(
-            225deg,
-            transparent 49%,
-            #efa9c0 50%
-        );
+            display: flex;
 
-    clip-path:
-        polygon(
-            100% 0,
-            50% 50%,
-            100% 100%
-        );
+            align-items: center;
+            justify-content: center;
 
-    z-index:5;
-}
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff5c9c,
+                    #ff9fc8
+                );
 
-.envelope-bottom{
+            border:
+                4px solid rgba(255,255,255,.8);
 
-    position:absolute;
+            box-shadow:
+                0 5px 20px rgba(184,61,109,.4),
+                0 0 25px rgba(255,131,187,.5);
 
-    inset:0;
+            font-size: 30px;
 
-    background:
-        linear-gradient(
-            180deg,
-            transparent 48%,
-            #efabc1 49%,
-            #f8bfd0 100%
-        );
+            z-index: 12;
 
-    clip-path:
-        polygon(
-            0 100%,
-            50% 50%,
-            100% 100%
-        );
+            transition:
+                opacity .5s,
+                transform .5s;
+        }
 
-    z-index:6;
-}
 
+        /* =========================================================
+           OPEN BUTTON
+        ========================================================= */
 
-/* =========================================================
-   NẮP
-========================================================= */
+        .open-letter-btn {
+            position: absolute;
 
-.envelope-flap{
+            left: 50%;
+            bottom: 25px;
 
-    position:absolute;
+            transform:
+                translateX(-50%);
 
-    top:0;
+            z-index: 20;
 
-    left:0;
+            border: 0;
 
-    width:100%;
+            border-radius: 999px;
 
-    height:55%;
+            padding:
+                13px 27px;
 
-    background:
-        linear-gradient(
-            145deg,
-            #ffe7c8,
-            #ffc8d9
-        );
+            font-weight: 800;
 
-    clip-path:
-        polygon(
-            0 0,
-            100% 0,
-            50% 100%
-        );
+            color: #7d3453;
 
-    transform-origin:top center;
+            background:
+                linear-gradient(
+                    90deg,
+                    #fff0a8,
+                    #ffb9d8
+                );
 
-    transition:
-        transform 1s
-        cubic-bezier(.2,.8,.2,1);
+            cursor: pointer;
 
-    z-index:10;
+            box-shadow:
+                0 8px 25px rgba(195,92,139,.35);
 
-    filter:
-        drop-shadow(
-            0 5px 8px #b85d7d44
-        );
-}
+            transition: .3s;
+        }
 
+        .open-letter-btn:hover {
+            transform:
+                translateX(-50%)
+                translateY(-3px)
+                scale(1.05);
+        }
 
-/* =========================================================
-   CON DẤU
-========================================================= */
 
-.envelope-seal{
+        /* =========================================================
+           LETTER
+        ========================================================= */
 
-    position:absolute;
+        .letter-paper {
+            position: absolute;
 
-    left:50%;
+            left: 50%;
+            bottom: 25px;
 
-    top:43%;
+            width: 82%;
 
-    transform:
-        translate(-50%,-50%);
+            min-height: 360px;
 
-    width:70px;
+            padding:
+                55px
+                55px
+                45px;
 
-    height:70px;
+            transform:
+                translate(-50%,110%);
 
-    border-radius:50%;
+            opacity: 0;
 
-    display:flex;
+            z-index: 7;
 
-    align-items:center;
+            border-radius: 5px;
 
-    justify-content:center;
+            color: #65453b;
 
-    background:
-        linear-gradient(
-            135deg,
-            #ff5c9c,
-            #ff9fc8
-        );
+            text-align: left;
 
-    border:
-        4px solid #fff8;
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    #fff9e9,
+                    transparent 35%
+                ),
 
-    box-shadow:
+                radial-gradient(
+                    circle at 80% 80%,
+                    #ffe7d2,
+                    transparent 35%
+                ),
 
-        0 5px 20px #b83d6d66,
+                linear-gradient(
+                    135deg,
+                    #fff9e8,
+                    #fff0d0
+                );
 
-        0 0 25px #ff83bb88;
+            box-shadow:
+                0 25px 60px rgba(27,0,29,.4),
+                inset 0 0 25px rgba(217,157,101,.25);
 
-    font-size:30px;
+            border:
+                1px solid rgba(216,161,110,.6);
 
-    z-index:12;
+            transition:
+                transform 1.3s cubic-bezier(.2,.8,.2,1),
+                opacity .8s ease;
+        }
 
-    transition:
+        .letter-paper::before {
+            content: "";
 
-        opacity .5s,
+            position: absolute;
 
-        transform .5s;
-}
+            inset: 0;
 
+            pointer-events: none;
 
-/* =========================================================
-   NÚT MỞ
-========================================================= */
+            opacity: .25;
 
-.open-letter-btn{
+            background-image:
+                radial-gradient(
+                    #8c6040 .7px,
+                    transparent .7px
+                );
 
-    position:absolute;
+            background-size: 8px 8px;
+        }
 
-    left:50%;
+        .letter-paper::after {
+            content: "";
 
-    bottom:25px;
+            position: absolute;
 
-    transform:
-        translateX(-50%);
+            inset: 14px;
 
-    z-index:20;
+            border:
+                1px solid rgba(210,155,108,.5);
 
-    border:0;
+            pointer-events: none;
+        }
 
-    border-radius:999px;
+        .letter-decoration {
+            position: absolute;
 
-    padding:
-        12px
-        25px;
+            font-size: 28px;
 
-    font-family:inherit;
+            z-index: 3;
+        }
 
-    font-weight:800;
+        .letter-decoration.top-left {
+            left: 20px;
+            top: 15px;
+        }
 
-    color:#7d3453;
+        .letter-decoration.top-right {
+            right: 20px;
+            top: 15px;
+        }
 
-    background:
-        linear-gradient(
-            90deg,
-            #fff0a8,
-            #ffb9d8
-        );
+        .letter-decoration.bottom-left {
+            left: 20px;
+            bottom: 15px;
+        }
 
-    cursor:pointer;
+        .letter-decoration.bottom-right {
+            right: 20px;
+            bottom: 15px;
+        }
 
-    box-shadow:
-        0 8px 25px #c35c8b55;
+        .letter-title {
+            position: relative;
 
-    transition:.3s;
-}
+            z-index: 4;
 
-.open-letter-btn:hover{
+            text-align: center;
 
-    transform:
-        translateX(-50%)
-        translateY(-3px)
-        scale(1.05);
-}
+            font-family:
+                "Playfair Display",
+                serif;
 
+            font-size:
+                clamp(28px, 5vw, 44px);
 
-/* =========================================================
-   📜 GIẤY THƯ
-========================================================= */
+            color: #c65379;
 
-.letter-paper{
+            margin-bottom: 20px;
+        }
 
-    position:absolute;
+        .letter-line {
+            position: relative;
 
-    left:50%;
+            z-index: 4;
 
-    bottom:25px;
+            width: 120px;
+            height: 3px;
 
-    width:82%;
+            margin:
+                0 auto 25px;
 
-    min-height:360px;
+            border-radius: 99px;
 
-    padding:
-        55px
-        55px
-        45px;
+            background:
+                linear-gradient(
+                    90deg,
+                    #ff9cbd,
+                    #e37b9e
+                );
+        }
 
-    transform:
-        translate(-50%,110%);
+        .letter-text {
+            position: relative;
 
-    opacity:0;
+            z-index: 4;
 
-    z-index:7;
+            font-size:
+                clamp(16px, 2.3vw, 21px);
 
-    border-radius:5px;
+            line-height: 1.9;
 
-    color:#65453b;
+            white-space: pre-line;
 
-    text-align:left;
+            color: #65453b;
 
-    background:
+            text-align: left;
+        }
 
-        radial-gradient(
-            circle at 20% 20%,
-            #fff9e9,
-            transparent 35%
-        ),
+        .letter-signature {
+            position: relative;
 
-        radial-gradient(
-            circle at 80% 80%,
-            #ffe7d2,
-            transparent 35%
-        ),
+            z-index: 4;
 
-        linear-gradient(
-            135deg,
-            #fff9e8,
-            #fff0d0
-        );
+            margin-top: 30px;
 
-    box-shadow:
+            text-align: right;
 
-        0 25px 60px #1b001d66,
+            font-family:
+                "Playfair Display",
+                serif;
 
-        inset 0 0 25px #d99d6544;
+            font-size: 22px;
 
-    border:
-        1px solid #d8a16e99;
+            color: #b95073;
+        }
 
-    transition:
 
-        transform 1.3s
-        cubic-bezier(.2,.8,.2,1),
+        /* =========================================================
+           OPEN STATE
+        ========================================================= */
 
-        opacity .8s ease;
-}
+        .envelope-wrapper.open {
+            height: auto;
 
+            min-height: 620px;
+        }
 
-/* =========================================================
-   TEXTURE GIẤY
-========================================================= */
+        .envelope-wrapper.open .envelope-flap {
+            transform:
+                rotateX(180deg);
 
-.letter-paper::before{
+            z-index: 2;
+        }
 
-    content:"";
+        .envelope-wrapper.open .envelope-seal {
+            opacity: 0;
 
-    position:absolute;
+            transform:
+                translate(-50%,-50%)
+                scale(.4);
+        }
 
-    inset:0;
+        .envelope-wrapper.open .letter-paper {
+            transform:
+                translate(-50%,0);
 
-    pointer-events:none;
+            opacity: 1;
+        }
 
-    opacity:.25;
+        .envelope-wrapper.open .open-letter-btn {
+            opacity: 0;
 
-    background-image:
-        radial-gradient(
-            #8c6040 0.7px,
-            transparent 0.7px
-        );
+            pointer-events: none;
+        }
 
-    background-size:8px 8px;
-}
+        .close-letter-btn {
+            display: none;
 
-.letter-paper::after{
+            margin:
+                25px auto 0;
 
-    content:"";
+            padding:
+                10px 22px;
 
-    position:absolute;
+            border-radius: 999px;
 
-    inset:14px;
+            border:
+                1px solid rgba(255,255,255,.4);
 
-    border:
-        1px solid #d29b6c88;
+            color: white;
 
-    pointer-events:none;
-}
+            background:
+                rgba(255,255,255,.1);
 
+            backdrop-filter:
+                blur(10px);
 
-/* =========================================================
-   TRANG TRÍ
-========================================================= */
+            cursor: pointer;
 
-.letter-decoration{
+            font-weight: 700;
+        }
 
-    position:absolute;
+        .envelope-wrapper.open ~ .close-letter-btn {
+            display: block;
+        }
 
-    font-size:28px;
 
-    z-index:3;
-}
+        /* =========================================================
+           DATE / FOOTER
+        ========================================================= */
 
-.letter-decoration.top-left{
-    left:20px;
-    top:15px;
-}
+        .date {
+            margin-top: 20px;
 
-.letter-decoration.top-right{
-    right:20px;
-    top:15px;
-}
+            opacity: .85;
 
-.letter-decoration.bottom-left{
-    left:20px;
-    bottom:15px;
-}
+            font-size: 17px;
+        }
 
-.letter-decoration.bottom-right{
-    right:20px;
-    bottom:15px;
-}
+        .flowers-bottom {
+            margin-top: 25px;
 
+            font-size: 32px;
 
-/* =========================================================
-   TIÊU ĐỀ THƯ
-========================================================= */
+            letter-spacing: 8px;
 
-.letter-title{
+            animation:
+                bottomFlowers 3s ease-in-out infinite;
+        }
 
-    position:relative;
+        @keyframes bottomFlowers {
 
-    z-index:4;
+            50% {
+                transform:
+                    translateY(-5px);
+            }
+        }
 
-    text-align:center;
+        .footer {
+            text-align: center;
 
-    font-family:'Playfair Display',serif;
+            margin-top: 30px;
 
-    font-size:
-        clamp(
-            28px,
-            5vw,
-            44px
-        );
+            opacity: .7;
 
-    color:#c65379;
+            font-size: 13px;
+        }
 
-    margin-bottom:20px;
-}
 
-.letter-line{
+        /* =========================================================
+           CANVAS
+        ========================================================= */
 
-    position:relative;
+        #confetti {
+            position: fixed;
 
-    z-index:4;
+            inset: 0;
 
-    width:120px;
+            width: 100%;
+            height: 100%;
 
-    height:3px;
+            pointer-events: none;
 
-    margin:
-        0
-        auto
-        25px;
+            z-index: 50;
+        }
 
-    border-radius:99px;
+        #fireworks {
+            position: fixed;
 
-    background:
-        linear-gradient(
-            90deg,
-            #ff9cbd,
-            #e37b9e
-        );
-}
+            inset: 0;
 
+            width: 100%;
+            height: 100%;
 
-/* =========================================================
-   LỜI CHÚC
-========================================================= */
+            pointer-events: none;
 
-.letter-text{
+            z-index: 49;
+        }
 
-    position:relative;
 
-    z-index:4;
+        /* =========================================================
+           SCROLL INDICATOR
+        ========================================================= */
 
-    font-family:
-        'Be Vietnam Pro',
-        sans-serif;
+        .scroll-hint {
+            margin-top: 30px;
 
-    font-size:
-        clamp(
-            16px,
-            2.3vw,
-            21px
-        );
+            font-size: 13px;
 
-    line-height:1.9;
+            opacity: .7;
 
-    white-space:pre-line;
+            animation:
+                scrollHint 2s ease-in-out infinite;
+        }
 
-    color:#65453b;
+        @keyframes scrollHint {
 
-    text-align:left;
-}
+            50% {
+                transform:
+                    translateY(7px);
+            }
+        }
 
 
-/* =========================================================
-   CHỮ KÝ
-========================================================= */
+        /* =========================================================
+           MOBILE
+        ========================================================= */
 
-.letter-signature{
+        @media (max-width: 800px) {
 
-    position:relative;
+            .container {
+                padding:
+                    15px
+                    12px
+                    60px;
+            }
 
-    z-index:4;
+            .hero {
+                padding:
+                    45px 8px 35px;
+            }
 
-    margin-top:30px;
+            .card {
+                padding:
+                    35px 15px;
+            }
 
-    text-align:right;
+            .ribbon {
+                display: none;
+            }
 
-    font-family:'Playfair Display',serif;
+            .rainbow-stage {
+                height: auto;
 
-    font-size:22px;
+                display: flex;
 
-    color:#b95073;
-}
+                flex-direction: column;
 
+                align-items: center;
 
-/* =========================================================
-   TRẠNG THÁI MỞ
-========================================================= */
+                gap: 35px;
 
-.envelope-wrapper.open{
+                padding:
+                    20px 0 30px;
+            }
 
-    height:auto;
+            .connection-lines,
+            .connection-point,
+            .flying-light {
+                display: none;
+            }
 
-    min-height:620px;
-}
+            .rainbow-photo {
+                position: relative;
 
-.envelope-wrapper.open .envelope-flap{
+                left: auto !important;
+                right: auto !important;
+                top: auto !important;
 
-    transform:
-        rotateX(180deg);
+                width:
+                    min(78vw, 300px);
 
-    z-index:2;
-}
+                height:
+                    min(78vw, 300px);
 
-.envelope-wrapper.open .envelope-seal{
+                transform:
+                    rotate(0deg) !important;
+            }
 
-    opacity:0;
+            .rainbow-photo:hover {
+                transform:
+                    scale(1.05) !important;
+            }
 
-    transform:
-        translate(-50%,-50%)
-        scale(.4);
-}
+            .falling-image {
+                width: 48px;
+                height: 48px;
 
-.envelope-wrapper.open .letter-paper{
+                border-radius: 14px;
+            }
+        }
 
-    transform:
-        translate(-50%,0);
 
-    opacity:1;
-}
+        @media (max-width: 600px) {
 
-.envelope-wrapper.open .open-letter-btn{
+            .passcode-keypad {
+                grid-template-columns:
+                    repeat(3,70px);
 
-    opacity:0;
+                gap: 12px;
+            }
 
-    pointer-events:none;
-}
+            .passcode-key {
+                width: 70px;
+                height: 70px;
 
+                font-size: 23px;
+            }
 
-/* =========================================================
-   ĐÓNG THƯ
-========================================================= */
+            .envelope-wrapper {
+                height: 360px;
+            }
 
-.close-letter-btn{
+            .letter-paper {
+                width: 92%;
 
-    display:none;
+                padding:
+                    45px 28px 35px;
 
-    margin:
-        25px
-        auto
-        0;
+                min-height: 330px;
+            }
 
-    padding:
-        10px
-        22px;
+            .letter-text {
+                font-size: 15px;
 
-    border-radius:999px;
+                line-height: 1.75;
+            }
 
-    border:
-        1px solid #ffffff66;
+            .letter-decoration {
+                font-size: 20px;
+            }
+        }
 
-    color:#fff;
 
-    background:#ffffff18;
+        @media (max-width: 450px) {
 
-    backdrop-filter:blur(10px);
+            .effect-btn {
+                width: 100%;
 
-    cursor:pointer;
+                max-width: 280px;
+            }
 
-    font-family:inherit;
+            .rainbow-title h2 {
+                font-size: 24px;
+            }
 
-    font-weight:700;
-}
+            .rainbow-title span {
+                font-size: 20px;
+            }
 
-.envelope-wrapper.open
-~ .close-letter-btn{
+            .passcode-keypad {
+                grid-template-columns:
+                    repeat(3,65px);
 
-    display:block;
-}
+                gap: 11px;
+            }
 
+            .passcode-key {
+                width: 65px;
+                height: 65px;
 
-/* =========================================================
-   FOOTER
-========================================================= */
+                font-size: 22px;
+            }
 
-.date{
+            .envelope-wrapper {
+                width: 96vw;
+            }
 
-    opacity:.85;
+            .letter-paper {
+                width: 94%;
 
-    font-size:17px;
-}
+                padding:
+                    42px 22px 30px;
+            }
 
-.flowers-bottom{
+            .flowers-bottom {
+                font-size: 24px;
 
-    margin-top:25px;
+                letter-spacing: 3px;
+            }
+        }
 
-    font-size:32px;
 
-    letter-spacing:8px;
-}
+        /* =========================================================
+           REDUCE MOTION
+        ========================================================= */
 
-.footer{
+        @media (prefers-reduced-motion: reduce) {
 
-    text-align:center;
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
 
-    margin-top:28px;
+                scroll-behavior: auto !important;
+            }
+        }
 
-    opacity:.7;
-
-    font-size:13px;
-}
-
-
-/* =========================================================
-   CANVAS
-========================================================= */
-
-#confetti{
-
-    position:fixed;
-
-    inset:0;
-
-    pointer-events:none;
-
-    z-index:20;
-}
-
-#fireworks{
-
-    position:fixed;
-
-    inset:0;
-
-    z-index:19;
-
-    pointer-events:none;
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media(max-width:800px){
-
-    .card{
-        padding:
-            35px
-            15px;
-    }
-
-    .rainbow-stage{
-
-        height:auto;
-
-        display:flex;
-
-        flex-direction:column;
-
-        align-items:center;
-
-        gap:35px;
-
-        padding:
-            20px
-            0
-            30px;
-    }
-
-    .connection-lines{
-        display:none;
-    }
-
-    .connection-point{
-        display:none;
-    }
-
-    .flying-light{
-        display:none;
-    }
-
-    .rainbow-photo{
-
-        position:relative;
-
-        left:auto !important;
-
-        right:auto !important;
-
-        top:auto !important;
-
-        width:
-            min(
-                78vw,
-                300px
-            );
-
-        height:
-            min(
-                78vw,
-                300px
-            );
-
-        transform:
-            rotate(0deg) !important;
-    }
-
-    .rainbow-photo:hover{
-
-        transform:
-            scale(1.05) !important;
-    }
-
-    .falling-image{
-
-        width:48px;
-
-        height:48px;
-
-        border-radius:14px;
-    }
-}
-
-
-@media(max-width:600px){
-
-    .passcode-keypad{
-
-        grid-template-columns:
-            repeat(3,70px);
-
-        gap:12px;
-    }
-
-    .passcode-key{
-
-        width:70px;
-
-        height:70px;
-
-        font-size:23px;
-    }
-
-    .envelope-wrapper{
-
-        height:360px;
-    }
-
-    .letter-paper{
-
-        width:92%;
-
-        padding:
-            45px
-            28px
-            35px;
-
-        min-height:330px;
-    }
-
-    .letter-text{
-
-        font-size:15px;
-
-        line-height:1.75;
-    }
-
-    .letter-decoration{
-
-        font-size:20px;
-    }
-}
-
-
-@media(max-width:450px){
-
-    .effect-btn{
-
-        width:100%;
-
-        max-width:280px;
-    }
-
-    .rainbow-title h2{
-
-        font-size:24px;
-    }
-
-    .rainbow-title span{
-
-        font-size:20px;
-    }
-
-    .passcode-keypad{
-
-        grid-template-columns:
-            repeat(3,65px);
-
-        gap:11px;
-    }
-
-    .passcode-key{
-
-        width:65px;
-
-        height:65px;
-
-        font-size:22px;
-    }
-
-    .envelope-wrapper{
-
-        width:96vw;
-    }
-
-    .letter-paper{
-
-        width:94%;
-
-        padding:
-            42px
-            22px
-            30px;
-    }
-
-}
-
-</style>
-
+    </style>
 </head>
 
 
 <body>
 
+    <!-- =========================================================
+         BACKGROUND
+    ========================================================= -->
 
-<!-- =====================================================
-     BACKGROUND
-===================================================== -->
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+    <div class="glow three"></div>
 
-<div class="glow one"></div>
-<div class="glow two"></div>
-<div class="glow three"></div>
+    <div id="stars"></div>
+    <div id="flowers"></div>
 
-<div id="stars"></div>
+    <canvas id="confetti"></canvas>
+    <canvas id="fireworks"></canvas>
 
-<div id="flowers"></div>
 
-<canvas id="confetti"></canvas>
+    <!-- =========================================================
+         MAIN
+    ========================================================= -->
 
-<canvas id="fireworks"></canvas>
+    <main class="container">
 
+        <!-- =====================================================
+             HERO
+        ===================================================== -->
 
-<!-- =====================================================
-     MAIN
-===================================================== -->
+        <section class="hero">
 
-<main class="container">
+            <div class="badge">
+                🎓 THE GRADUATION DAY 🎓
+            </div>
 
+            <h1>
+                Chúc Mừng<br>
+                Tốt Nghiệp!
+            </h1>
 
-<section class="hero">
+            <p class="subtitle">
+                Một hành trình khép lại —
+                <b style="color:#ffe58b">
+                    một tương lai rực rỡ mở ra ✨
+                </b>
+            </p>
 
-    <div class="badge">
-        🎓 THE GRADUATION DAY 🎓
-    </div>
+            <div class="scroll-hint"></div>
 
-    <h1>
-        Chúc Mừng<br>
-        Tốt Nghiệp!
-    </h1>
+        </section>
 
-    <p class="subtitle">
 
-        Một hành trình khép lại —
+        <!-- =====================================================
+             CARD
+        ===================================================== -->
 
-        <b style="color:#ffe58b">
-            một tương lai rực rỡ mở ra ✨
-        </b>
+        <section class="glass card">
 
-    </p>
-
-</section>
-
-
-<section class="glass card">
-
-
-    <div class="ribbon">
-        CONGRATULATIONS!
-    </div>
-
-
-    <!-- =================================================
-         BUTTONS
-    ================================================= -->
-
-    <div class="effect-buttons">
-
-        <button
-            class="effect-btn"
-            onclick="launchFireworks()">
-
-            🎆 Bắn pháo hoa
-
-        </button>
-
-
-        <button
-            class="effect-btn"
-            id="musicBtn"
-            onclick="toggleMusic()">
-
-            🎵 Phát nhạc
-
-        </button>
-
-
-        <button
-            class="effect-btn"
-            id="flowerBtn"
-            onclick="toggleFlowers()">
-
-            🌸 
-
-        </button>
-
-    </div>
-
-
-    <div class="graduation-icon">
-        🎓
-    </div>
-
-
-    <div class="small-title">
-        CONGRATULATIONS
-    </div>
-
-
-    <div class="name">
-        {{ name }}
-    </div>
-
-
-    <div class="subtitle">
-        ĐÃ TỐT NGHIỆP THÀNH CÔNG! 🥳
-    </div>
-
-
-    <!-- =================================================
-         GALLERY
-    ================================================= -->
-
-    <section class="rainbow-gallery">
-
-
-        <div class="rainbow-title">
-
-            <span>🌸</span>
-
-            <h2>
-                KIẾM NHIỀU TIỀN, KIẾM NHIỀU TIỀN
-            </h2>
-
-            <span>🌸</span>
-
-        </div>
-
-
-        <div class="rainbow-stage">
-
-
-            <svg
-                class="connection-lines"
-                viewBox="0 0 1000 620"
-                preserveAspectRatio="none">
-
-                <defs>
-
-                    <linearGradient
-                        id="rainbowGradient"
-                        x1="0%"
-                        y1="0%"
-                        x2="100%"
-                        y2="0%">
-
-                        <stop
-                            offset="0%"
-                            stop-color="#ff4d8d"/>
-
-                        <stop
-                            offset="25%"
-                            stop-color="#ffd84d"/>
-
-                        <stop
-                            offset="50%"
-                            stop-color="#65ffd2"/>
-
-                        <stop
-                            offset="75%"
-                            stop-color="#61a8ff"/>
-
-                        <stop
-                            offset="100%"
-                            stop-color="#d66cff"/>
-
-                    </linearGradient>
-
-                </defs>
-
-
-                <path
-                    class="connect-main"
-                    d="
-                        M 180 420
-                        Q 260 300
-                        350 235
-                    "
-                />
-
-                <path
-                    class="connect-inner"
-                    d="
-                        M 180 420
-                        Q 260 300
-                        350 235
-                    "
-                />
-
-
-                <path
-                    class="connect-main"
-                    d="
-                        M 350 235
-                        Q 430 150
-                        500 135
-                    "
-                />
-
-                <path
-                    class="connect-inner"
-                    d="
-                        M 350 235
-                        Q 430 150
-                        500 135
-                    "
-                />
-
-
-                <path
-                    class="connect-main"
-                    d="
-                        M 500 135
-                        Q 570 150
-                        650 235
-                    "
-                />
-
-                <path
-                    class="connect-inner"
-                    d="
-                        M 500 135
-                        Q 570 150
-                        650 235
-                    "
-                />
-
-
-                <path
-                    class="connect-main"
-                    d="
-                        M 650 235
-                        Q 740 300
-                        820 420
-                    "
-                />
-
-                <path
-                    class="connect-inner"
-                    d="
-                        M 650 235
-                        Q 740 300
-                        820 420
-                    "
-                />
-
-            </svg>
-
-
-            <div class="connection-point point-1"></div>
-            <div class="connection-point point-2"></div>
-            <div class="connection-point point-3"></div>
-            <div class="connection-point point-4"></div>
-            <div class="connection-point point-5"></div>
-
-
-            <div class="flying-light fly-1"></div>
-            <div class="flying-light fly-2"></div>
-            <div class="flying-light fly-3"></div>
-            <div class="flying-light fly-4"></div>
-
-
-            <!-- ẢNH 1 -->
-
-            <div class="rainbow-photo photo-1">
-
-                <img
-                    src="{{ url_for('static', filename='images/' + photos[0]) }}"
-                    alt="Ảnh tốt nghiệp 1"
-                >
-
-                <div class="photo-caption">
-                    ✨ Đẳng cấp
-                </div>
-
+            <div class="ribbon">
+                CONGRATULATIONS!
             </div>
 
 
-            <!-- ẢNH 2 -->
+            <!-- =================================================
+                 BUTTONS
+            ================================================= -->
 
-            <div class="rainbow-photo photo-2">
-
-                <img
-                    src="{{ url_for('static', filename='images/' + photos[1]) }}"
-                    alt="Ảnh tốt nghiệp 2"
-                >
-
-                <div class="photo-caption">
-                    🌸 Thượng hạng
-                </div>
-
-            </div>
-
-
-            <!-- ẢNH 3 -->
-
-            <div class="rainbow-photo photo-3">
-
-                <img
-                    src="{{ url_for('static', filename='images/' + photos[2]) }}"
-                    alt="Ảnh tốt nghiệp 3"
-                >
-
-                <div class="photo-caption">
-                    🎓 Quý tộc
-                </div>
-
-            </div>
-
-
-            <!-- ẢNH 4 -->
-
-            <div class="rainbow-photo photo-4">
-
-                <img
-                    src="{{ url_for('static', filename='images/' + photos[3]) }}"
-                    alt="Ảnh tốt nghiệp 4"
-                >
-
-                <div class="photo-caption">
-                    💖 Rất wow
-                </div>
-
-            </div>
-
-
-            <!-- ẢNH 5 -->
-
-            <div class="rainbow-photo photo-5">
-
-                <img
-                    src="{{ url_for('static', filename='images/' + photos[4]) }}"
-                    alt="Ảnh tốt nghiệp 5"
-                >
-
-                <div class="photo-caption">
-                    🌟 5 sao
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         💌 MESSAGE
-    ================================================= -->
-
-    <div class="message-lock">
-
-
-        <div class="lock-title">
-
-            💌 Đôi lời bốc phét dành cho người cuồng công việc
-
-        </div>
-
-
-        <!-- MÀN HÌNH KHÓA -->
-
-        <div
-            class="locked-message"
-            id="lockedMessage">
-
-            💌
-
-            <br>
-
-            <span>
-                🔐 Nhập mật mã để mở bức thư bí mật
-            </span>
-
-        </div>
-
-
-        <!-- =================================================
-             IPHONE PASSCODE
-        ================================================= -->
-
-        <div
-            class="password-area"
-            id="passwordArea">
-
-
-            <div class="passcode-title">
-
-                
-
-            </div>
-
-
-            <div
-                class="passcode-dots"
-                id="passcodeDots">
-
-                <div class="passcode-dot"></div>
-                <div class="passcode-dot"></div>
-                <div class="passcode-dot"></div>
-                <div class="passcode-dot"></div>
-
-            </div>
-
-
-            <!-- BÀN PHÍM -->
-
-            <div class="passcode-keypad">
-
+            <div class="effect-buttons">
 
                 <button
                     type="button"
-                    class="passcode-key"
-                    onclick="enterPasscode('1')">
-                    1
+                    class="effect-btn"
+                    onclick="launchFireworks()">
+
+                    🎆 Bắn pháo hoa
+
                 </button>
 
 
                 <button
                     type="button"
-                    class="passcode-key"
-                    onclick="enterPasscode('2')">
-                    2
+                    class="effect-btn"
+                    id="musicBtn"
+                    onclick="toggleMusic()">
+
+                    🎵 Phát nhạc
+
                 </button>
 
 
                 <button
                     type="button"
-                    class="passcode-key"
-                    onclick="enterPasscode('3')">
-                    3
-                </button>
+                    class="effect-btn active"
+                    id="flowerBtn"
+                    onclick="toggleFlowers()">
 
-
-                <button
-                    type="button"
-                    class="passcode-key"
-                    onclick="enterPasscode('4')">
-                    4
-                </button>
-
-
-                <button
-                    type="button"
-                    class="passcode-key"
-                    onclick="enterPasscode('5')">
-                    5
-                </button>
-
-
-                <button
-                    type="button"
-                    class="passcode-key"
-                    onclick="enterPasscode('6')">
-                    6
-                </button>
-
-
-                <button
-                    type="button"
-                    class="passcode-key"
-                    onclick="enterPasscode('7')">
-                    7
-                </button>
-
-
-                <button
-                    type="button"
-                    class="passcode-key"
-                    onclick="enterPasscode('8')">
-                    8
-                </button>
-
-
-                <button
-                    type="button"
-                    class="passcode-key"
-                    onclick="enterPasscode('9')">
-                    9
-                </button>
-
-
-                <button
-                    type="button"
-                    class="passcode-key passcode-zero"
-                    onclick="enterPasscode('0')">
-                    0
-                </button>
-
-
-                <button
-                    type="button"
-                    class="passcode-key passcode-delete"
-                    onclick="deletePasscode()">
-
-                    ⌫
+                    🌸
 
                 </button>
-
-
-            </div>
-
-
-            <div id="messageError"></div>
-
-
-        </div>
-
-
-        <!-- =================================================
-             💌 PHONG BÌ
-        ================================================= -->
-
-        <div
-            class="envelope-wrapper"
-            id="envelopeWrapper"
-            style="display:none;">
-
-
-            <div class="envelope">
-
-
-                <div class="envelope-left"></div>
-
-                <div class="envelope-right"></div>
-
-                <div class="envelope-bottom"></div>
-
-
-                <!-- NẮP -->
-
-                <div class="envelope-flap"></div>
-
-
-                <!-- TEM -->
-
-                <div class="envelope-seal">
-                    💖
-                </div>
-
-
-                <!-- NÚT MỞ -->
-
-                <button
-                    class="open-letter-btn"
-                    id="openLetterBtn"
-                    onclick="openLetter()">
-
-                    💌 Mở thư
-
-                </button>
-
 
             </div>
 
 
             <!-- =================================================
-                 📜 GIẤY THƯ
+                 TITLE
             ================================================= -->
 
-            <div class="letter-paper">
+            <div class="graduation-icon">
+                🎓
+            </div>
+
+            <div class="small-title">
+                CONGRATULATIONS
+            </div>
+
+            <div class="name">
+                {{ name }}
+            </div>
+
+            <div class="subtitle">
+                ĐÃ TỐT NGHIỆP THÀNH CÔNG! 🥳
+            </div>
 
 
-                <div
-                    class="letter-decoration top-left">
-                    🌸
+            <!-- =================================================
+                 GALLERY
+            ================================================= -->
+
+            <section class="rainbow-gallery">
+
+                <div class="rainbow-title">
+
+                    <span>🌸</span>
+
+                    <h2>
+                        KIẾM NHIỀU TIỀN, KIẾM NHIỀU TIỀN
+                    </h2>
+
+                    <span>🌸</span>
+
+                </div>
+
+
+                <div class="rainbow-stage">
+
+                    <!-- SVG -->
+
+                    <svg
+                        class="connection-lines"
+                        viewBox="0 0 1000 620"
+                        preserveAspectRatio="none">
+
+                        <defs>
+
+                            <linearGradient
+                                id="rainbowGradient"
+                                x1="0%"
+                                y1="0%"
+                                x2="100%"
+                                y2="0%">
+
+                                <stop
+                                    offset="0%"
+                                    stop-color="#ff4d8d"/>
+
+                                <stop
+                                    offset="25%"
+                                    stop-color="#ffd84d"/>
+
+                                <stop
+                                    offset="50%"
+                                    stop-color="#65ffd2"/>
+
+                                <stop
+                                    offset="75%"
+                                    stop-color="#61a8ff"/>
+
+                                <stop
+                                    offset="100%"
+                                    stop-color="#d66cff"/>
+
+                            </linearGradient>
+
+                        </defs>
+
+
+                        <path
+                            class="connect-main"
+                            d="
+                                M 180 420
+                                Q 260 300
+                                350 235
+                            "
+                        />
+
+                        <path
+                            class="connect-inner"
+                            d="
+                                M 180 420
+                                Q 260 300
+                                350 235
+                            "
+                        />
+
+
+                        <path
+                            class="connect-main"
+                            d="
+                                M 350 235
+                                Q 430 150
+                                500 135
+                            "
+                        />
+
+                        <path
+                            class="connect-inner"
+                            d="
+                                M 350 235
+                                Q 430 150
+                                500 135
+                            "
+                        />
+
+
+                        <path
+                            class="connect-main"
+                            d="
+                                M 500 135
+                                Q 570 150
+                                650 235
+                            "
+                        />
+
+                        <path
+                            class="connect-inner"
+                            d="
+                                M 500 135
+                                Q 570 150
+                                650 235
+                            "
+                        />
+
+
+                        <path
+                            class="connect-main"
+                            d="
+                                M 650 235
+                                Q 740 300
+                                820 420
+                            "
+                        />
+
+                        <path
+                            class="connect-inner"
+                            d="
+                                M 650 235
+                                Q 740 300
+                                820 420
+                            "
+                        />
+
+                    </svg>
+
+
+                    <!-- POINTS -->
+
+                    <div class="connection-point point-1"></div>
+                    <div class="connection-point point-2"></div>
+                    <div class="connection-point point-3"></div>
+                    <div class="connection-point point-4"></div>
+                    <div class="connection-point point-5"></div>
+
+
+                    <!-- LIGHTS -->
+
+                    <div class="flying-light fly-1"></div>
+                    <div class="flying-light fly-2"></div>
+                    <div class="flying-light fly-3"></div>
+                    <div class="flying-light fly-4"></div>
+
+
+                    <!-- PHOTO 1 -->
+
+                    <div class="rainbow-photo photo-1">
+
+                        <img
+                            src="{{ url_for('static', filename='images/' + photos[0]) }}"
+                            alt="Ảnh tốt nghiệp 1"
+                            loading="lazy"
+                            onerror="this.src='https://via.placeholder.com/500x500?text=PHOTO+1'"
+                        >
+
+                        <div class="photo-caption">
+                            ✨ Đẳng cấp
+                        </div>
+
+                    </div>
+
+
+                    <!-- PHOTO 2 -->
+
+                    <div class="rainbow-photo photo-2">
+
+                        <img
+                            src="{{ url_for('static', filename='images/' + photos[1]) }}"
+                            alt="Ảnh tốt nghiệp 2"
+                            loading="lazy"
+                            onerror="this.src='https://via.placeholder.com/500x500?text=PHOTO+2'"
+                        >
+
+                        <div class="photo-caption">
+                            🌸 Thượng hạng
+                        </div>
+
+                    </div>
+
+
+                    <!-- PHOTO 3 -->
+
+                    <div class="rainbow-photo photo-3">
+
+                        <img
+                            src="{{ url_for('static', filename='images/' + photos[2]) }}"
+                            alt="Ảnh tốt nghiệp 3"
+                            loading="lazy"
+                            onerror="this.src='https://via.placeholder.com/500x500?text=PHOTO+3'"
+                        >
+
+                        <div class="photo-caption">
+                            🎓 Quý tộc
+                        </div>
+
+                    </div>
+
+
+                    <!-- PHOTO 4 -->
+
+                    <div class="rainbow-photo photo-4">
+
+                        <img
+                            src="{{ url_for('static', filename='images/' + photos[3]) }}"
+                            alt="Ảnh tốt nghiệp 4"
+                            loading="lazy"
+                            onerror="this.src='https://via.placeholder.com/500x500?text=PHOTO+4'"
+                        >
+
+                        <div class="photo-caption">
+                            💖 Rất wow
+                        </div>
+
+                    </div>
+
+
+                    <!-- PHOTO 5 -->
+
+                    <div class="rainbow-photo photo-5">
+
+                        <img
+                            src="{{ url_for('static', filename='images/' + photos[4]) }}"
+                            alt="Ảnh tốt nghiệp 5"
+                            loading="lazy"
+                            onerror="this.src='https://via.placeholder.com/500x500?text=PHOTO+5'"
+                        >
+
+                        <div class="photo-caption">
+                            🌟 5 sao
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SECRET LETTER
+            ================================================= -->
+
+            <div class="message-lock">
+
+                <div class="lock-title">
+                    💌 Đôi lời bốc phét dành cho người cuồng công việc
                 </div>
 
 
                 <div
-                    class="letter-decoration top-right">
-                    🌷
+                    class="locked-message"
+                    id="lockedMessage">
+
+                    💌
+
+                    <br>
+
+                    <span>
+                        🔐 Nhập mật mã để mở bức thư bí mật
+                    </span>
+
                 </div>
 
+
+                <!-- PASSWORD -->
 
                 <div
-                    class="letter-decoration bottom-left">
-                    💕
+                    class="password-area"
+                    id="passwordArea">
+
+                    <div class="passcode-title">
+                        Nhập mật mã 4 số 🔐
+                    </div>
+
+
+                    <div
+                        class="passcode-dots"
+                        id="passcodeDots">
+
+                        <div class="passcode-dot"></div>
+                        <div class="passcode-dot"></div>
+                        <div class="passcode-dot"></div>
+                        <div class="passcode-dot"></div>
+
+                    </div>
+
+
+                    <div class="passcode-keypad">
+
+                        <button
+                            type="button"
+                            class="passcode-key"
+                            onclick="enterPasscode('1')">
+                            1
+                        </button>
+
+                        <button
+                            type="button"
+                            class="passcode-key"
+                            onclick="enterPasscode('2')">
+                            2
+                        </button>
+
+                        <button
+                            type="button"
+                            class="passcode-key"
+                            onclick="enterPasscode('3')">
+                            3
+                        </button>
+
+                        <button
+                            type="button"
+                            class="passcode-key"
+                            onclick="enterPasscode('4')">
+                            4
+                        </button>
+
+                        <button
+                            type="button"
+                            class="passcode-key"
+                            onclick="enterPasscode('5')">
+                            5
+                        </button>
+
+                        <button
+                            type="button"
+                            class="passcode-key"
+                            onclick="enterPasscode('6')">
+                            6
+                        </button>
+
+                        <button
+                            type="button"
+                            class="passcode-key"
+                            onclick="enterPasscode('7')">
+                            7
+                        </button>
+
+                        <button
+                            type="button"
+                            class="passcode-key"
+                            onclick="enterPasscode('8')">
+                            8
+                        </button>
+
+                        <button
+                            type="button"
+                            class="passcode-key"
+                            onclick="enterPasscode('9')">
+                            9
+                        </button>
+
+                        <button
+                            type="button"
+                            class="passcode-key passcode-zero"
+                            onclick="enterPasscode('0')">
+                            0
+                        </button>
+
+                        <button
+                            type="button"
+                            class="passcode-key passcode-delete"
+                            onclick="deletePasscode()">
+                            ⌫
+                        </button>
+
+                    </div>
+
+
+                    <div id="messageError"></div>
+
                 </div>
 
+
+                <!-- ENVELOPE -->
 
                 <div
-                    class="letter-decoration bottom-right">
-                    ✨
+                    class="envelope-wrapper"
+                    id="envelopeWrapper"
+                    style="display:none;">
+
+                    <div class="envelope">
+
+                        <div class="envelope-left"></div>
+
+                        <div class="envelope-right"></div>
+
+                        <div class="envelope-bottom"></div>
+
+                        <div class="envelope-flap"></div>
+
+                        <div class="envelope-seal">
+                            💖
+                        </div>
+
+                        <button
+                            type="button"
+                            class="open-letter-btn"
+                            id="openLetterBtn"
+                            onclick="openLetter()">
+
+                            💌 Mở thư
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- LETTER -->
+
+                    <div class="letter-paper">
+
+                        <div class="letter-decoration top-left">
+                            🌸
+                        </div>
+
+                        <div class="letter-decoration top-right">
+                            🌷
+                        </div>
+
+                        <div class="letter-decoration bottom-left">
+                            💕
+                        </div>
+
+                        <div class="letter-decoration bottom-right">
+                            ✨
+                        </div>
+
+
+                        <div class="letter-title">
+                            💌 Gửi {{ name }}
+                        </div>
+
+                        <div class="letter-line"></div>
+
+                        <div class="letter-text">{{ message }}</div>
+
+                        <div class="letter-signature"></div>
+
+                    </div>
+
                 </div>
 
 
-                <div class="letter-title">
+                <!-- CLOSE -->
 
-                    
+                <button
+                    type="button"
+                    class="close-letter-btn"
+                    id="closeLetterBtn"
+                    onclick="closeLetter()">
 
-                </div>
+                    💌 Gấp thư lại
 
-
-                <div class="letter-line"></div>
-
-
-                <div class="letter-text">
-
-                    {{ message }}
-
-                </div>
-
-
-                <div class="letter-signature">
-
-                    
-
-                </div>
-
+                </button>
 
             </div>
 
 
+            <!-- DATE -->
+
+            <div class="date">
+                {{ date }}
+            </div>
+
+
+            <div class="flowers-bottom">
+                🌸 ✨ 🌹 ✨ 🌷 ✨ 🌸
+            </div>
+
+        </section>
+
+
+        <div class="footer">
+            From NguyenChiKhanh
         </div>
 
-
-        <!-- NÚT ĐÓNG -->
-
-        <button
-            class="close-letter-btn"
-            id="closeLetterBtn"
-            onclick="closeLetter()">
-
-            💌 Gấp thư lại
-
-        </button>
+    </main>
 
 
-    </div>
+    <script>
+
+        /* =========================================================
+           ⭐ STARS
+        ========================================================= */
+
+        const stars =
+            document.getElementById("stars");
+
+        for (let i = 0; i < 110; i++) {
+
+            const star =
+                document.createElement("span");
+
+            star.className = "star";
+
+            star.style.left =
+                Math.random() * 100 + "%";
+
+            star.style.top =
+                Math.random() * 100 + "%";
+
+            star.style.animationDelay =
+                Math.random() * 3 + "s";
+
+            star.style.animationDuration =
+                (1 + Math.random() * 3) + "s";
+
+            stars.appendChild(star);
+        }
 
 
-    <div class="date">
-        {{ date }}
-    </div>
+        /* =========================================================
+           🌸 FALLING FLOWERS / IMAGES
+           ẢNH KHÔNG XOAY
+        ========================================================= */
 
+        const flowers =
+            document.getElementById("flowers");
 
-    <div class="flowers-bottom">
-        🌸 ✨ 🌹 ✨ 🌷 ✨ 🌸
-    </div>
+        const fallingImages = [
 
+            "{{ url_for('static', filename='images/falling/f1.jpg') }}",
+            "{{ url_for('static', filename='images/falling/f2.jpg') }}",
+            "{{ url_for('static', filename='images/falling/f3.jpg') }}",
+            "{{ url_for('static', filename='images/falling/f4.jpg') }}",
+            "{{ url_for('static', filename='images/falling/f5.jpg') }}",
+            "{{ url_for('static', filename='images/falling/f6.jpg') }}",
+            "{{ url_for('static', filename='images/falling/f7.jpg') }}",
+            "{{ url_for('static', filename='images/falling/f8.jpg') }}",
+            "{{ url_for('static', filename='images/falling/f9.jpg') }}",
+            "{{ url_for('static', filename='images/falling/f10.jpg') }}"
 
-</section>
-
-
-<div class="footer">
-    From NguyenChiKhanh
-</div>
-
-
-</main>
-
-
-<script>
-
-
-/* =========================================================
-   ⭐ SAO
-========================================================= */
-
-const stars =
-    document.getElementById("stars");
-
-
-for(let i=0;i<100;i++){
-
-    const s =
-        document.createElement("span");
-
-    s.className="star";
-
-    s.style.left =
-        Math.random()*100+"%";
-
-    s.style.top =
-        Math.random()*100+"%";
-
-    s.style.animationDelay =
-        Math.random()*3+"s";
-
-    s.style.animationDuration =
-        (1+Math.random()*3)+"s";
-
-    stars.appendChild(s);
-
-}
-
-
-/* =========================================================
-   🌸 HOA + ẢNH RƠI
-========================================================= */
-
-const flowers =
-    document.getElementById("flowers");
-
-
-const fallingImages = [
-
-    "{{ url_for('static', filename='images/falling/f1.jpg') }}",
-
-    "{{ url_for('static', filename='images/falling/f6.jpg') }}",
-
-    "{{ url_for('static', filename='images/falling/f2.jpg') }}",
-
-    "{{ url_for('static', filename='images/falling/f7.jpg') }}",
-
-    "{{ url_for('static', filename='images/falling/f3.jpg') }}",
-
-    "{{ url_for('static', filename='images/falling/f8.jpg') }}",
-
-    "{{ url_for('static', filename='images/falling/f4.jpg') }}",
-
-    "{{ url_for('static', filename='images/falling/f9.jpg') }}",
-
-    "{{ url_for('static', filename='images/falling/f5.jpg') }}",
-
-    "{{ url_for('static', filename='images/falling/f10.jpg') }}"
-
-];
-
-
-const flowerTypes = [
-
-    "🌸",
-    "🌹",
-    "🌺",
-    "🌷",
-    "🌼",
-    "💮",
-    "🌻",
-    "🌿",
-    "✨"
-
-];
-
-
-function createFallingFlower(){
-
-    const f =
-        document.createElement("span");
-
-    f.className =
-        "falling-item falling-flower";
-
-    f.innerText =
-        flowerTypes[
-            Math.floor(
-                Math.random() *
-                flowerTypes.length
-            )
         ];
 
-    f.style.left =
-        Math.random()*100+"%";
+        const flowerTypes = [
 
-    f.style.fontSize =
-        (18 + Math.random()*28)+"px";
+            "🌸",
+            "🌹",
+            "🌺",
+            "🌷",
+            "🌼",
+            "💮",
+            "🌻",
+            "🌿",
+            "✨"
 
-    f.style.animationDuration =
-        (7 + Math.random()*9)+"s";
-
-    f.style.animationDelay =
-        (-Math.random()*15)+"s";
-
-
-    f.style.setProperty(
-        "--move1",
-        (Math.random()*300-150)+"px"
-    );
-
-    f.style.setProperty(
-        "--move2",
-        (Math.random()*500-250)+"px"
-    );
-
-    f.style.setProperty(
-        "--move3",
-        (Math.random()*350-175)+"px"
-    );
-
-    f.style.setProperty(
-        "--move4",
-        (Math.random()*600-300)+"px"
-    );
-
-    flowers.appendChild(f);
-
-}
-
-
-function createFallingImage(){
-
-    const img =
-        document.createElement("img");
-
-    img.className =
-        "falling-item falling-image";
-
-
-    const randomImage =
-        fallingImages[
-            Math.floor(
-                Math.random() *
-                fallingImages.length
-            )
         ];
 
 
-    img.src =
-        randomImage;
+        function randomMove() {
 
-    img.alt =
-        "Ảnh rơi";
+            return {
 
+                move1:
+                    (Math.random() * 300 - 150) + "px",
 
-    img.style.left =
-        Math.random()*100+"%";
+                move2:
+                    (Math.random() * 500 - 250) + "px",
 
+                move3:
+                    (Math.random() * 400 - 200) + "px",
 
-    const size =
-        45 + Math.random()*40;
+                move4:
+                    (Math.random() * 600 - 300) + "px"
 
+            };
+        }
 
-    img.style.width =
-        size+"px";
 
-    img.style.height =
-        size+"px";
+        function createFallingFlower() {
 
+            const f =
+                document.createElement("span");
 
-    img.style.animationDuration =
-        (7 + Math.random()*10)+"s";
+            f.className =
+                "falling-item falling-flower";
 
-    img.style.animationDelay =
-        (-Math.random()*18)+"s";
+            f.innerText =
+                flowerTypes[
+                    Math.floor(
+                        Math.random() *
+                        flowerTypes.length
+                    )
+                ];
 
+            f.style.left =
+                Math.random() * 100 + "%";
 
-    img.style.setProperty(
-        "--move1",
-        (Math.random()*300-150)+"px"
-    );
+            f.style.fontSize =
+                (18 + Math.random() * 28) + "px";
 
-    img.style.setProperty(
-        "--move2",
-        (Math.random()*500-250)+"px"
-    );
+            f.style.animationDuration =
+                (7 + Math.random() * 9) + "s";
 
-    img.style.setProperty(
-        "--move3",
-        (Math.random()*400-200)+"px"
-    );
+            f.style.animationDelay =
+                (-Math.random() * 15) + "s";
 
-    img.style.setProperty(
-        "--move4",
-        (Math.random()*600-300)+"px"
-    );
+            const move =
+                randomMove();
 
-
-    flowers.appendChild(img);
-
-}
-
-
-for(let i=0;i<50;i++){
-
-    createFallingFlower();
-
-}
-
-
-for(let i=0;i<30;i++){
-
-    createFallingImage();
-
-}
-
-
-/* =========================================================
-   🎉 CONFETTI
-========================================================= */
-
-const canvas =
-    document.getElementById("confetti");
-
-const ctx =
-    canvas.getContext("2d");
-
-
-function resize(){
-
-    canvas.width =
-        innerWidth;
-
-    canvas.height =
-        innerHeight;
-
-}
-
-resize();
-
-window.addEventListener(
-    "resize",
-    resize
-);
-
-
-let pieces=[];
-
-
-function createConfetti(){
-
-    pieces=[];
-
-    for(let i=0;i<280;i++){
-
-        pieces.push({
-
-            x:innerWidth/2,
-
-            y:innerHeight*.48,
-
-            vx:(Math.random()-.5)*17,
-
-            vy:(Math.random()-.8)*17,
-
-            size:
-                4+Math.random()*9,
-
-            gravity:
-                .15+Math.random()*.15,
-
-            rotation:
-                Math.random()*Math.PI
-
-        });
-
-    }
-
-    requestAnimationFrame(
-        drawConfetti
-    );
-
-}
-
-
-function drawConfetti(){
-
-    ctx.clearRect(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-    );
-
-
-    pieces.forEach(
-        p=>{
-
-            p.x+=p.vx;
-
-            p.y+=p.vy;
-
-            p.vy+=p.gravity;
-
-            p.rotation+=.15;
-
-
-            ctx.save();
-
-            ctx.translate(
-                p.x,
-                p.y
+            f.style.setProperty(
+                "--move1",
+                move.move1
             );
 
-            ctx.rotate(
-                p.rotation
+            f.style.setProperty(
+                "--move2",
+                move.move2
             );
 
+            f.style.setProperty(
+                "--move3",
+                move.move3
+            );
 
-            ctx.fillStyle =
-                `hsl(
-                    ${Math.random()*360},
-                    90%,
+            f.style.setProperty(
+                "--move4",
+                move.move4
+            );
+
+            flowers.appendChild(f);
+        }
+
+
+        function createFallingImage() {
+
+            const img =
+                document.createElement("img");
+
+            img.className =
+                "falling-item falling-image";
+
+            img.src =
+                fallingImages[
+                    Math.floor(
+                        Math.random() *
+                        fallingImages.length
+                    )
+                ];
+
+            img.alt = "Ảnh rơi";
+
+            img.style.left =
+                Math.random() * 100 + "%";
+
+            const size =
+                45 + Math.random() * 40;
+
+            img.style.width =
+                size + "px";
+
+            img.style.height =
+                size + "px";
+
+            img.style.animationDuration =
+                (7 + Math.random() * 10) + "s";
+
+            img.style.animationDelay =
+                (-Math.random() * 18) + "s";
+
+            const move =
+                randomMove();
+
+            img.style.setProperty(
+                "--move1",
+                move.move1
+            );
+
+            img.style.setProperty(
+                "--move2",
+                move.move2
+            );
+
+            img.style.setProperty(
+                "--move3",
+                move.move3
+            );
+
+            img.style.setProperty(
+                "--move4",
+                move.move4
+            );
+
+            flowers.appendChild(img);
+        }
+
+
+        /* TẠO HOA */
+
+        for (let i = 0; i < 45; i++) {
+            createFallingFlower();
+        }
+
+
+        /* TẠO ẢNH */
+
+        for (let i = 0; i < 25; i++) {
+            createFallingImage();
+        }
+
+
+        /* =========================================================
+           🌸 TOGGLE FLOWERS
+        ========================================================= */
+
+        let flowersVisible = true;
+
+        function toggleFlowers() {
+
+            flowersVisible =
+                !flowersVisible;
+
+            flowers.style.display =
+                flowersVisible
+                    ? "block"
+                    : "none";
+
+            const btn =
+                document.getElementById(
+                    "flowerBtn"
+                );
+
+            if (flowersVisible) {
+
+                btn.textContent =
+                    "🌸";
+
+                btn.classList.add(
+                    "active"
+                );
+
+            } else {
+
+                btn.textContent =
+                    "🌸";
+
+                btn.classList.remove(
+                    "active"
+                );
+            }
+        }
+
+
+        /* =========================================================
+           🎉 CONFETTI
+        ========================================================= */
+
+        const canvas =
+            document.getElementById("confetti");
+
+        const ctx =
+            canvas.getContext("2d");
+
+        let pieces = [];
+
+
+        function resizeConfetti() {
+
+            canvas.width =
+                window.innerWidth;
+
+            canvas.height =
+                window.innerHeight;
+        }
+
+
+        resizeConfetti();
+
+
+        window.addEventListener(
+            "resize",
+            resizeConfetti
+        );
+
+
+        function createConfetti() {
+
+            pieces = [];
+
+            for (let i = 0; i < 260; i++) {
+
+                pieces.push({
+
+                    x:
+                        window.innerWidth / 2,
+
+                    y:
+                        window.innerHeight * .48,
+
+                    vx:
+                        (Math.random() - .5) * 18,
+
+                    vy:
+                        (Math.random() - .8) * 18,
+
+                    size:
+                        4 + Math.random() * 9,
+
+                    gravity:
+                        .12 + Math.random() * .16,
+
+                    rotation:
+                        Math.random() * Math.PI * 2,
+
+                    rotationSpeed:
+                        (Math.random() - .5) * .25,
+
+                    hue:
+                        Math.random() * 360
+
+                });
+            }
+
+            requestAnimationFrame(
+                drawConfetti
+            );
+        }
+
+
+        function drawConfetti() {
+
+            ctx.clearRect(
+                0,
+                0,
+                canvas.width,
+                canvas.height
+            );
+
+            pieces.forEach(p => {
+
+                p.x += p.vx;
+
+                p.y += p.vy;
+
+                p.vy += p.gravity;
+
+                p.vx *= .995;
+
+                p.rotation +=
+                    p.rotationSpeed;
+
+                ctx.save();
+
+                ctx.translate(
+                    p.x,
+                    p.y
+                );
+
+                ctx.rotate(
+                    p.rotation
+                );
+
+                ctx.fillStyle =
+                    `hsl(
+                        ${p.hue},
+                        90%,
+                        70%
+                    )`;
+
+                ctx.fillRect(
+                    -p.size / 2,
+                    -p.size / 2,
+                    p.size,
+                    p.size * 1.7
+                );
+
+                ctx.restore();
+
+            });
+
+
+            pieces =
+                pieces.filter(
+                    p =>
+                        p.y <
+                        window.innerHeight + 80
+                );
+
+
+            if (pieces.length) {
+
+                requestAnimationFrame(
+                    drawConfetti
+                );
+            }
+        }
+
+
+        /* =========================================================
+           🎆 FIREWORKS
+        ========================================================= */
+
+        const fwCanvas =
+            document.getElementById("fireworks");
+
+        const fw =
+            fwCanvas.getContext("2d");
+
+        let fireworks = [];
+
+        let sparks = [];
+
+
+        function resizeFireworks() {
+
+            fwCanvas.width =
+                window.innerWidth;
+
+            fwCanvas.height =
+                window.innerHeight;
+        }
+
+
+        resizeFireworks();
+
+
+        window.addEventListener(
+            "resize",
+            resizeFireworks
+        );
+
+
+        function randomColor() {
+
+            return `
+                hsl(
+                    ${Math.floor(Math.random() * 360)},
+                    100%,
                     70%
-                )`;
-
-
-            ctx.fillRect(
-                -p.size/2,
-                -p.size/2,
-                p.size,
-                p.size*1.7
-            );
-
-
-            ctx.restore();
-
+                )
+            `;
         }
-    );
 
 
-    pieces =
-        pieces.filter(
-            p =>
-                p.y <
-                innerHeight+50
-        );
+        function launchOneFirework(
 
+            x =
+                window.innerWidth *
+                (.15 + .7 * Math.random()),
 
-    if(pieces.length){
+            y =
+                window.innerHeight *
+                (.18 + .35 * Math.random())
 
-        requestAnimationFrame(
-            drawConfetti
-        );
+        ) {
 
-    }
+            fireworks.push({
 
-}
+                x: x,
 
+                y:
+                    window.innerHeight + 10,
 
-/* =========================================================
-   🎆 FIREWORKS
-========================================================= */
+                target: y,
 
-const fwCanvas =
-    document.getElementById("fireworks");
+                color:
+                    randomColor(),
 
-const fw =
-    fwCanvas.getContext("2d");
+                speed:
+                    10 + Math.random() * 4
 
+            });
+        }
 
-function resizeFW(){
 
-    fwCanvas.width =
-        innerWidth;
+        function launchFireworks() {
 
-    fwCanvas.height =
-        innerHeight;
+            for (let i = 0; i < 9; i++) {
 
-}
-
-resizeFW();
-
-window.addEventListener(
-    "resize",
-    resizeFW
-);
-
-
-let fireworks=[];
-
-let sparks=[];
-
-
-function randomColor(){
-
-    return `hsl(
-        ${Math.floor(Math.random()*360)},
-        100%,
-        70%
-    )`;
-
-}
-
-
-function launchOneFirework(
-
-    x =
-        innerWidth *
-        (
-            .15 +
-            .7*Math.random()
-        ),
-
-    y =
-        innerHeight *
-        (
-            .18 +
-            .35*Math.random()
-        )
-
-){
-
-    fireworks.push({
-
-        x:x,
-
-        y:innerHeight+10,
-
-        target:y,
-
-        color:randomColor(),
-
-        speed:
-            10+
-            Math.random()*4
-
-    });
-
-}
-
-
-function launchFireworks(){
-
-    for(let i=0;i<9;i++){
-
-        setTimeout(
-            () =>
-                launchOneFirework(),
-            i*180
-        );
-
-    }
-
-
-    if(!window.fwRunning){
-
-        window.fwRunning=true;
-
-        requestAnimationFrame(
-            drawFireworks
-        );
-
-    }
-
-
-    createConfetti();
-
-}
-
-
-function explode(f){
-
-    for(let i=0;i<90;i++){
-
-        const a =
-            Math.random()*
-            Math.PI*2;
-
-        const sp =
-            1.5+
-            Math.random()*7;
-
-
-        sparks.push({
-
-            x:f.x,
-
-            y:f.target,
-
-            vx:
-                Math.cos(a)*sp,
-
-            vy:
-                Math.sin(a)*sp,
-
-            life:
-                55+
-                Math.random()*35,
-
-            color:f.color,
-
-            size:
-                1.5+
-                Math.random()*3
-
-        });
-
-    }
-
-}
-
-
-function drawFireworks(){
-
-    fw.clearRect(
-        0,
-        0,
-        fwCanvas.width,
-        fwCanvas.height
-    );
-
-
-    fw.globalCompositeOperation =
-        "lighter";
-
-
-    fireworks.forEach(
-        (f,i)=>{
-
-            f.y-=f.speed;
-
-
-            fw.beginPath();
-
-            fw.arc(
-                f.x,
-                f.y,
-                3,
-                0,
-                Math.PI*2
-            );
-
-            fw.fillStyle=f.color;
-
-            fw.fill();
-
-
-            if(
-                f.y<=f.target
-            ){
-
-                explode(f);
-
-                fireworks.splice(
-                    i,
-                    1
+                setTimeout(
+                    () =>
+                        launchOneFirework(),
+                    i * 180
                 );
-
             }
 
+
+            if (!window.fwRunning) {
+
+                window.fwRunning = true;
+
+                requestAnimationFrame(
+                    drawFireworks
+                );
+            }
+
+
+            createConfetti();
         }
-    );
 
 
-    sparks.forEach(
-        (s,i)=>{
+        function explode(f) {
 
-            s.x+=s.vx;
+            for (let i = 0; i < 100; i++) {
 
-            s.y+=s.vy;
+                const angle =
+                    Math.random() *
+                    Math.PI * 2;
 
-            s.vy+=.055;
+                const speed =
+                    1.5 +
+                    Math.random() * 7;
 
-            s.vx*=.985;
+                sparks.push({
 
-            s.vy*=.985;
+                    x: f.x,
 
-            s.life--;
+                    y: f.target,
+
+                    vx:
+                        Math.cos(angle) *
+                        speed,
+
+                    vy:
+                        Math.sin(angle) *
+                        speed,
+
+                    life:
+                        55 +
+                        Math.random() * 35,
+
+                    color:
+                        f.color,
+
+                    size:
+                        1.5 +
+                        Math.random() * 3
+
+                });
+            }
+        }
 
 
-            fw.globalAlpha =
-                Math.max(
+        function drawFireworks() {
+
+            fw.clearRect(
+                0,
+                0,
+                fwCanvas.width,
+                fwCanvas.height
+            );
+
+
+            fw.globalCompositeOperation =
+                "lighter";
+
+
+            for (
+                let i = fireworks.length - 1;
+                i >= 0;
+                i--
+            ) {
+
+                const f =
+                    fireworks[i];
+
+                f.y -= f.speed;
+
+                fw.beginPath();
+
+                fw.arc(
+                    f.x,
+                    f.y,
+                    3,
                     0,
-                    s.life/90
+                    Math.PI * 2
                 );
 
+                fw.fillStyle =
+                    f.color;
 
-            fw.beginPath();
-
-            fw.arc(
-                s.x,
-                s.y,
-                s.size,
-                0,
-                Math.PI*2
-            );
-
-            fw.fillStyle=s.color;
-
-            fw.fill();
+                fw.fill();
 
 
-            if(s.life<=0){
+                if (
+                    f.y <= f.target
+                ) {
 
-                sparks.splice(
-                    i,
-                    1
-                );
+                    explode(f);
 
+                    fireworks.splice(
+                        i,
+                        1
+                    );
+                }
             }
 
-        }
-    );
+
+            for (
+                let i = sparks.length - 1;
+                i >= 0;
+                i--
+            ) {
+
+                const s =
+                    sparks[i];
+
+                s.x += s.vx;
+
+                s.y += s.vy;
+
+                s.vy += .055;
+
+                s.vx *= .985;
+
+                s.vy *= .985;
+
+                s.life--;
 
 
-    fw.globalAlpha=1;
-
-    fw.globalCompositeOperation =
-        "source-over";
-
-
-    if(
-        fireworks.length ||
-        sparks.length
-    ){
-
-        requestAnimationFrame(
-            drawFireworks
-        );
-
-    }else{
-
-        window.fwRunning=false;
-
-        fw.clearRect(
-            0,
-            0,
-            fwCanvas.width,
-            fwCanvas.height
-        );
-
-    }
-
-}
+                fw.globalAlpha =
+                    Math.max(
+                        0,
+                        s.life / 90
+                    );
 
 
-/* =========================================================
-   🌸 TOGGLE HOA
-========================================================= */
+                fw.beginPath();
 
-let flowersVisible=true;
+                fw.arc(
+                    s.x,
+                    s.y,
+                    s.size,
+                    0,
+                    Math.PI * 2
+                );
 
+                fw.fillStyle =
+                    s.color;
 
-function toggleFlowers(){
-
-    flowersVisible =
-        !flowersVisible;
-
-
-    flowers.style.display =
-        flowersVisible
-            ? "block"
-            : "none";
+                fw.fill();
 
 
-    const btn =
-        document.getElementById(
-            "flowerBtn"
-        );
+                if (
+                    s.life <= 0
+                ) {
+
+                    sparks.splice(
+                        i,
+                        1
+                    );
+                }
+            }
 
 
-    if(flowersVisible){
+            fw.globalAlpha = 1;
 
-        btn.textContent =
-            "🌸 ";
-
-        btn.classList.add(
-            "active"
-        );
-
-    }else{
-
-        btn.textContent =
-            "🌸 ";
-
-        btn.classList.remove(
-            "active"
-        );
-
-    }
-
-}
+            fw.globalCompositeOperation =
+                "source-over";
 
 
-/* =========================================================
-   🎵 MUSIC
-========================================================= */
+            if (
+                fireworks.length ||
+                sparks.length
+            ) {
 
-const configuredMusic =
-    {{ (
-        url_for(
-            'static',
-            filename='music/' + music_file
-        )
-        if music_file
-        else ''
-    )|tojson }};
+                requestAnimationFrame(
+                    drawFireworks
+                );
 
+            } else {
 
-let audio=null;
+                window.fwRunning = false;
 
-let audioCtx=null;
-
-let musicTimer=null;
-
-let musicPlaying=false;
-
-
-const melody=[
-
-    [523.25,.22],
-    [659.25,.22],
-    [783.99,.22],
-    [1046.5,.35],
-
-    [783.99,.22],
-    [659.25,.22],
-    [523.25,.30],
-
-    [587.33,.22],
-    [698.46,.22],
-    [880,.22],
-    [1174.66,.38],
-
-    [880,.22],
-    [698.46,.22],
-    [587.33,.30]
-
-];
-
-
-function toggleMusic(){
-
-    const btn =
-        document.getElementById(
-            "musicBtn"
-        );
-
-
-    if(musicPlaying){
-
-        if(audio){
-
-            audio.pause();
-
-            audio.currentTime=0;
-
+                fw.clearRect(
+                    0,
+                    0,
+                    fwCanvas.width,
+                    fwCanvas.height
+                );
+            }
         }
 
 
-        if(audioCtx){
+        /* =========================================================
+           🎵 MUSIC
+        ========================================================= */
 
-            audioCtx.close();
-
-            audioCtx=null;
-
-        }
-
-
-        clearTimeout(
-            musicTimer
-        );
-
-
-        musicPlaying=false;
+        const configuredMusic =
+            {{ (
+                url_for(
+                    'static',
+                    filename='music/' + music_file
+                )
+                if music_file
+                else ''
+            )|tojson }};
 
 
-        btn.textContent =
-            "🎵 Phát nhạc";
+        let audio = null;
+
+        let audioCtx = null;
+
+        let musicTimer = null;
+
+        let musicPlaying = false;
 
 
-        btn.classList.remove(
-            "active"
-        );
+        const melody = [
 
+            [523.25, .22],
+            [659.25, .22],
+            [783.99, .22],
+            [1046.5, .35],
 
-        return;
+            [783.99, .22],
+            [659.25, .22],
+            [523.25, .30],
 
-    }
+            [587.33, .22],
+            [698.46, .22],
+            [880, .22],
+            [1174.66, .38],
 
+            [880, .22],
+            [698.46, .22],
+            [587.33, .30]
 
-    musicPlaying=true;
-
-
-    btn.textContent =
-        "⏸️ Tắt nhạc";
-
-
-    btn.classList.add(
-        "active"
-    );
-
-
-    if(configuredMusic){
-
-        audio =
-            new Audio(
-                configuredMusic
-            );
-
-        audio.loop=true;
-
-        audio.volume=.55;
-
-        audio.play().catch(
-            ()=>{}
-        );
-
-    }else{
-
-        playMelody(0);
-
-    }
-
-}
-
-
-function playMelody(index){
-
-    if(!musicPlaying)
-        return;
-
-
-    if(!audioCtx){
-
-        audioCtx =
-            new (
-                window.AudioContext ||
-                window.webkitAudioContext
-            )();
-
-    }
-
-
-    const [
-        freq,
-        dur
-    ] =
-        melody[
-            index %
-            melody.length
         ];
 
 
-    const osc =
-        audioCtx.createOscillator();
+        function toggleMusic() {
 
-    const gain =
-        audioCtx.createGain();
-
-
-    osc.type="sine";
-
-    osc.frequency.value=freq;
-
-
-    gain.gain.setValueAtTime(
-        .0001,
-        audioCtx.currentTime
-    );
-
-
-    gain.gain.exponentialRampToValueAtTime(
-        .12,
-        audioCtx.currentTime+.02
-    );
-
-
-    gain.gain.exponentialRampToValueAtTime(
-        .0001,
-        audioCtx.currentTime+dur
-    );
-
-
-    osc.connect(gain);
-
-    gain.connect(
-        audioCtx.destination
-    );
-
-
-    osc.start();
-
-
-    osc.stop(
-        audioCtx.currentTime+
-        dur+
-        .03
-    );
-
-
-    musicTimer =
-        setTimeout(
-            () =>
-                playMelody(
-                    index+1
-                ),
-            (dur+.08)*1000
-        );
-
-}
-
-
-/* =========================================================
-   🔐 PASSCODE
-========================================================= */
-
-/*
-    MẬT KHẨU HIỆN TẠI:
-
-    2610
-*/
-
-const MESSAGE_PASSWORD =
-    "2610";
-
-
-let passcode="";
-
-
-function updatePasscodeDots(){
-
-    const dots =
-        document.querySelectorAll(
-            ".passcode-dot"
-        );
-
-
-    dots.forEach(
-        (dot,index)=>{
-
-            if(
-                index <
-                passcode.length
-            ){
-
-                dot.classList.add(
-                    "filled"
+            const btn =
+                document.getElementById(
+                    "musicBtn"
                 );
 
-            }else{
 
-                dot.classList.remove(
-                    "filled"
+            if (musicPlaying) {
+
+                if (audio) {
+
+                    audio.pause();
+
+                    audio.currentTime = 0;
+
+                    audio = null;
+                }
+
+
+                if (audioCtx) {
+
+                    audioCtx.close();
+
+                    audioCtx = null;
+                }
+
+
+                clearTimeout(
+                    musicTimer
                 );
 
+
+                musicPlaying = false;
+
+
+                btn.textContent =
+                    "🎵 Phát nhạc";
+
+
+                btn.classList.remove(
+                    "active"
+                );
+
+
+                return;
             }
 
+
+            musicPlaying = true;
+
+
+            btn.textContent =
+                "⏸️ Tắt nhạc";
+
+
+            btn.classList.add(
+                "active"
+            );
+
+
+            if (configuredMusic) {
+
+                audio =
+                    new Audio(
+                        configuredMusic
+                    );
+
+                audio.loop = true;
+
+                audio.volume = .55;
+
+                audio.play()
+                    .catch(() => {
+
+                        /*
+                         Trình duyệt có thể chặn
+                         autoplay.
+                        */
+
+                    });
+
+            } else {
+
+                playMelody(0);
+            }
         }
-    );
-
-}
 
 
-function enterPasscode(number){
+        function playMelody(index) {
 
-    if(
-        passcode.length >= 4
-    ){
-
-        return;
-
-    }
+            if (!musicPlaying) {
+                return;
+            }
 
 
-    passcode += number;
+            if (!audioCtx) {
+
+                audioCtx =
+                    new (
+                        window.AudioContext ||
+                        window.webkitAudioContext
+                    )();
+            }
 
 
-    updatePasscodeDots();
+            const [
+                frequency,
+                duration
+            ] =
+                melody[
+                    index % melody.length
+                ];
 
 
-    if(
-        passcode.length === 4
-    ){
+            const oscillator =
+                audioCtx.createOscillator();
 
-        setTimeout(
-            checkPasscode,
-            180
-        );
-
-    }
-
-}
+            const gain =
+                audioCtx.createGain();
 
 
-function deletePasscode(){
-
-    if(
-        passcode.length === 0
-    ){
-
-        return;
-
-    }
+            oscillator.type =
+                "sine";
 
 
-    passcode =
-        passcode.slice(
-            0,
-            -1
-        );
+            oscillator.frequency.value =
+                frequency;
 
 
-    updatePasscodeDots();
-
-}
-
-
-/* =========================================================
-   🔐 KIỂM TRA MẬT KHẨU
-========================================================= */
-
-function checkPasscode(){
-
-    const locked =
-        document.getElementById(
-            "lockedMessage"
-        );
+            gain.gain.setValueAtTime(
+                .0001,
+                audioCtx.currentTime
+            );
 
 
-    const passwordArea =
-        document.getElementById(
-            "passwordArea"
-        );
+            gain.gain.exponentialRampToValueAtTime(
+                .12,
+                audioCtx.currentTime + .02
+            );
 
 
-    const error =
-        document.getElementById(
-            "messageError"
-        );
+            gain.gain.exponentialRampToValueAtTime(
+                .0001,
+                audioCtx.currentTime + duration
+            );
 
 
-    const envelope =
-        document.getElementById(
-            "envelopeWrapper"
-        );
+            oscillator.connect(gain);
+
+            gain.connect(
+                audioCtx.destination
+            );
 
 
-    /* =====================================================
-       💖 ĐÚNG
-    ===================================================== */
-
-    if(
-        passcode ===
-        MESSAGE_PASSWORD
-    ){
-
-        error.textContent="";
+            oscillator.start();
 
 
-        locked.style.display =
-            "none";
+            oscillator.stop(
+                audioCtx.currentTime +
+                duration +
+                .03
+            );
 
 
-        passwordArea.style.display =
-            "none";
+            musicTimer =
+                setTimeout(
+                    () =>
+                        playMelody(
+                            index + 1
+                        ),
+                    (duration + .08) * 1000
+                );
+        }
 
 
-        envelope.style.display =
-            "block";
+        /* =========================================================
+           🔐 PASSCODE
+        ========================================================= */
+
+        const MESSAGE_PASSWORD =
+            "2610";
+
+        let passcode = "";
 
 
-        envelope.style.opacity="0";
+        function updatePasscodeDots() {
 
-        envelope.style.transform =
-            "translateY(40px) scale(.85)";
+            const dots =
+                document.querySelectorAll(
+                    ".passcode-dot"
+                );
 
 
-        setTimeout(
-            () => {
+            dots.forEach(
+                (dot, index) => {
 
-                envelope.style.transition =
-                    "1s cubic-bezier(.2,.8,.2,1)";
+                    if (
+                        index <
+                        passcode.length
+                    ) {
 
-                envelope.style.opacity="1";
+                        dot.classList.add(
+                            "filled"
+                        );
+
+                    } else {
+
+                        dot.classList.remove(
+                            "filled"
+                        );
+                    }
+                }
+            );
+        }
+
+
+        function enterPasscode(number) {
+
+            if (
+                passcode.length >= 4
+            ) {
+
+                return;
+            }
+
+
+            passcode += number;
+
+            updatePasscodeDots();
+
+
+            if (
+                passcode.length === 4
+            ) {
+
+                setTimeout(
+                    checkPasscode,
+                    180
+                );
+            }
+        }
+
+
+        function deletePasscode() {
+
+            if (
+                passcode.length === 0
+            ) {
+
+                return;
+            }
+
+
+            passcode =
+                passcode.slice(
+                    0,
+                    -1
+                );
+
+
+            updatePasscodeDots();
+        }
+
+
+        /* =========================================================
+           🔐 CHECK PASSWORD
+        ========================================================= */
+
+        function checkPasscode() {
+
+            const locked =
+                document.getElementById(
+                    "lockedMessage"
+                );
+
+            const passwordArea =
+                document.getElementById(
+                    "passwordArea"
+                );
+
+            const error =
+                document.getElementById(
+                    "messageError"
+                );
+
+            const envelope =
+                document.getElementById(
+                    "envelopeWrapper"
+                );
+
+
+            if (
+                passcode ===
+                MESSAGE_PASSWORD
+            ) {
+
+                error.textContent = "";
+
+
+                locked.style.display =
+                    "none";
+
+
+                passwordArea.style.display =
+                    "none";
+
+
+                envelope.style.display =
+                    "block";
+
+
+                envelope.style.opacity =
+                    "0";
+
 
                 envelope.style.transform =
-                    "translateY(0) scale(1)";
-
-            },
-            100
-        );
+                    "translateY(40px) scale(.85)";
 
 
-        /*
-            Pháo hoa
-        */
+                setTimeout(() => {
 
-        createConfetti();
-
-
-        setTimeout(
-            () => {
-
-                launchFireworks();
-
-            },
-            500
-        );
+                    envelope.style.transition =
+                        "1s cubic-bezier(.2,.8,.2,1)";
 
 
-        passcode="";
-
-        updatePasscodeDots();
-
-    }
+                    envelope.style.opacity =
+                        "1";
 
 
-    /* =====================================================
-       ❌ SAI
-    ===================================================== */
+                    envelope.style.transform =
+                        "translateY(0) scale(1)";
 
-    else{
-
-        error.textContent =
-            "❌ Muahahaha sai rồiii thử lại đê 😎";
+                }, 100);
 
 
-        const keypad =
-            document.querySelector(
-                ".passcode-keypad"
-            );
+                createConfetti();
 
 
-        keypad.classList.remove(
-            "passcode-shake"
-        );
+                setTimeout(
+                    launchFireworks,
+                    500
+                );
 
 
-        void keypad.offsetWidth;
-
-
-        keypad.classList.add(
-            "passcode-shake"
-        );
-
-
-        const dots =
-            document.getElementById(
-                "passcodeDots"
-            );
-
-
-        dots.classList.remove(
-            "passcode-shake"
-        );
-
-
-        void dots.offsetWidth;
-
-
-        dots.classList.add(
-            "passcode-shake"
-        );
-
-
-        setTimeout(
-            () => {
-
-                passcode="";
+                passcode = "";
 
                 updatePasscodeDots();
 
-            },
-            450
-        );
 
-    }
+            } else {
 
-}
+                error.textContent =
+                    "❌ Muahahaha sai rồiii, thử lại đê 😎";
 
 
-/* =========================================================
-   💌 MỞ THƯ
-========================================================= */
-
-function openLetter(){
-
-    const envelope =
-        document.getElementById(
-            "envelopeWrapper"
-        );
+                const keypad =
+                    document.querySelector(
+                        ".passcode-keypad"
+                    );
 
 
-    envelope.classList.add(
-        "open"
-    );
+                keypad.classList.remove(
+                    "passcode-shake"
+                );
 
 
-    setTimeout(
-        () => {
-
-            launchFireworks();
-
-        },
-        900
-    );
+                void keypad.offsetWidth;
 
 
-    setTimeout(
-        () => {
-
-            createConfetti();
-
-        },
-        500
-    );
-
-}
+                keypad.classList.add(
+                    "passcode-shake"
+                );
 
 
-/* =========================================================
-   💌 ĐÓNG THƯ
-========================================================= */
-
-function closeLetter(){
-
-    const envelope =
-        document.getElementById(
-            "envelopeWrapper"
-        );
+                const dots =
+                    document.getElementById(
+                        "passcodeDots"
+                    );
 
 
-    envelope.classList.remove(
-        "open"
-    );
-
-}
+                dots.classList.remove(
+                    "passcode-shake"
+                );
 
 
-/* =========================================================
-   ⌨️ BÀN PHÍM MÁY TÍNH
-========================================================= */
+                void dots.offsetWidth;
 
-document.addEventListener(
-    "keydown",
-    function(event){
 
-        if(
-            /^[0-9]$/.test(
-                event.key
-            )
-        ){
+                dots.classList.add(
+                    "passcode-shake"
+                );
 
-            enterPasscode(
-                event.key
+
+                setTimeout(() => {
+
+                    passcode = "";
+
+                    updatePasscodeDots();
+
+                }, 450);
+            }
+        }
+
+
+        /* =========================================================
+           💌 OPEN LETTER
+        ========================================================= */
+
+        function openLetter() {
+
+            const envelope =
+                document.getElementById(
+                    "envelopeWrapper"
+                );
+
+
+            envelope.classList.add(
+                "open"
             );
 
+
+            setTimeout(
+                launchFireworks,
+                900
+            );
+
+
+            setTimeout(
+                createConfetti,
+                500
+            );
         }
 
 
-        if(
-            event.key ===
-            "Backspace"
-        ){
+        /* =========================================================
+           💌 CLOSE LETTER
+        ========================================================= */
 
-            deletePasscode();
+        function closeLetter() {
 
+            const envelope =
+                document.getElementById(
+                    "envelopeWrapper"
+                );
+
+
+            envelope.classList.remove(
+                "open"
+            );
         }
 
-    }
-);
+
+        /* =========================================================
+           ⌨️ COMPUTER KEYBOARD
+        ========================================================= */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (
+                    /^[0-9]$/.test(
+                        event.key
+                    )
+                ) {
+
+                    enterPasscode(
+                        event.key
+                    );
+                }
 
 
-/* =========================================================
-   🎉 KHI VÀO TRANG
-========================================================= */
+                if (
+                    event.key ===
+                    "Backspace"
+                ) {
 
-/*
-    Không bắn pháo hoa ngay khi vào trang.
-    Chỉ có hiệu ứng confetti nhẹ.
-*/
-
-setTimeout(
-    () => {
-
-        createConfetti();
-
-    },
-    1200
-);
+                    deletePasscode();
+                }
 
 
-/* =========================================================
-   ACTIVE HOA
-========================================================= */
+                if (
+                    event.key ===
+                    "Escape"
+                ) {
 
-document
-    .getElementById("flowerBtn")
-    .classList.add("active");
+                    closeLetter();
+                }
+            }
+        );
 
 
-</script>
+        /* =========================================================
+           💌 CLICK LOCK SCREEN
+        ========================================================= */
+
+        document
+            .getElementById("lockedMessage")
+            .addEventListener(
+                "click",
+                function() {
+
+                    document
+                        .getElementById(
+                            "passwordArea"
+                        )
+                        .scrollIntoView({
+                            behavior: "smooth",
+                            block: "center"
+                        });
+                }
+            );
+
+
+        /* =========================================================
+           🎉 INITIAL EFFECT
+        ========================================================= */
+
+        setTimeout(
+            () => {
+
+                createConfetti();
+
+            },
+            1200
+        );
+
+
+        /* =========================================================
+           🖱️ PHOTO CLICK EFFECT
+        ========================================================= */
+
+        document
+            .querySelectorAll(".rainbow-photo")
+            .forEach(photo => {
+
+                photo.addEventListener(
+                    "click",
+                    function() {
+
+                        createConfetti();
+
+                    }
+                );
+
+            });
+
+
+        /* =========================================================
+           🎓 PAGE LOAD
+        ========================================================= */
+
+        window.addEventListener(
+            "load",
+            () => {
+
+                document.body.classList.add(
+                    "loaded"
+                );
+
+            }
+        );
+
+    </script>
 
 </body>
 
 </html>
+```
