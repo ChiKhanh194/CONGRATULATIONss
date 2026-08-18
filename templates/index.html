@@ -169,7 +169,7 @@ body{
 
 
 /* =========================================================
-   🌸 LỚP HOA RƠI
+   🌸 HOA + ẢNH RƠI
 ========================================================= */
 
 #flowers{
@@ -188,30 +188,10 @@ body{
 
 
 /* =========================================================
-   🖼️ LỚP ẢNH RƠI
-   ẢNH LUÔN HIỂN THỊ MẶC ĐỊNH
+   VẬT THỂ RƠI
 ========================================================= */
 
-#fallingImages{
-
-    position:fixed;
-
-    inset:0;
-
-    pointer-events:none;
-
-    overflow:hidden;
-
-    z-index:2;
-
-}
-
-
-/* =========================================================
-   VẬT THỂ HOA
-========================================================= */
-
-.falling-flower{
+.falling-item{
 
     position:absolute;
 
@@ -228,13 +208,13 @@ body{
         opacity;
 
     animation:
-        flowerFalling linear infinite;
+        fallingDown linear infinite;
 
 }
 
 
 /* =========================================================
-   HOA EMOJI
+   HOA
 ========================================================= */
 
 .falling-flower{
@@ -253,16 +233,10 @@ body{
 
 
 /* =========================================================
-   ẢNH RƠI
+   🖼️ ẢNH RƠI
 ========================================================= */
 
 .falling-image{
-
-    position:absolute;
-
-    top:-100px;
-
-    left:0;
 
     width:65px;
 
@@ -273,14 +247,6 @@ body{
     border-radius:18px;
 
     padding:3px;
-
-    pointer-events:none;
-
-    user-select:none;
-
-    will-change:
-        transform,
-        opacity;
 
     background:
 
@@ -301,110 +267,15 @@ body{
 
         0 0 30px #ff8edc66;
 
-    /*
-        QUAN TRỌNG:
-        Không animation rotate.
-        Ảnh chỉ di chuyển.
-    */
-
-    animation:
-        imageFalling linear infinite;
-
 }
 
 
 /* =========================================================
-   🌸 ANIMATION HOA RƠI
-   HOA CÓ XOAY
-========================================================= */
-
-@keyframes flowerFalling{
-
-    0%{
-
-        transform:
-            translate3d(
-                0,
-                -100px,
-                0
-            )
-            rotate(0deg);
-
-        opacity:0;
-
-    }
-
-    8%{
-
-        opacity:1;
-
-    }
-
-    25%{
-
-        transform:
-            translate3d(
-                var(--move1),
-                25vh,
-                0
-            )
-            rotate(120deg);
-
-    }
-
-    50%{
-
-        transform:
-            translate3d(
-                var(--move2),
-                50vh,
-                0
-            )
-            rotate(240deg);
-
-    }
-
-    75%{
-
-        transform:
-            translate3d(
-                var(--move3),
-                75vh,
-                0
-            )
-            rotate(360deg);
-
-    }
-
-    92%{
-
-        opacity:1;
-
-    }
-
-    100%{
-
-        transform:
-            translate3d(
-                var(--move4),
-                115vh,
-                0
-            )
-            rotate(720deg);
-
-        opacity:.15;
-
-    }
-
-}
-
-
-/* =========================================================
-   🖼️ ANIMATION ẢNH RƠI
+   ANIMATION RƠI
    KHÔNG XOAY
 ========================================================= */
 
-@keyframes imageFalling{
+@keyframes fallingDown{
 
     0%{
 
@@ -1543,82 +1414,282 @@ h1{
 
 
 /* =========================================================
-   PASSWORD
+   🔐 IPHONE STYLE PASSCODE
 ========================================================= */
 
 .password-area{
 
-    margin-top:18px;
+    margin-top:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
 
 }
 
-.password-area input{
 
-    width:min(300px,80%);
+/* Tiêu đề */
 
-    padding:13px 20px;
-
-    border-radius:999px;
-
-    border:1px solid #ffffff44;
-
-    outline:none;
-
-    background:#ffffff18;
-
-    color:white;
-
-    text-align:center;
-
-    font-family:inherit;
+.passcode-title{
 
     font-size:16px;
 
+    font-weight:700;
+
+    color:#fff;
+
+    margin-bottom:20px;
+
+    text-shadow:
+        0 0 10px #ffb6e6;
+
 }
 
-.password-area input::placeholder{
 
-    color:#ffffff99;
+/* 4 dấu chấm */
+
+.passcode-dots{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    margin-bottom:25px;
 
 }
 
-.password-area button{
+.passcode-dot{
 
-    margin-left:8px;
+    width:15px;
 
-    padding:13px 22px;
+    height:15px;
 
-    border:0;
+    border-radius:50%;
 
-    border-radius:999px;
+    background:
+        rgba(255,255,255,.25);
 
-    font-family:inherit;
+    border:
+        2px solid
+        rgba(255,255,255,.7);
 
-    font-weight:800;
+    transition:.2s ease;
 
-    color:#501047;
+    box-shadow:
+        0 0 10px
+        rgba(255,150,220,.2);
+
+}
+
+.passcode-dot.filled{
+
+    background:#fff;
+
+    border-color:#fff;
+
+    box-shadow:
+
+        0 0 8px #fff,
+
+        0 0 20px #ff9cda,
+
+        0 0 35px #c7a2ff;
+
+    transform:scale(1.12);
+
+}
+
+
+/* =========================================================
+   BÀN PHÍM
+========================================================= */
+
+.passcode-keypad{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,75px);
+
+    gap:14px;
+
+    justify-content:center;
+
+}
+
+
+.passcode-key{
+
+    width:75px;
+
+    height:75px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.55);
+
+    color:white;
+
+    font-family:
+        'Be Vietnam Pro',
+        sans-serif;
+
+    font-size:25px;
+
+    font-weight:700;
+
+    cursor:pointer;
 
     background:
 
         linear-gradient(
-            90deg,
-            #ffe477,
-            #ff9ddc
+            145deg,
+            rgba(255,255,255,.25),
+            rgba(220,170,255,.16)
         );
 
-    cursor:pointer;
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+
+        0 8px 25px
+        rgba(60,0,80,.25),
+
+        inset 0 1px
+        rgba(255,255,255,.35);
+
+    transition:
+
+        transform .12s ease,
+
+        background .15s ease,
+
+        box-shadow .15s ease;
+
+    user-select:none;
+
+    -webkit-tap-highlight-color:
+        transparent;
 
 }
+
+.passcode-key:hover{
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,180,225,.45),
+            rgba(190,160,255,.35)
+        );
+
+    box-shadow:
+
+        0 8px 30px
+        rgba(255,140,220,.35),
+
+        0 0 20px
+        rgba(200,160,255,.25);
+
+}
+
+.passcode-key:active{
+
+    transform:scale(.88);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #ffb5dc,
+            #c9adff
+        );
+
+    box-shadow:
+
+        0 0 25px
+        #ff9fd9;
+
+}
+
+.passcode-delete{
+
+    background:
+        rgba(255,255,255,.10);
+
+    font-size:20px;
+
+}
+
+.passcode-zero{
+
+    grid-column:2;
+
+}
+
+
+/* =========================================================
+   THÔNG BÁO LỖI
+========================================================= */
 
 #messageError{
 
     min-height:25px;
 
-    margin-top:10px;
+    margin-top:20px;
 
-    color:#ffb4dc;
+    color:#ffd0ed;
 
     font-weight:700;
+
+    font-size:14px;
+
+    text-shadow:
+        0 0 10px #ff8dca;
+
+}
+
+
+/* =========================================================
+   RUNG
+========================================================= */
+
+@keyframes passcodeShake{
+
+    0%,100%{
+        transform:translateX(0);
+    }
+
+    20%{
+        transform:translateX(-12px);
+    }
+
+    40%{
+        transform:translateX(12px);
+    }
+
+    60%{
+        transform:translateX(-8px);
+    }
+
+    80%{
+        transform:translateX(8px);
+    }
+
+}
+
+.passcode-shake{
+
+    animation:
+        passcodeShake .45s ease;
 
 }
 
@@ -1708,42 +1779,6 @@ h1{
             rotateX(0);
 
     }
-
-}
-
-
-/* =========================================================
-   SHAKE
-========================================================= */
-
-@keyframes passwordShake{
-
-    0%,100%{
-        transform:translateX(0);
-    }
-
-    20%{
-        transform:translateX(-10px);
-    }
-
-    40%{
-        transform:translateX(10px);
-    }
-
-    60%{
-        transform:translateX(-7px);
-    }
-
-    80%{
-        transform:translateX(7px);
-    }
-
-}
-
-.shake{
-
-    animation:
-        passwordShake .45s;
 
 }
 
@@ -1892,11 +1927,6 @@ h1{
 
     }
 
-    /*
-        ẢNH RƠI TRÊN ĐIỆN THOẠI
-        Không xoay.
-    */
-
     .falling-image{
 
         width:48px;
@@ -1912,17 +1942,22 @@ h1{
 
 @media(max-width:600px){
 
-    .password-area input{
+    .passcode-keypad{
 
-        width:90%;
+        grid-template-columns:
+            repeat(3,70px);
 
-        margin-bottom:10px;
+        gap:12px;
 
     }
 
-    .password-area button{
+    .passcode-key{
 
-        margin-left:0;
+        width:70px;
+
+        height:70px;
+
+        font-size:23px;
 
     }
 
@@ -1951,6 +1986,25 @@ h1{
 
     }
 
+    .passcode-keypad{
+
+        grid-template-columns:
+            repeat(3,65px);
+
+        gap:11px;
+
+    }
+
+    .passcode-key{
+
+        width:65px;
+
+        height:65px;
+
+        font-size:22px;
+
+    }
+
 }
 
 </style>
@@ -1971,21 +2025,7 @@ h1{
 
 <div id="stars"></div>
 
-
-<!--
-    HOA RƠI
-    Có thể bật / tắt bằng nút 🌸 Hoa rơi
--->
 <div id="flowers"></div>
-
-
-<!--
-    ẢNH RƠI
-    LUÔN HIỂN THỊ MẶC ĐỊNH
-    Không bị tắt khi tắt hoa
--->
-<div id="fallingImages"></div>
-
 
 <canvas id="confetti"></canvas>
 
@@ -2031,9 +2071,7 @@ h1{
     </div>
 
 
-    <!-- =================================================
-         BUTTONS
-    ================================================= -->
+    <!-- BUTTONS -->
 
     <div class="effect-buttons">
 
@@ -2056,17 +2094,12 @@ h1{
         </button>
 
 
-        <!--
-            CHỈ CÒN NÚT HOA RƠI
-            ẢNH RƠI KHÔNG CÓ NÚT TẮT
-        -->
-
         <button
-            class="effect-btn active"
+            class="effect-btn"
             id="flowerBtn"
             onclick="toggleFlowers()">
 
-            🌸 
+            🌸 Hoa rơi
 
         </button>
 
@@ -2354,39 +2387,150 @@ h1{
             <br>
 
             <span>
-                🔐 Nhập mật khẩu để mở lời chúc
+                🔐 Nhập mật mã 4 số để mở lời chúc
             </span>
 
         </div>
 
 
+        <!-- =================================================
+             IPHONE PASSCODE
+        ================================================= -->
+
         <div
             class="password-area"
             id="passwordArea">
 
-            <input
-                type="password"
-                id="messagePassword"
-                placeholder="🔑 Nhập mật khẩu..."
-                autocomplete="off"
-                onkeydown="
-                    if(event.key==='Enter')
-                        unlockMessage()
-                "
-            >
 
-            <button
-                onclick="unlockMessage()">
+            <div class="passcode-title">
 
-                💖 Mở lời chúc
+                🔐 Nhập mật mã để mở lời chúc
 
-            </button>
+            </div>
+
+
+            <!-- 4 DẤU CHẤM -->
+
+            <div
+                class="passcode-dots"
+                id="passcodeDots">
+
+                <div class="passcode-dot"></div>
+
+                <div class="passcode-dot"></div>
+
+                <div class="passcode-dot"></div>
+
+                <div class="passcode-dot"></div>
+
+            </div>
+
+
+            <!-- BÀN PHÍM -->
+
+            <div class="passcode-keypad">
+
+
+                <button
+                    type="button"
+                    class="passcode-key"
+                    onclick="enterPasscode('1')">
+                    1
+                </button>
+
+
+                <button
+                    type="button"
+                    class="passcode-key"
+                    onclick="enterPasscode('2')">
+                    2
+                </button>
+
+
+                <button
+                    type="button"
+                    class="passcode-key"
+                    onclick="enterPasscode('3')">
+                    3
+                </button>
+
+
+                <button
+                    type="button"
+                    class="passcode-key"
+                    onclick="enterPasscode('4')">
+                    4
+                </button>
+
+
+                <button
+                    type="button"
+                    class="passcode-key"
+                    onclick="enterPasscode('5')">
+                    5
+                </button>
+
+
+                <button
+                    type="button"
+                    class="passcode-key"
+                    onclick="enterPasscode('6')">
+                    6
+                </button>
+
+
+                <button
+                    type="button"
+                    class="passcode-key"
+                    onclick="enterPasscode('7')">
+                    7
+                </button>
+
+
+                <button
+                    type="button"
+                    class="passcode-key"
+                    onclick="enterPasscode('8')">
+                    8
+                </button>
+
+
+                <button
+                    type="button"
+                    class="passcode-key"
+                    onclick="enterPasscode('9')">
+                    9
+                </button>
+
+
+                <button
+                    type="button"
+                    class="passcode-key passcode-zero"
+                    onclick="enterPasscode('0')">
+                    0
+                </button>
+
+
+                <button
+                    type="button"
+                    class="passcode-key passcode-delete"
+                    onclick="deletePasscode()">
+
+                    ⌫
+
+                </button>
+
+
+            </div>
 
 
             <div id="messageError"></div>
 
+
         </div>
 
+
+        <!-- LỜI CHÚC -->
 
         <div
             class="message-content"
@@ -2423,12 +2567,14 @@ h1{
 
 <script>
 
+
 /* =========================================================
    ⭐ SAO
 ========================================================= */
 
 const stars =
     document.getElementById("stars");
+
 
 for(let i=0;i<100;i++){
 
@@ -2455,25 +2601,17 @@ for(let i=0;i<100;i++){
 
 
 /* =========================================================
-   🌸 HOA RƠI
-   CHỈ HOA MỚI CÓ NÚT BẬT / TẮT
+   🌸 HOA + ẢNH RƠI
 ========================================================= */
 
 const flowers =
     document.getElementById("flowers");
 
 
-/* =========================================================
-   🖼️ ẢNH RƠI
-   ẢNH LUÔN BẬT
-========================================================= */
-
-const fallingImagesContainer =
-    document.getElementById("fallingImages");
-
-
 /*
-    Đặt 10 ảnh trong:
+    ẢNH RƠI
+
+    Đặt ảnh vào:
 
     static/images/falling/
 
@@ -2509,7 +2647,7 @@ const fallingImages = [
 
 
 /* =========================================================
-   🌸 LOẠI HOA
+   HOA
 ========================================================= */
 
 const flowerTypes = [
@@ -2537,7 +2675,7 @@ function createFallingFlower(){
         document.createElement("span");
 
     f.className =
-        "falling-flower";
+        "falling-item falling-flower";
 
     f.innerText =
         flowerTypes[
@@ -2586,7 +2724,7 @@ function createFallingFlower(){
 
 
 /* =========================================================
-   🖼️ TẠO ẢNH RƠI
+   TẠO ẢNH RƠI
    KHÔNG XOAY
 ========================================================= */
 
@@ -2596,10 +2734,8 @@ function createFallingImage(){
         document.createElement("img");
 
     img.className =
-        "falling-image";
+        "falling-item falling-image";
 
-
-    /* Chọn ngẫu nhiên ảnh */
 
     const randomImage =
         fallingImages[
@@ -2609,47 +2745,38 @@ function createFallingImage(){
             )
         ];
 
+
     img.src =
         randomImage;
+
 
     img.alt =
         "Ảnh rơi";
 
 
-    /* Vị trí ngang */
-
     img.style.left =
         Math.random()*100+"%";
 
 
-    /* Kích thước */
-
     const size =
         45 + Math.random()*40;
 
+
     img.style.width =
         size+"px";
+
 
     img.style.height =
         size+"px";
 
 
-    /* Tốc độ */
-
     img.style.animationDuration =
         (7 + Math.random()*10)+"s";
 
 
-    /*
-        Delay âm để khi mở trang
-        ảnh đã xuất hiện sẵn
-    */
-
     img.style.animationDelay =
         (-Math.random()*18)+"s";
 
-
-    /* Đường bay */
 
     img.style.setProperty(
         "--move1",
@@ -2673,25 +2800,18 @@ function createFallingImage(){
 
 
     /*
-        KHÔNG CÓ:
-
-        img.style.transform =
-            rotate(...)
-
-        và animation imageFalling
-        cũng KHÔNG có rotate().
-
-        => ẢNH GIỮ NGUYÊN HƯỚNG
+        QUAN TRỌNG:
+        Không đặt rotate ở đây.
     */
 
 
-    fallingImagesContainer.appendChild(img);
+    flowers.appendChild(img);
 
 }
 
 
 /* =========================================================
-   🌸 TẠO HOA
+   TẠO HOA + ẢNH
 ========================================================= */
 
 for(let i=0;i<50;i++){
@@ -2701,63 +2821,9 @@ for(let i=0;i<50;i++){
 }
 
 
-/* =========================================================
-   🖼️ TẠO ẢNH
-   ẢNH LUÔN CÓ TỪ ĐẦU
-========================================================= */
-
 for(let i=0;i<30;i++){
 
     createFallingImage();
-
-}
-
-
-/* =========================================================
-   🌸 TOGGLE HOA
-   CHỈ TẮT/BẬT HOA
-========================================================= */
-
-let flowersVisible=true;
-
-
-function toggleFlowers(){
-
-    flowersVisible =
-        !flowersVisible;
-
-
-    flowers.style.display =
-        flowersVisible
-            ? "block"
-            : "none";
-
-
-    const btn =
-        document.getElementById(
-            "flowerBtn"
-        );
-
-
-    if(flowersVisible){
-
-        btn.textContent =
-            "🌸 Tắt hoa rơi";
-
-        btn.classList.add(
-            "active"
-        );
-
-    }else{
-
-        btn.textContent =
-            "🌸 Bật hoa rơi";
-
-        btn.classList.remove(
-            "active"
-        );
-
-    }
 
 }
 
@@ -3188,6 +3254,58 @@ function drawFireworks(){
 
 
 /* =========================================================
+   🌸 TOGGLE HOA + ẢNH
+========================================================= */
+
+/*
+    Mặc định BẬT.
+*/
+
+let flowersVisible=true;
+
+
+function toggleFlowers(){
+
+    flowersVisible =
+        !flowersVisible;
+
+
+    flowers.style.display =
+        flowersVisible
+            ? "block"
+            : "none";
+
+
+    const btn =
+        document.getElementById(
+            "flowerBtn"
+        );
+
+
+    if(flowersVisible){
+
+        btn.textContent =
+            "🌸 Hoa rơi";
+
+        btn.classList.add(
+            "active"
+        );
+
+    }else{
+
+        btn.textContent =
+            "🌸 Bật hoa rơi";
+
+        btn.classList.remove(
+            "active"
+        );
+
+    }
+
+}
+
+
+/* =========================================================
    🎵 MUSIC
 ========================================================= */
 
@@ -3407,19 +3525,127 @@ function playMelody(index){
 
 
 /* =========================================================
-   🔐 MẬT KHẨU
+   🔐 IPHONE STYLE 4 DIGIT PASSCODE
 ========================================================= */
 
+
+/*
+    MẬT KHẨU:
+    2610
+*/
+
 const MESSAGE_PASSWORD =
-    "NgocMai";
+    "2610";
 
 
-function unlockMessage(){
+let passcode = "";
 
-    const input =
-        document.getElementById(
-            "messagePassword"
+
+/* =========================================================
+   CẬP NHẬT DẤU CHẤM
+========================================================= */
+
+function updatePasscodeDots(){
+
+    const dots =
+        document.querySelectorAll(
+            ".passcode-dot"
         );
+
+
+    dots.forEach(
+        (dot,index)=>{
+
+            if(
+                index <
+                passcode.length
+            ){
+
+                dot.classList.add(
+                    "filled"
+                );
+
+            }else{
+
+                dot.classList.remove(
+                    "filled"
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   NHẬP SỐ
+========================================================= */
+
+function enterPasscode(number){
+
+    if(
+        passcode.length >= 4
+    ){
+
+        return;
+
+    }
+
+
+    passcode += number;
+
+
+    updatePasscodeDots();
+
+
+    if(
+        passcode.length === 4
+    ){
+
+        setTimeout(
+            checkPasscode,
+            180
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   XÓA SỐ
+========================================================= */
+
+function deletePasscode(){
+
+    if(
+        passcode.length === 0
+    ){
+
+        return;
+
+    }
+
+
+    passcode =
+        passcode.slice(
+            0,
+            -1
+        );
+
+
+    updatePasscodeDots();
+
+}
+
+
+/* =========================================================
+   KIỂM TRA PASSCODE
+========================================================= */
+
+function checkPasscode(){
 
     const locked =
         document.getElementById(
@@ -3431,27 +3657,34 @@ function unlockMessage(){
             "messageContent"
         );
 
+    const passwordArea =
+        document.getElementById(
+            "passwordArea"
+        );
+
     const error =
         document.getElementById(
             "messageError"
         );
 
 
+    /* =====================================================
+       ĐÚNG MẬT KHẨU
+    ===================================================== */
+
     if(
-        input.value ===
+        passcode ===
         MESSAGE_PASSWORD
     ){
 
-        error.textContent="";
+        error.textContent = "";
 
 
         locked.style.display =
             "none";
 
 
-        document.getElementById(
-            "passwordArea"
-        ).style.display =
+        passwordArea.style.display =
             "none";
 
 
@@ -3475,33 +3708,102 @@ function unlockMessage(){
     }
 
 
+    /* =====================================================
+       SAI MẬT KHẨU
+    ===================================================== */
+
     else{
 
         error.textContent =
-            "❌ Muahaha sai mật khẩu";
+            "❌ Sai mật mã, thử lại nhé 💕";
 
 
-        input.value="";
+        const keypad =
+            document.querySelector(
+                ".passcode-keypad"
+            );
 
 
-        locked.classList.remove(
-            "shake"
+        keypad.classList.remove(
+            "passcode-shake"
         );
 
 
-        void locked.offsetWidth;
+        void keypad.offsetWidth;
 
 
-        locked.classList.add(
-            "shake"
+        keypad.classList.add(
+            "passcode-shake"
         );
 
 
-        input.focus();
+        const dots =
+            document.getElementById(
+                "passcodeDots"
+            );
+
+
+        dots.classList.remove(
+            "passcode-shake"
+        );
+
+
+        void dots.offsetWidth;
+
+
+        dots.classList.add(
+            "passcode-shake"
+        );
+
+
+        setTimeout(
+            () => {
+
+                passcode = "";
+
+                updatePasscodeDots();
+
+            },
+            450
+        );
 
     }
 
 }
+
+
+/* =========================================================
+   ⌨️ NHẬP BẰNG BÀN PHÍM MÁY TÍNH
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(
+            /^[0-9]$/.test(
+                event.key
+            )
+        ){
+
+            enterPasscode(
+                event.key
+            );
+
+        }
+
+
+        if(
+            event.key ===
+            "Backspace"
+        ){
+
+            deletePasscode();
+
+        }
+
+    }
+);
 
 
 /* =========================================================
@@ -3518,6 +3820,7 @@ setTimeout(
     },
     700
 );
+
 
 </script>
 
