@@ -12,8 +12,7 @@ GRADUATION_DATE = "23 • 08 • 2026"
 
 # ✨ Sửa lời chúc ngay trong code
 MESSAGE = """Chúc mừng người của tư bản nha!
-Mong rằng chặng đường phía trước sẽ luôn ngập tràn
-cơ hội, thành công và những điều tuyệt vời nhất.
+Mong rằng chặng đường phía trước sẽ luôn ngập tràn cơ hội, thành công và những điều tuyệt vời nhất.
 Hãy tự tin tỏa sáng nhé! ✨"""
 
 # 📸 ẢNH CỦA BẠN:
