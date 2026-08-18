@@ -5,13 +5,9 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>
-    🎓 Chúc Mừng Tốt Nghiệp - {{ name }}
-</title>
-
+<title>🎓 Chúc Mừng Tốt Nghiệp - {{ name }}</title>
 
 <style>
 
@@ -34,13 +30,10 @@
     padding:0;
 }
 
-
 html,
 body{
     min-height:100%;
-    font-family:
-        'Be Vietnam Pro',
-        sans-serif;
+    font-family:'Be Vietnam Pro',sans-serif;
 }
 
 
@@ -85,7 +78,7 @@ body{
 
 
 /* =========================================================
-   ÁNH SÁNG NỀN
+   ÁNH SÁNG
 ========================================================= */
 
 .glow{
@@ -107,37 +100,22 @@ body{
 
 }
 
-
 .glow.one{
-
     background:#ffe56b;
-
     left:-180px;
-
     top:10%;
-
 }
-
 
 .glow.two{
-
     background:#ff76cf;
-
     right:-180px;
-
     top:35%;
-
 }
 
-
 .glow.three{
-
     background:#69ddff;
-
     left:35%;
-
     bottom:-300px;
-
 }
 
 
@@ -157,7 +135,6 @@ body{
 
 }
 
-
 .star{
 
     position:absolute;
@@ -169,33 +146,23 @@ body{
 
     background:white;
 
-    box-shadow:
-        0 0 15px white;
+    box-shadow:0 0 15px white;
 
     animation:
         twinkle 2s infinite alternate;
 
 }
 
-
 @keyframes twinkle{
 
     from{
-
         opacity:.15;
-
-        transform:
-            scale(.5);
-
+        transform:scale(.5);
     }
 
     to{
-
         opacity:1;
-
-        transform:
-            scale(1.5);
-
+        transform:scale(1.5);
     }
 
 }
@@ -219,7 +186,6 @@ body{
 
 }
 
-
 .flower{
 
     position:absolute;
@@ -230,7 +196,6 @@ body{
         fall linear infinite;
 
 }
-
 
 @keyframes fall{
 
@@ -265,8 +230,7 @@ body{
 
     margin:auto;
 
-    padding:
-        25px 18px 70px;
+    padding:25px 18px 70px;
 
 }
 
@@ -279,28 +243,23 @@ body{
 
     text-align:center;
 
-    padding:
-        55px 10px 35px;
+    padding:55px 10px 35px;
 
 }
-
 
 .badge{
 
     display:inline-block;
 
-    padding:
-        10px 22px;
+    padding:10px 22px;
 
-    border:
-        1px solid #ffffff55;
+    border:1px solid #ffffff55;
 
     border-radius:999px;
 
     background:#ffffff16;
 
-    backdrop-filter:
-        blur(15px);
+    backdrop-filter:blur(15px);
 
     letter-spacing:2px;
 
@@ -311,20 +270,15 @@ body{
 
 }
 
-
 h1{
 
-    font-family:
-        'Playfair Display',
-        serif;
+    font-family:'Playfair Display',serif;
 
-    font-size:
-        clamp(52px,9vw,110px);
+    font-size:clamp(52px,9vw,110px);
 
     line-height:1.02;
 
-    margin:
-        25px 0 12px;
+    margin:25px 0 12px;
 
     background:
 
@@ -337,8 +291,7 @@ h1{
             #fff
         );
 
-    background-size:
-        300% auto;
+    background-size:300% auto;
 
     color:transparent;
 
@@ -354,18 +307,13 @@ h1{
 
 }
 
-
 @keyframes shine{
 
     to{
-
-        background-position:
-            300% center;
-
+        background-position:300% center;
     }
 
 }
-
 
 .subtitle{
 
@@ -393,11 +341,9 @@ h1{
             #ffffff08
         );
 
-    border:
-        1px solid #ffffff35;
+    border:1px solid #ffffff35;
 
-    backdrop-filter:
-        blur(20px);
+    backdrop-filter:blur(20px);
 
     box-shadow:
 
@@ -409,11 +355,9 @@ h1{
 
 }
 
-
 .card{
 
-    padding:
-        45px 30px;
+    padding:45px 30px;
 
     text-align:center;
 
@@ -423,7 +367,6 @@ h1{
 
 }
 
-
 .card:before{
 
     content:"";
@@ -432,15 +375,13 @@ h1{
 
     inset:12px;
 
-    border:
-        1px solid #ffe68666;
+    border:1px solid #ffe68666;
 
     border-radius:25px;
 
     pointer-events:none;
 
 }
-
 
 .ribbon{
 
@@ -450,11 +391,9 @@ h1{
 
     top:30px;
 
-    transform:
-        rotate(35deg);
+    transform:rotate(35deg);
 
-    padding:
-        9px 70px;
+    padding:9px 70px;
 
     color:#46144d;
 
@@ -492,21 +431,17 @@ h1{
 
     gap:12px;
 
-    margin:
-        0 auto 30px;
+    margin:0 auto 30px;
 
 }
 
-
 .effect-btn{
 
-    border:
-        1px solid #ffffff55;
+    border:1px solid #ffffff55;
 
     border-radius:999px;
 
-    padding:
-        12px 20px;
+    padding:12px 20px;
 
     color:#43134e;
 
@@ -534,7 +469,6 @@ h1{
 
 }
 
-
 .effect-btn:hover{
 
     transform:
@@ -545,7 +479,6 @@ h1{
         0 12px 35px #ff9fdd66;
 
 }
-
 
 .effect-btn.active{
 
@@ -573,7 +506,6 @@ h1{
 
 }
 
-
 @keyframes float{
 
     50%{
@@ -585,7 +517,6 @@ h1{
     }
 
 }
-
 
 .small-title{
 
@@ -599,12 +530,9 @@ h1{
 
 }
 
-
 .name{
 
-    font-family:
-        'Playfair Display',
-        serif;
+    font-family:'Playfair Display',serif;
 
     font-size:
         clamp(
@@ -613,8 +541,7 @@ h1{
             75px
         );
 
-    margin:
-        8px 0;
+    margin:8px 0;
 
     color:#ffe37b;
 
@@ -628,7 +555,7 @@ h1{
 
 
 /* =========================================================
-   🌈 TIÊU ĐỀ ẢNH
+   🌈 GALLERY TITLE
 ========================================================= */
 
 .rainbow-gallery{
@@ -637,11 +564,9 @@ h1{
 
     max-width:1100px;
 
-    margin:
-        65px auto 45px;
+    margin:65px auto 45px;
 
 }
-
 
 .rainbow-title{
 
@@ -657,12 +582,9 @@ h1{
 
 }
 
-
 .rainbow-title h2{
 
-    font-family:
-        'Playfair Display',
-        serif;
+    font-family:'Playfair Display',serif;
 
     font-size:
         clamp(
@@ -681,17 +603,14 @@ h1{
 
 }
 
-
 .rainbow-title span{
 
     font-size:28px;
 
     animation:
-        titleFlower 2s
-        ease-in-out infinite;
+        titleFlower 2s ease-in-out infinite;
 
 }
-
 
 @keyframes titleFlower{
 
@@ -707,7 +626,7 @@ h1{
 
 
 /* =========================================================
-   🌈 KHU VỰC CẦU VỒNG
+   🌈 RAINBOW STAGE
 ========================================================= */
 
 .rainbow-stage{
@@ -747,7 +666,6 @@ h1{
 
 }
 
-
 .connect-main{
 
     fill:none;
@@ -774,27 +692,20 @@ h1{
             0 0 25px #ffe477
         );
 
-    stroke-dasharray:
-        18 12;
+    stroke-dasharray:18 12;
 
     animation:
-        lineMove 1.8s
-        linear infinite;
+        lineMove 1.8s linear infinite;
 
 }
-
 
 @keyframes lineMove{
 
     to{
-
-        stroke-dashoffset:
-            -60;
-
+        stroke-dashoffset:-60;
     }
 
 }
-
 
 .connect-inner{
 
@@ -806,30 +717,24 @@ h1{
 
     stroke-linecap:round;
 
-    stroke-dasharray:
-        5 15;
+    stroke-dasharray:5 15;
 
     animation:
-        innerMove .8s
-        linear infinite;
+        innerMove .8s linear infinite;
 
 }
-
 
 @keyframes innerMove{
 
     to{
-
-        stroke-dashoffset:
-            -40;
-
+        stroke-dashoffset:-40;
     }
 
 }
 
 
 /* =========================================================
-   ✨ HẠT SÁNG
+   ✨ CONNECTION POINT
 ========================================================= */
 
 .connection-point{
@@ -857,18 +762,15 @@ h1{
         0 0 55px #6fdcff;
 
     animation:
-        pointPulse 1.3s
-        ease-in-out infinite;
+        pointPulse 1.3s ease-in-out infinite;
 
 }
-
 
 @keyframes pointPulse{
 
     0%,100%{
 
-        transform:
-            scale(.75);
+        transform:scale(.75);
 
         opacity:.7;
 
@@ -876,8 +778,7 @@ h1{
 
     50%{
 
-        transform:
-            scale(1.35);
+        transform:scale(1.35);
 
         opacity:1;
 
@@ -885,58 +786,34 @@ h1{
 
 }
 
-
-/* =========================================================
-   VỊ TRÍ CÁC ĐIỂM
-========================================================= */
-
 .point-1{
-
     left:18%;
-
     top:68%;
-
 }
-
 
 .point-2{
-
     left:35%;
-
     top:38%;
-
 }
-
 
 .point-3{
-
     left:50%;
-
     top:22%;
-
 }
-
 
 .point-4{
-
     left:65%;
-
     top:38%;
-
 }
 
-
 .point-5{
-
     left:82%;
-
     top:68%;
-
 }
 
 
 /* =========================================================
-   ✨ TIA SÁNG BAY
+   ✨ FLYING LIGHT
 ========================================================= */
 
 .flying-light{
@@ -967,205 +844,145 @@ h1{
 
 }
 
-
 .fly-1{
-
     animation:
-        fly1 2.8s
-        linear infinite;
-
+        fly1 2.8s linear infinite;
 }
-
 
 @keyframes fly1{
 
     0%{
-
         left:18%;
         top:68%;
         opacity:0;
-
     }
 
     10%{
-
         opacity:1;
-
     }
 
     50%{
-
         left:35%;
         top:38%;
-
     }
 
     90%{
-
         opacity:1;
-
     }
 
     100%{
-
         left:35%;
         top:38%;
         opacity:0;
-
     }
 
 }
 
-
 .fly-2{
-
     animation:
-        fly2 2.8s
-        linear infinite 1s;
-
+        fly2 2.8s linear infinite 1s;
 }
-
 
 @keyframes fly2{
 
     0%{
-
         left:35%;
         top:38%;
         opacity:0;
-
     }
 
     10%{
-
         opacity:1;
-
     }
 
     50%{
-
         left:50%;
         top:22%;
-
     }
 
     90%{
-
         opacity:1;
-
     }
 
     100%{
-
         left:50%;
         top:22%;
         opacity:0;
-
     }
 
 }
 
-
 .fly-3{
-
     animation:
-        fly3 2.8s
-        linear infinite 2s;
-
+        fly3 2.8s linear infinite 2s;
 }
-
 
 @keyframes fly3{
 
     0%{
-
         left:50%;
         top:22%;
         opacity:0;
-
     }
 
     10%{
-
         opacity:1;
-
     }
 
     50%{
-
         left:65%;
         top:38%;
-
     }
 
     90%{
-
         opacity:1;
-
     }
 
     100%{
-
         left:65%;
         top:38%;
         opacity:0;
-
     }
 
 }
 
-
 .fly-4{
-
     animation:
-        fly4 2.8s
-        linear infinite 3s;
-
+        fly4 2.8s linear infinite 3s;
 }
-
 
 @keyframes fly4{
 
     0%{
-
         left:65%;
         top:38%;
         opacity:0;
-
     }
 
     10%{
-
         opacity:1;
-
     }
 
     50%{
-
         left:82%;
         top:68%;
-
     }
 
     90%{
-
         opacity:1;
-
     }
 
     100%{
-
         left:82%;
         top:68%;
         opacity:0;
-
     }
 
 }
 
 
 /* =========================================================
-   🖼️ ẢNH
+   🖼️ RAINBOW PHOTO
 ========================================================= */
 
 .rainbow-photo{
@@ -1207,7 +1024,6 @@ h1{
 
 }
 
-
 .rainbow-photo:before{
 
     content:"";
@@ -1230,42 +1046,34 @@ h1{
             #ff4d8d
         );
 
-    background-size:
-        300% 300%;
+    background-size:300% 300%;
 
     animation:
-        borderMove 4s
-        linear infinite;
+        borderMove 4s linear infinite;
 
     z-index:-1;
 
-    filter:
-        blur(7px);
+    filter:blur(7px);
 
     opacity:.8;
 
 }
 
-
 @keyframes borderMove{
 
     0%{
-        background-position:
-            0% 50%;
+        background-position:0% 50%;
     }
 
     50%{
-        background-position:
-            100% 50%;
+        background-position:100% 50%;
     }
 
     100%{
-        background-position:
-            0% 50%;
+        background-position:0% 50%;
     }
 
 }
-
 
 .rainbow-photo img{
 
@@ -1295,11 +1103,9 @@ h1{
 
     top:57%;
 
-    transform:
-        rotate(-8deg);
+    transform:rotate(-8deg);
 
 }
-
 
 .photo-2{
 
@@ -1307,11 +1113,9 @@ h1{
 
     top:27%;
 
-    transform:
-        rotate(-5deg);
+    transform:rotate(-5deg);
 
 }
-
 
 .photo-3{
 
@@ -1319,11 +1123,9 @@ h1{
 
     top:5%;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
 }
-
 
 .photo-4{
 
@@ -1331,11 +1133,9 @@ h1{
 
     top:27%;
 
-    transform:
-        rotate(5deg);
+    transform:rotate(5deg);
 
 }
-
 
 .photo-5{
 
@@ -1343,14 +1143,13 @@ h1{
 
     top:57%;
 
-    transform:
-        rotate(8deg);
+    transform:rotate(8deg);
 
 }
 
 
 /* =========================================================
-   HOVER ẢNH
+   HOVER PHOTO
 ========================================================= */
 
 .rainbow-photo:hover{
@@ -1376,17 +1175,15 @@ h1{
 
 }
 
-
 .rainbow-photo:hover img{
 
-    transform:
-        scale(1.08);
+    transform:scale(1.08);
 
 }
 
 
 /* =========================================================
-   SỐ ẢNH
+   PHOTO NUMBER
 ========================================================= */
 
 .photo-number{
@@ -1421,8 +1218,7 @@ h1{
             #ff8fd2
         );
 
-    border:
-        3px solid white;
+    border:3px solid white;
 
     box-shadow:
 
@@ -1462,44 +1258,226 @@ h1{
     background:
         rgba(40,5,60,.75);
 
-    backdrop-filter:
-        blur(8px);
+    backdrop-filter:blur(8px);
 
     opacity:0;
 
-    transform:
-        translateY(15px);
+    transform:translateY(15px);
 
     transition:.4s;
 
 }
 
-
-.rainbow-photo:hover
-.photo-caption{
+.rainbow-photo:hover .photo-caption{
 
     opacity:1;
 
-    transform:
-        translateY(0);
+    transform:translateY(0);
 
 }
 
 
 /* =========================================================
-   LỜI CHÚC
+   💌 LỜI CHÚC KHÓA MẬT KHẨU
 ========================================================= */
 
-.message{
+.message-lock{
 
     max-width:820px;
 
-    margin:
-        25px auto;
+    margin:35px auto;
 
-    font-family:
-        'Playfair Display',
-        serif;
+    text-align:center;
+
+}
+
+.lock-title{
+
+    font-family:'Playfair Display',serif;
+
+    color:#ffe58c;
+
+    font-size:
+        clamp(
+            22px,
+            3vw,
+            30px
+        );
+
+    margin-bottom:18px;
+
+    text-shadow:
+        0 0 20px #ffd86b66;
+
+}
+
+.locked-message{
+
+    padding:35px 20px;
+
+    border-radius:25px;
+
+    background:#ffffff12;
+
+    border:1px solid #ffffff35;
+
+    backdrop-filter:blur(15px);
+
+    font-size:45px;
+
+    box-shadow:
+
+        0 15px 50px #16001f55,
+
+        inset 0 1px #ffffff22;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.locked-message:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+        0 20px 60px #0005,
+
+        0 0 35px #ffb8e855;
+
+}
+
+.locked-message span{
+
+    display:block;
+
+    margin-top:10px;
+
+    font-family:'Be Vietnam Pro',sans-serif;
+
+    font-size:16px;
+
+    color:#ffffffcc;
+
+}
+
+
+/* =========================================================
+   PASSWORD AREA
+========================================================= */
+
+.password-area{
+
+    margin-top:18px;
+
+}
+
+.password-area input{
+
+    width:min(300px,80%);
+
+    padding:13px 20px;
+
+    border-radius:999px;
+
+    border:1px solid #ffffff44;
+
+    outline:none;
+
+    background:#ffffff18;
+
+    color:white;
+
+    text-align:center;
+
+    font-family:inherit;
+
+    font-size:16px;
+
+    backdrop-filter:blur(10px);
+
+}
+
+.password-area input::placeholder{
+
+    color:#ffffff99;
+
+}
+
+.password-area input:focus{
+
+    border-color:#ffe477;
+
+    box-shadow:
+        0 0 20px #ffe47755;
+
+}
+
+.password-area button{
+
+    margin-left:8px;
+
+    padding:13px 22px;
+
+    border:0;
+
+    border-radius:999px;
+
+    font-family:inherit;
+
+    font-weight:800;
+
+    color:#501047;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #ffe477,
+            #ff9ddc
+        );
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.password-area button:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:
+        0 8px 25px #ff9ddc66;
+
+}
+
+#messageError{
+
+    min-height:25px;
+
+    margin-top:10px;
+
+    color:#ffb4dc;
+
+    font-weight:700;
+
+}
+
+
+/* =========================================================
+   💌 NỘI DUNG LỜI CHÚC
+========================================================= */
+
+.message-content{
+
+    display:none;
+
+    margin-top:30px;
+
+    font-family:'Playfair Display',serif;
 
     font-size:
         clamp(
@@ -1514,8 +1492,115 @@ h1{
 
     color:#fff9dc;
 
+    padding:35px 25px;
+
+    border-radius:28px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ffffff18,
+            #ffffff08
+        );
+
+    border:1px solid #ffe58c66;
+
+    box-shadow:
+
+        0 20px 60px #0005,
+
+        0 0 40px #ffd86b33;
+
 }
 
+.message-content.show{
+
+    display:block;
+
+    animation:
+        messageOpen
+        1s
+        cubic-bezier(.2,.8,.2,1);
+
+}
+
+@keyframes messageOpen{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+            scale(.7)
+            rotateX(-60deg);
+
+        filter:blur(10px);
+
+    }
+
+    60%{
+
+        opacity:1;
+
+        transform:
+            scale(1.04)
+            rotateX(8deg);
+
+        filter:blur(0);
+
+    }
+
+    100%{
+
+        transform:
+            scale(1)
+            rotateX(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   PASSWORD SHAKE
+========================================================= */
+
+@keyframes passwordShake{
+
+    0%,100%{
+        transform:translateX(0);
+    }
+
+    20%{
+        transform:translateX(-10px);
+    }
+
+    40%{
+        transform:translateX(10px);
+    }
+
+    60%{
+        transform:translateX(-7px);
+    }
+
+    80%{
+        transform:translateX(7px);
+    }
+
+}
+
+.shake{
+
+    animation:
+        passwordShake .45s;
+
+}
+
+
+/* =========================================================
+   DATE / FOOTER
+========================================================= */
 
 .date{
 
@@ -1524,7 +1609,6 @@ h1{
     font-size:17px;
 
 }
-
 
 .flowers-bottom{
 
@@ -1535,7 +1619,6 @@ h1{
     letter-spacing:8px;
 
 }
-
 
 .footer{
 
@@ -1566,7 +1649,6 @@ h1{
 
 }
 
-
 #fireworks{
 
     position:fixed;
@@ -1581,18 +1663,16 @@ h1{
 
 
 /* =========================================================
-   📱 MOBILE
+   MOBILE
 ========================================================= */
 
 @media(max-width:800px){
 
     .card{
 
-        padding:
-            35px 15px;
+        padding:35px 15px;
 
     }
-
 
     .rainbow-stage{
 
@@ -1606,11 +1686,9 @@ h1{
 
         gap:35px;
 
-        padding:
-            20px 0 30px;
+        padding:20px 0 30px;
 
     }
-
 
     .connection-lines{
 
@@ -1618,20 +1696,17 @@ h1{
 
     }
 
-
     .connection-point{
 
         display:none;
 
     }
 
-
     .flying-light{
 
         display:none;
 
     }
-
 
     .rainbow-photo{
 
@@ -1660,7 +1735,6 @@ h1{
 
     }
 
-
     .rainbow-photo:hover{
 
         transform:
@@ -1675,6 +1749,24 @@ h1{
    MOBILE NHỎ
 ========================================================= */
 
+@media(max-width:600px){
+
+    .password-area input{
+
+        width:90%;
+
+        margin-bottom:10px;
+
+    }
+
+    .password-area button{
+
+        margin-left:0;
+
+    }
+
+}
+
 @media(max-width:450px){
 
     .effect-btn{
@@ -1685,13 +1777,11 @@ h1{
 
     }
 
-
     .rainbow-title h2{
 
         font-size:24px;
 
     }
-
 
     .rainbow-title span{
 
@@ -1714,21 +1804,16 @@ h1{
 ===================================================== -->
 
 <div class="glow one"></div>
-
 <div class="glow two"></div>
-
 <div class="glow three"></div>
-
 
 <div id="stars"></div>
 
 <div id="flowers"></div>
 
-
 <canvas id="confetti"></canvas>
 
 <canvas id="fireworks"></canvas>
-
 
 
 <!-- =====================================================
@@ -1744,38 +1829,26 @@ h1{
 
 <section class="hero">
 
-
     <div class="badge">
-
         🎓 THE GRADUATION DAY 🎓
-
     </div>
 
-
     <h1>
-
         Chúc Mừng<br>
-
         Tốt Nghiệp!
-
     </h1>
-
 
     <p class="subtitle">
 
         Một hành trình khép lại —
 
         <b style="color:#ffe58b">
-
             một tương lai rực rỡ bắt đầu ✨
-
         </b>
 
     </p>
 
-
 </section>
-
 
 
 <!-- =====================================================
@@ -1786,19 +1859,13 @@ h1{
 
 
     <div class="ribbon">
-
         CONGRATULATIONS!
-
     </div>
 
 
-
-    <!-- =================================================
-         BUTTONS
-    ================================================= -->
+    <!-- BUTTONS -->
 
     <div class="effect-buttons">
-
 
         <button
             class="effect-btn"
@@ -1827,38 +1894,27 @@ h1{
 
         </button>
 
-
     </div>
 
 
-
     <div class="graduation-icon">
-
         🎓
-
     </div>
 
 
     <div class="small-title">
-
         CONGRATULATIONS
-
     </div>
 
 
     <div class="name">
-
         {{ name }}
-
     </div>
 
 
     <div class="subtitle">
-
         ĐÃ TỐT NGHIỆP THÀNH CÔNG! 🥳
-
     </div>
-
 
 
     <!-- =================================================
@@ -1873,9 +1929,7 @@ h1{
             <span>🌸</span>
 
             <h2>
-
                 KIẾM NHIỀU TIỀN, KIẾM NHIỀU TIỀN
-
             </h2>
 
             <span>🌸</span>
@@ -1883,26 +1937,17 @@ h1{
         </div>
 
 
-
-        <!-- =================================================
-             5 ẢNH + ĐƯỜNG NỐI
-        ================================================= -->
-
         <div class="rainbow-stage">
 
 
-            <!-- =================================================
-                 SVG ĐƯỜNG NỐI
-            ================================================= -->
+            <!-- SVG ĐƯỜNG NỐI -->
 
             <svg
                 class="connection-lines"
                 viewBox="0 0 1000 620"
                 preserveAspectRatio="none">
 
-
                 <defs>
-
 
                     <linearGradient
                         id="rainbowGradient"
@@ -1911,42 +1956,32 @@ h1{
                         x2="100%"
                         y2="0%">
 
-
                         <stop
                             offset="0%"
                             stop-color="#ff4d8d"/>
-
 
                         <stop
                             offset="25%"
                             stop-color="#ffd84d"/>
 
-
                         <stop
                             offset="50%"
                             stop-color="#65ffd2"/>
-
 
                         <stop
                             offset="75%"
                             stop-color="#61a8ff"/>
 
-
                         <stop
                             offset="100%"
                             stop-color="#d66cff"/>
 
-
                     </linearGradient>
-
 
                 </defs>
 
 
-
-                <!-- ==============================
-                     NỐI ẢNH 1 → ẢNH 2
-                ============================== -->
+                <!-- 1 → 2 -->
 
                 <path
                     class="connect-main"
@@ -1956,7 +1991,6 @@ h1{
                         350 235
                     "
                 />
-
 
                 <path
                     class="connect-inner"
@@ -1968,10 +2002,7 @@ h1{
                 />
 
 
-
-                <!-- ==============================
-                     NỐI ẢNH 2 → ẢNH 3
-                ============================== -->
+                <!-- 2 → 3 -->
 
                 <path
                     class="connect-main"
@@ -1981,7 +2012,6 @@ h1{
                         500 135
                     "
                 />
-
 
                 <path
                     class="connect-inner"
@@ -1993,10 +2023,7 @@ h1{
                 />
 
 
-
-                <!-- ==============================
-                     NỐI ẢNH 3 → ẢNH 4
-                ============================== -->
+                <!-- 3 → 4 -->
 
                 <path
                     class="connect-main"
@@ -2006,7 +2033,6 @@ h1{
                         650 235
                     "
                 />
-
 
                 <path
                     class="connect-inner"
@@ -2018,10 +2044,7 @@ h1{
                 />
 
 
-
-                <!-- ==============================
-                     NỐI ẢNH 4 → ẢNH 5
-                ============================== -->
+                <!-- 4 → 5 -->
 
                 <path
                     class="connect-main"
@@ -2032,7 +2055,6 @@ h1{
                     "
                 />
 
-
                 <path
                     class="connect-inner"
                     d="
@@ -2041,285 +2063,242 @@ h1{
                         820 420
                     "
                 />
-
 
             </svg>
 
 
+            <!-- ĐIỂM SÁNG -->
 
-            <!-- =================================================
-                 ĐIỂM SÁNG
-            ================================================= -->
+            <div class="connection-point point-1"></div>
 
-            <div
-                class="connection-point point-1">
-            </div>
+            <div class="connection-point point-2"></div>
 
+            <div class="connection-point point-3"></div>
 
-            <div
-                class="connection-point point-2">
-            </div>
+            <div class="connection-point point-4"></div>
+
+            <div class="connection-point point-5"></div>
 
 
-            <div
-                class="connection-point point-3">
-            </div>
+            <!-- TIA SÁNG -->
 
+            <div class="flying-light fly-1"></div>
 
-            <div
-                class="connection-point point-4">
-            </div>
+            <div class="flying-light fly-2"></div>
 
+            <div class="flying-light fly-3"></div>
 
-            <div
-                class="connection-point point-5">
-            </div>
-
-
-
-            <!-- =================================================
-                 TIA SÁNG CHẠY
-            ================================================= -->
-
-            <div
-                class="flying-light fly-1">
-            </div>
-
-
-            <div
-                class="flying-light fly-2">
-            </div>
-
-
-            <div
-                class="flying-light fly-3">
-            </div>
-
-
-            <div
-                class="flying-light fly-4">
-            </div>
-
+            <div class="flying-light fly-4"></div>
 
 
             <!-- =================================================
                  ẢNH 1
             ================================================= -->
 
-            <div
-                class="rainbow-photo photo-1">
-
+            <div class="rainbow-photo photo-1">
 
                 <div class="photo-number">
-
-                    
-
+                    1
                 </div>
-
 
                 <img
                     src="{{ url_for('static', filename='images/' + photos[0]) }}"
                     alt="Ảnh tốt nghiệp 1"
                 >
 
-
                 <div class="photo-caption">
-
                     ✨ Đẳng cấp
-
                 </div>
-
 
             </div>
 
 
+            <!-- ẢNH 2 -->
 
-            <!-- =================================================
-                 ẢNH 2
-            ================================================= -->
-
-            <div
-                class="rainbow-photo photo-2">
-
+            <div class="rainbow-photo photo-2">
 
                 <div class="photo-number">
-
-                    
-
+                    2
                 </div>
-
 
                 <img
                     src="{{ url_for('static', filename='images/' + photos[1]) }}"
                     alt="Ảnh tốt nghiệp 2"
                 >
 
-
                 <div class="photo-caption">
-
                     🌸 Thượng hạng
-
                 </div>
-
 
             </div>
 
 
+            <!-- ẢNH 3 -->
 
-            <!-- =================================================
-                 ẢNH 3
-            ================================================= -->
-
-            <div
-                class="rainbow-photo photo-3">
-
+            <div class="rainbow-photo photo-3">
 
                 <div class="photo-number">
-
-                    
-
+                    3
                 </div>
-
 
                 <img
                     src="{{ url_for('static', filename='images/' + photos[2]) }}"
                     alt="Ảnh tốt nghiệp 3"
                 >
 
-
                 <div class="photo-caption">
-
                     🎓 Quý tộc
-
                 </div>
-
 
             </div>
 
 
+            <!-- ẢNH 4 -->
 
-            <!-- =================================================
-                 ẢNH 4
-            ================================================= -->
-
-            <div
-                class="rainbow-photo photo-4">
-
+            <div class="rainbow-photo photo-4">
 
                 <div class="photo-number">
-
-                    
-
+                    4
                 </div>
-
 
                 <img
                     src="{{ url_for('static', filename='images/' + photos[3]) }}"
                     alt="Ảnh tốt nghiệp 4"
                 >
 
-
                 <div class="photo-caption">
-
                     💖 Rất wow
-
                 </div>
-
 
             </div>
 
 
+            <!-- ẢNH 5 -->
 
-            <!-- =================================================
-                 ẢNH 5
-            ================================================= -->
-
-            <div
-                class="rainbow-photo photo-5">
-
+            <div class="rainbow-photo photo-5">
 
                 <div class="photo-number">
-
-                    
-
+                    5
                 </div>
-
 
                 <img
                     src="{{ url_for('static', filename='images/' + photos[4]) }}"
                     alt="Ảnh tốt nghiệp 5"
                 >
 
-
                 <div class="photo-caption">
-
                     🌟 5 sao
-
                 </div>
-
 
             </div>
 
 
         </div>
 
-
     </section>
 
 
+    <!-- =====================================================
+         💌 LỜI CHÚC KHÓA MẬT KHẨU
+    ===================================================== -->
 
-    <!-- =================================================
-         LỜI CHÚC
-    ================================================= -->
+    <div class="message-lock">
 
-    <div class="message">
 
-        {{ message }}
+        <div class="lock-title">
+
+            💌 Đôi lời bốc phét dành cho người cuồng công việc
+
+        </div>
+
+
+        <div
+            class="locked-message"
+            id="lockedMessage">
+
+            💌
+
+            <br>
+
+            <span>
+                🔐 Nhập tên vào đây nhé
+            </span>
+
+        </div>
+
+
+        <div
+            class="password-area"
+            id="passwordArea">
+
+
+            <input
+                type="password"
+                id="messagePassword"
+                placeholder="🔑 Nhập mật khẩu..."
+                autocomplete="off"
+                onkeydown="
+                    if(event.key==='Enter')
+                        unlockMessage()
+                "
+            >
+
+
+            <button
+                onclick="unlockMessage()">
+
+                💖 Mở lời chúc
+
+            </button>
+
+
+            <div id="messageError"></div>
+
+
+        </div>
+
+
+        <div
+            class="message-content"
+            id="messageContent">
+
+            {{ message }}
+
+        </div>
+
 
     </div>
 
 
     <div class="date">
-
         {{ date }}
-
     </div>
 
 
     <div class="flowers-bottom">
-
         🌸 ✨ 🌹 ✨ 🌷 ✨ 🌸
-
     </div>
 
 
 </section>
 
 
-
 <div class="footer">
-
-    
-
+    From NguyenChiKhanh
 </div>
 
 
 </main>
 
 
-
 <script>
 
-
 /* =========================================================
-   ⭐ TẠO SAO
+   ⭐ SAO
 ========================================================= */
 
 const stars =
-    document.getElementById(
-        "stars"
-    );
-
+    document.getElementById("stars");
 
 for(
     let i=0;
@@ -2328,52 +2307,35 @@ for(
 ){
 
     const s =
-        document.createElement(
-            "span"
-        );
+        document.createElement("span");
 
-
-    s.className =
-        "star";
-
+    s.className="star";
 
     s.style.left =
         Math.random()*100+"%";
 
-
     s.style.top =
         Math.random()*100+"%";
-
 
     s.style.animationDelay =
         Math.random()*3+"s";
 
-
     s.style.animationDuration =
-        (
-            1+
-            Math.random()*3
-        )+"s";
-
+        (1+Math.random()*3)+"s";
 
     stars.appendChild(s);
 
 }
 
 
-
 /* =========================================================
-   🌸 HOA RƠI
+   🌸 HOA
 ========================================================= */
 
 const flowers =
-    document.getElementById(
-        "flowers"
-    );
-
+    document.getElementById("flowers");
 
 const flowerTypes=[
-
     "🌸",
     "🌹",
     "🌺",
@@ -2382,9 +2344,7 @@ const flowerTypes=[
     "💮",
     "✨",
     "🌻"
-
 ];
-
 
 for(
     let i=0;
@@ -2393,106 +2353,70 @@ for(
 ){
 
     const f =
-        document.createElement(
-            "span"
-        );
+        document.createElement("span");
 
-
-    f.className =
-        "flower";
-
+    f.className="flower";
 
     f.innerText =
         flowerTypes[
             Math.floor(
-                Math.random() *
+                Math.random()*
                 flowerTypes.length
             )
         ];
 
-
     f.style.left =
         Math.random()*100+"%";
 
-
     f.style.fontSize =
-        (
-            18+
-            Math.random()*28
-        )+"px";
-
+        (18+Math.random()*28)+"px";
 
     f.style.animationDuration =
-        (
-            6+
-            Math.random()*10
-        )+"s";
-
+        (6+Math.random()*10)+"s";
 
     f.style.animationDelay =
-        (
-            -Math.random()*15
-        )+"s";
-
+        (-Math.random()*15)+"s";
 
     f.style.setProperty(
         "--move",
-        (
-            Math.random()*300-
-            150
-        )+"px"
+        (Math.random()*300-150)+"px"
     );
-
 
     flowers.appendChild(f);
 
 }
 
 
-
 /* =========================================================
-   🎉 PHÁO GIẤY
+   🎉 CONFETTI
 ========================================================= */
 
 const canvas =
-    document.getElementById(
-        "confetti"
-    );
-
+    document.getElementById("confetti");
 
 const ctx =
-    canvas.getContext(
-        "2d"
-    );
-
+    canvas.getContext("2d");
 
 function resize(){
 
-    canvas.width =
-        innerWidth;
+    canvas.width=innerWidth;
 
-    canvas.height =
-        innerHeight;
+    canvas.height=innerHeight;
 
 }
 
-
 resize();
-
 
 window.addEventListener(
     "resize",
     resize
 );
 
-
 let pieces=[];
-
 
 function createConfetti(){
 
     pieces=[];
-
 
     for(
         let i=0;
@@ -2502,47 +2426,32 @@ function createConfetti(){
 
         pieces.push({
 
-            x:
-                innerWidth/2,
+            x:innerWidth/2,
 
-            y:
-                innerHeight*.48,
+            y:innerHeight*.48,
 
-            vx:
-                (
-                    Math.random()-
-                    .5
-                )*17,
+            vx:(Math.random()-.5)*17,
 
-            vy:
-                (
-                    Math.random()-
-                    .8
-                )*17,
+            vy:(Math.random()-.8)*17,
 
             size:
-                4+
-                Math.random()*9,
+                4+Math.random()*9,
 
             gravity:
-                .15+
-                Math.random()*.15,
+                .15+Math.random()*.15,
 
             rotation:
-                Math.random()*
-                Math.PI
+                Math.random()*Math.PI
 
         });
 
     }
-
 
     requestAnimationFrame(
         drawConfetti
     );
 
 }
-
 
 function drawConfetti(){
 
@@ -2553,42 +2462,34 @@ function drawConfetti(){
         canvas.height
     );
 
-
     pieces.forEach(
         p=>{
 
-            p.x += p.vx;
+            p.x+=p.vx;
 
-            p.y += p.vy;
+            p.y+=p.vy;
 
-            p.vy += p.gravity;
+            p.vy+=p.gravity;
 
-            p.rotation += .15;
-
+            p.rotation+=.15;
 
             ctx.save();
-
 
             ctx.translate(
                 p.x,
                 p.y
             );
 
-
             ctx.rotate(
                 p.rotation
             );
 
-
             ctx.fillStyle =
                 `hsl(
-                    ${
-                        Math.random()*360
-                    },
+                    ${Math.random()*360},
                     90%,
                     70%
                 )`;
-
 
             ctx.fillRect(
                 -p.size/2,
@@ -2597,12 +2498,10 @@ function drawConfetti(){
                 p.size*1.7
             );
 
-
             ctx.restore();
 
         }
     );
-
 
     pieces =
         pieces.filter(
@@ -2611,10 +2510,7 @@ function drawConfetti(){
                 innerHeight+50
         );
 
-
-    if(
-        pieces.length
-    ){
+    if(pieces.length){
 
         requestAnimationFrame(
             drawConfetti
@@ -2625,62 +2521,44 @@ function drawConfetti(){
 }
 
 
-
 /* =========================================================
-   🎆 PHÁO HOA
+   🎆 FIREWORKS
 ========================================================= */
 
 const fwCanvas =
-    document.getElementById(
-        "fireworks"
-    );
-
+    document.getElementById("fireworks");
 
 const fw =
-    fwCanvas.getContext(
-        "2d"
-    );
-
+    fwCanvas.getContext("2d");
 
 function resizeFW(){
 
-    fwCanvas.width =
-        innerWidth;
+    fwCanvas.width=innerWidth;
 
-    fwCanvas.height =
-        innerHeight;
+    fwCanvas.height=innerHeight;
 
 }
 
-
 resizeFW();
-
 
 window.addEventListener(
     "resize",
     resizeFW
 );
 
-
 let fireworks=[];
 
 let sparks=[];
 
-
 function randomColor(){
 
     return `hsl(
-        ${
-            Math.floor(
-                Math.random()*360
-            )
-        },
+        ${Math.floor(Math.random()*360)},
         100%,
         70%
     )`;
 
 }
-
 
 function launchOneFirework(
 
@@ -2704,13 +2582,11 @@ function launchOneFirework(
 
         x:x,
 
-        y:
-            innerHeight+10,
+        y:innerHeight+10,
 
         target:y,
 
-        color:
-            randomColor(),
+        color:randomColor(),
 
         speed:
             10+
@@ -2719,7 +2595,6 @@ function launchOneFirework(
     });
 
 }
-
 
 function launchFireworks(){
 
@@ -2737,10 +2612,7 @@ function launchFireworks(){
 
     }
 
-
-    if(
-        !window.fwRunning
-    ){
+    if(!window.fwRunning){
 
         window.fwRunning=true;
 
@@ -2750,11 +2622,9 @@ function launchFireworks(){
 
     }
 
-
     createConfetti();
 
 }
-
 
 function explode(f){
 
@@ -2768,19 +2638,15 @@ function explode(f){
             Math.random()*
             Math.PI*2;
 
-
         const sp =
             1.5+
             Math.random()*7;
 
-
         sparks.push({
 
-            x:
-                f.x,
+            x:f.x,
 
-            y:
-                f.target,
+            y:f.target,
 
             vx:
                 Math.cos(a)*sp,
@@ -2792,8 +2658,7 @@ function explode(f){
                 55+
                 Math.random()*35,
 
-            color:
-                f.color,
+            color:f.color,
 
             size:
                 1.5+
@@ -2805,7 +2670,6 @@ function explode(f){
 
 }
 
-
 function drawFireworks(){
 
     fw.clearRect(
@@ -2815,19 +2679,15 @@ function drawFireworks(){
         fwCanvas.height
     );
 
-
     fw.globalCompositeOperation =
         "lighter";
-
 
     fireworks.forEach(
         (f,i)=>{
 
-            f.y -= f.speed;
-
+            f.y-=f.speed;
 
             fw.beginPath();
-
 
             fw.arc(
                 f.x,
@@ -2837,17 +2697,12 @@ function drawFireworks(){
                 Math.PI*2
             );
 
-
-            fw.fillStyle =
-                f.color;
-
+            fw.fillStyle=f.color;
 
             fw.fill();
 
-
             if(
-                f.y <=
-                f.target
+                f.y<=f.target
             ){
 
                 explode(f);
@@ -2862,22 +2717,20 @@ function drawFireworks(){
         }
     );
 
-
     sparks.forEach(
         (s,i)=>{
 
-            s.x += s.vx;
+            s.x+=s.vx;
 
-            s.y += s.vy;
+            s.y+=s.vy;
 
-            s.vy += .055;
+            s.vy+=.055;
 
-            s.vx *= .985;
+            s.vx*=.985;
 
-            s.vy *= .985;
+            s.vy*=.985;
 
             s.life--;
-
 
             fw.globalAlpha =
                 Math.max(
@@ -2885,9 +2738,7 @@ function drawFireworks(){
                     s.life/90
                 );
 
-
             fw.beginPath();
-
 
             fw.arc(
                 s.x,
@@ -2897,17 +2748,11 @@ function drawFireworks(){
                 Math.PI*2
             );
 
-
-            fw.fillStyle =
-                s.color;
-
+            fw.fillStyle=s.color;
 
             fw.fill();
 
-
-            if(
-                s.life <= 0
-            ){
+            if(s.life<=0){
 
                 sparks.splice(
                     i,
@@ -2919,13 +2764,10 @@ function drawFireworks(){
         }
     );
 
-
     fw.globalAlpha=1;
-
 
     fw.globalCompositeOperation =
         "source-over";
-
 
     if(
         fireworks.length ||
@@ -2936,9 +2778,7 @@ function drawFireworks(){
             drawFireworks
         );
 
-    }
-
-    else{
+    }else{
 
         window.fwRunning=false;
 
@@ -2954,23 +2794,18 @@ function drawFireworks(){
 }
 
 
-
 /* =========================================================
-   🌸 BẬT / TẮT HOA
+   🌸 TOGGLE HOA
 ========================================================= */
 
 let flowersVisible=true;
-
 
 function toggleFlowers(){
 
     flowersVisible =
         !flowersVisible;
 
-
-    document.getElementById(
-        "flowers"
-    ).style.display =
+    flowers.style.display =
         flowersVisible
             ? "block"
             : "none";
@@ -2978,9 +2813,8 @@ function toggleFlowers(){
 }
 
 
-
 /* =========================================================
-   🎵 NHẠC
+   🎵 MUSIC
 ========================================================= */
 
 const configuredMusic =
@@ -2993,7 +2827,6 @@ const configuredMusic =
         else ''
     )|tojson }};
 
-
 let audio=null;
 
 let audioCtx=null;
@@ -3002,39 +2835,27 @@ let musicTimer=null;
 
 let musicPlaying=false;
 
-
 const melody=[
 
     [523.25,.22],
-
     [659.25,.22],
-
     [783.99,.22],
-
     [1046.5,.35],
 
     [783.99,.22],
-
     [659.25,.22],
-
     [523.25,.30],
 
     [587.33,.22],
-
     [698.46,.22],
-
     [880,.22],
-
     [1174.66,.38],
 
     [880,.22],
-
     [698.46,.22],
-
     [587.33,.30]
 
 ];
-
 
 function toggleMusic(){
 
@@ -3043,10 +2864,7 @@ function toggleMusic(){
             "musicBtn"
         );
 
-
-    if(
-        musicPlaying
-    ){
+    if(musicPlaying){
 
         if(audio){
 
@@ -3056,7 +2874,6 @@ function toggleMusic(){
 
         }
 
-
         if(audioCtx){
 
             audioCtx.close();
@@ -3065,64 +2882,48 @@ function toggleMusic(){
 
         }
 
-
         clearTimeout(
             musicTimer
         );
 
-
         musicPlaying=false;
-
 
         btn.textContent =
             "🎵 Phát nhạc";
-
 
         btn.classList.remove(
             "active"
         );
 
-
         return;
 
     }
 
-
     musicPlaying=true;
-
 
     btn.textContent =
         "⏸️ Tắt nhạc";
-
 
     btn.classList.add(
         "active"
     );
 
-
-    if(
-        configuredMusic
-    ){
+    if(configuredMusic){
 
         audio =
             new Audio(
                 configuredMusic
             );
 
-
         audio.loop=true;
 
-
         audio.volume=.55;
-
 
         audio.play().catch(
             ()=>{}
         );
 
-    }
-
-    else{
+    }else{
 
         playMelody(0);
 
@@ -3130,18 +2931,12 @@ function toggleMusic(){
 
 }
 
-
 function playMelody(index){
 
-    if(
-        !musicPlaying
-    )
+    if(!musicPlaying)
         return;
 
-
-    if(
-        !audioCtx
-    ){
+    if(!audioCtx){
 
         audioCtx =
             new (
@@ -3150,7 +2945,6 @@ function playMelody(index){
             )();
 
     }
-
 
     const [
         freq,
@@ -3161,51 +2955,38 @@ function playMelody(index){
             melody.length
         ];
 
-
     const osc =
         audioCtx.createOscillator();
-
 
     const gain =
         audioCtx.createGain();
 
+    osc.type="sine";
 
-    osc.type =
-        "sine";
-
-
-    osc.frequency.value =
-        freq;
-
+    osc.frequency.value=freq;
 
     gain.gain.setValueAtTime(
         .0001,
         audioCtx.currentTime
     );
 
-
     gain.gain.exponentialRampToValueAtTime(
         .12,
         audioCtx.currentTime+.02
     );
-
 
     gain.gain.exponentialRampToValueAtTime(
         .0001,
         audioCtx.currentTime+dur
     );
 
-
     osc.connect(gain);
-
 
     gain.connect(
         audioCtx.destination
     );
 
-
     osc.start();
-
 
     osc.stop(
         audioCtx.currentTime+
@@ -3213,29 +2994,144 @@ function playMelody(index){
         .03
     );
 
-
     musicTimer =
         setTimeout(
             () =>
                 playMelody(
                     index+1
                 ),
-
-            (
-                dur+.08
-            )*1000
+            (dur+.08)*1000
         );
 
 }
 
 
+/* =========================================================
+   🔐 MẬT KHẨU LỜI CHÚC
+========================================================= */
+
+/*
+    🔐 ĐỔI MẬT KHẨU TẠI ĐÂY
+
+    Ví dụ:
+    const MESSAGE_PASSWORD = "Mai2026";
+
+*/
+
+const MESSAGE_PASSWORD = "NgocMai";
+
+
+function unlockMessage(){
+
+    const input =
+        document.getElementById(
+            "messagePassword"
+        );
+
+    const locked =
+        document.getElementById(
+            "lockedMessage"
+        );
+
+    const content =
+        document.getElementById(
+            "messageContent"
+        );
+
+    const error =
+        document.getElementById(
+            "messageError"
+        );
+
+
+    /* ================================
+       ĐÚNG MẬT KHẨU
+    ================================= */
+
+    if(
+        input.value ===
+        MESSAGE_PASSWORD
+    ){
+
+        error.textContent="";
+
+
+        /* Ẩn phong bì */
+
+        locked.style.display="none";
+
+
+        /* Ẩn ô nhập mật khẩu */
+
+        document.getElementById(
+            "passwordArea"
+        ).style.display="none";
+
+
+        /* Hiện lời chúc */
+
+        content.classList.add("show");
+
+
+        /* Pháo giấy */
+
+        createConfetti();
+
+
+        /* Pháo hoa */
+
+        setTimeout(
+            () => {
+
+                launchFireworks();
+
+            },
+            500
+        );
+
+
+    }
+
+
+    /* ================================
+       SAI MẬT KHẨU
+    ================================= */
+
+    else{
+
+        error.textContent =
+            "❌ Muahaha sai mật khẩu";
+
+
+        input.value="";
+
+
+        locked.classList.remove(
+            "shake"
+        );
+
+
+        void locked.offsetWidth;
+
+
+        locked.classList.add(
+            "shake"
+        );
+
+
+        input.focus();
+
+    }
+
+}
+
 
 /* =========================================================
-   🎉 TỰ ĐỘNG KHI MỞ TRANG
+   🎉 HIỆU ỨNG KHI MỞ TRANG
 ========================================================= */
 
 setTimeout(
-    ()=>{
+    () => {
 
         createConfetti();
 
@@ -3246,7 +3142,6 @@ setTimeout(
 );
 
 </script>
-
 
 </body>
 
