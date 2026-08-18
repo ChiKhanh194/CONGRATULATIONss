@@ -1,0 +1,1 @@
+Đặt ảnh JPG/PNG của bạn vào thư mục này rồi sửa danh sách PHOTOS trong app.py.

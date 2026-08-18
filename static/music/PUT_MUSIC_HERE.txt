@@ -1,0 +1,1 @@
+Nếu muốn dùng MP3 riêng, đặt file MP3 vào thư mục này và sửa MUSIC_FILE trong app.py.
