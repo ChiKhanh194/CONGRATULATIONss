@@ -20,8 +20,8 @@ Hãy tự tin tỏa sáng nhé! ✨"""
 # Đặt ảnh vào thư mục static/images/
 # rồi sửa tên file ở đây.
 PHOTOS = [
-    "Mai4.jpg",
     "Mai7.jpg",
+    "Mai4.jpg",
     "Mai6.jpg",
     "Mai1.jpg",
     "Mai5.jpg",

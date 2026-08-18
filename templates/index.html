@@ -169,7 +169,7 @@ body{
 
 
 /* =========================================================
-   HOA RƠI
+   🌸 LỚP HOA RƠI
 ========================================================= */
 
 #flowers{
@@ -186,28 +186,292 @@ body{
 
 }
 
-.flower{
 
-    position:absolute;
+/* =========================================================
+   🖼️ LỚP ẢNH RƠI
+   ẢNH LUÔN HIỂN THỊ MẶC ĐỊNH
+========================================================= */
 
-    top:-70px;
+#fallingImages{
 
-    animation:
-        fall linear infinite;
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:2;
 
 }
 
-@keyframes fall{
 
-    to{
+/* =========================================================
+   VẬT THỂ HOA
+========================================================= */
+
+.falling-flower{
+
+    position:absolute;
+
+    top:-100px;
+
+    left:0;
+
+    pointer-events:none;
+
+    user-select:none;
+
+    will-change:
+        transform,
+        opacity;
+
+    animation:
+        flowerFalling linear infinite;
+
+}
+
+
+/* =========================================================
+   HOA EMOJI
+========================================================= */
+
+.falling-flower{
+
+    font-family:
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        sans-serif;
+
+    filter:
+        drop-shadow(
+            0 0 8px #ffffff55
+        );
+
+}
+
+
+/* =========================================================
+   ẢNH RƠI
+========================================================= */
+
+.falling-image{
+
+    position:absolute;
+
+    top:-100px;
+
+    left:0;
+
+    width:65px;
+
+    height:65px;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    padding:3px;
+
+    pointer-events:none;
+
+    user-select:none;
+
+    will-change:
+        transform,
+        opacity;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ff4d8d,
+            #ffe477,
+            #63ffd2,
+            #61a8ff,
+            #d66cff
+        );
+
+    box-shadow:
+
+        0 5px 20px #0008,
+
+        0 0 12px #fff8,
+
+        0 0 30px #ff8edc66;
+
+    /*
+        QUAN TRỌNG:
+        Không animation rotate.
+        Ảnh chỉ di chuyển.
+    */
+
+    animation:
+        imageFalling linear infinite;
+
+}
+
+
+/* =========================================================
+   🌸 ANIMATION HOA RƠI
+   HOA CÓ XOAY
+========================================================= */
+
+@keyframes flowerFalling{
+
+    0%{
 
         transform:
             translate3d(
-                var(--move),
-                110vh,
+                0,
+                -100px,
+                0
+            )
+            rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    8%{
+
+        opacity:1;
+
+    }
+
+    25%{
+
+        transform:
+            translate3d(
+                var(--move1),
+                25vh,
+                0
+            )
+            rotate(120deg);
+
+    }
+
+    50%{
+
+        transform:
+            translate3d(
+                var(--move2),
+                50vh,
+                0
+            )
+            rotate(240deg);
+
+    }
+
+    75%{
+
+        transform:
+            translate3d(
+                var(--move3),
+                75vh,
+                0
+            )
+            rotate(360deg);
+
+    }
+
+    92%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+            translate3d(
+                var(--move4),
+                115vh,
                 0
             )
             rotate(720deg);
+
+        opacity:.15;
+
+    }
+
+}
+
+
+/* =========================================================
+   🖼️ ANIMATION ẢNH RƠI
+   KHÔNG XOAY
+========================================================= */
+
+@keyframes imageFalling{
+
+    0%{
+
+        transform:
+            translate3d(
+                0,
+                -100px,
+                0
+            );
+
+        opacity:0;
+
+    }
+
+    8%{
+
+        opacity:1;
+
+    }
+
+    25%{
+
+        transform:
+            translate3d(
+                var(--move1),
+                25vh,
+                0
+            );
+
+    }
+
+    50%{
+
+        transform:
+            translate3d(
+                var(--move2),
+                50vh,
+                0
+            );
+
+    }
+
+    75%{
+
+        transform:
+            translate3d(
+                var(--move3),
+                75vh,
+                0
+            );
+
+    }
+
+    92%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+            translate3d(
+                var(--move4),
+                115vh,
+                0
+            );
 
         opacity:.15;
 
@@ -555,7 +819,7 @@ h1{
 
 
 /* =========================================================
-   🌈 GALLERY TITLE
+   GALLERY
 ========================================================= */
 
 .rainbow-gallery{
@@ -626,7 +890,7 @@ h1{
 
 
 /* =========================================================
-   🌈 RAINBOW STAGE
+   RAINBOW STAGE
 ========================================================= */
 
 .rainbow-stage{
@@ -645,7 +909,7 @@ h1{
 
 
 /* =========================================================
-   🔗 SVG ĐƯỜNG NỐI
+   SVG
 ========================================================= */
 
 .connection-lines{
@@ -734,7 +998,7 @@ h1{
 
 
 /* =========================================================
-   ✨ CONNECTION POINT
+   POINT
 ========================================================= */
 
 .connection-point{
@@ -813,7 +1077,7 @@ h1{
 
 
 /* =========================================================
-   ✨ FLYING LIGHT
+   FLYING LIGHT
 ========================================================= */
 
 .flying-light{
@@ -857,16 +1121,9 @@ h1{
         opacity:0;
     }
 
-    10%{
-        opacity:1;
-    }
-
     50%{
         left:35%;
         top:38%;
-    }
-
-    90%{
         opacity:1;
     }
 
@@ -891,16 +1148,9 @@ h1{
         opacity:0;
     }
 
-    10%{
-        opacity:1;
-    }
-
     50%{
         left:50%;
         top:22%;
-    }
-
-    90%{
         opacity:1;
     }
 
@@ -925,16 +1175,9 @@ h1{
         opacity:0;
     }
 
-    10%{
-        opacity:1;
-    }
-
     50%{
         left:65%;
         top:38%;
-    }
-
-    90%{
         opacity:1;
     }
 
@@ -959,16 +1202,9 @@ h1{
         opacity:0;
     }
 
-    10%{
-        opacity:1;
-    }
-
     50%{
         left:82%;
         top:68%;
-    }
-
-    90%{
         opacity:1;
     }
 
@@ -982,7 +1218,7 @@ h1{
 
 
 /* =========================================================
-   🖼️ RAINBOW PHOTO
+   PHOTO
 ========================================================= */
 
 .rainbow-photo{
@@ -1094,7 +1330,7 @@ h1{
 
 
 /* =========================================================
-   VỊ TRÍ 5 ẢNH
+   5 ẢNH
 ========================================================= */
 
 .photo-1{
@@ -1149,7 +1385,7 @@ h1{
 
 
 /* =========================================================
-   HOVER PHOTO
+   HOVER
 ========================================================= */
 
 .rainbow-photo:hover{
@@ -1178,55 +1414,6 @@ h1{
 .rainbow-photo:hover img{
 
     transform:scale(1.08);
-
-}
-
-
-/* =========================================================
-   PHOTO NUMBER
-========================================================= */
-
-.photo-number{
-
-    position:absolute;
-
-    top:-15px;
-
-    left:-15px;
-
-    width:46px;
-
-    height:46px;
-
-    border-radius:50%;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    color:#50104f;
-
-    font-weight:900;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #ffe477,
-            #ff8fd2
-        );
-
-    border:3px solid white;
-
-    box-shadow:
-
-        0 0 15px #ffe477,
-
-        0 0 35px #ff7ad5;
-
-    z-index:20;
 
 }
 
@@ -1278,7 +1465,7 @@ h1{
 
 
 /* =========================================================
-   💌 LỜI CHÚC KHÓA MẬT KHẨU
+   MESSAGE
 ========================================================= */
 
 .message-lock{
@@ -1305,9 +1492,6 @@ h1{
         );
 
     margin-bottom:18px;
-
-    text-shadow:
-        0 0 20px #ffd86b66;
 
 }
 
@@ -1341,12 +1525,6 @@ h1{
 
     transform:translateY(-5px);
 
-    box-shadow:
-
-        0 20px 60px #0005,
-
-        0 0 35px #ffb8e855;
-
 }
 
 .locked-message span{
@@ -1365,7 +1543,7 @@ h1{
 
 
 /* =========================================================
-   PASSWORD AREA
+   PASSWORD
 ========================================================= */
 
 .password-area{
@@ -1396,22 +1574,11 @@ h1{
 
     font-size:16px;
 
-    backdrop-filter:blur(10px);
-
 }
 
 .password-area input::placeholder{
 
     color:#ffffff99;
-
-}
-
-.password-area input:focus{
-
-    border-color:#ffe477;
-
-    box-shadow:
-        0 0 20px #ffe47755;
 
 }
 
@@ -1441,17 +1608,6 @@ h1{
 
     cursor:pointer;
 
-    transition:.25s;
-
-}
-
-.password-area button:hover{
-
-    transform:scale(1.05);
-
-    box-shadow:
-        0 8px 25px #ff9ddc66;
-
 }
 
 #messageError{
@@ -1468,7 +1624,7 @@ h1{
 
 
 /* =========================================================
-   💌 NỘI DUNG LỜI CHÚC
+   MESSAGE CONTENT
 ========================================================= */
 
 .message-content{
@@ -1505,12 +1661,6 @@ h1{
         );
 
     border:1px solid #ffe58c66;
-
-    box-shadow:
-
-        0 20px 60px #0005,
-
-        0 0 40px #ffd86b33;
 
 }
 
@@ -1563,7 +1713,7 @@ h1{
 
 
 /* =========================================================
-   PASSWORD SHAKE
+   SHAKE
 ========================================================= */
 
 @keyframes passwordShake{
@@ -1599,7 +1749,7 @@ h1{
 
 
 /* =========================================================
-   DATE / FOOTER
+   FOOTER
 ========================================================= */
 
 .date{
@@ -1742,12 +1892,23 @@ h1{
 
     }
 
+    /*
+        ẢNH RƠI TRÊN ĐIỆN THOẠI
+        Không xoay.
+    */
+
+    .falling-image{
+
+        width:48px;
+
+        height:48px;
+
+        border-radius:14px;
+
+    }
+
 }
 
-
-/* =========================================================
-   MOBILE NHỎ
-========================================================= */
 
 @media(max-width:600px){
 
@@ -1766,6 +1927,7 @@ h1{
     }
 
 }
+
 
 @media(max-width:450px){
 
@@ -1809,7 +1971,21 @@ h1{
 
 <div id="stars"></div>
 
+
+<!--
+    HOA RƠI
+    Có thể bật / tắt bằng nút 🌸 Hoa rơi
+-->
 <div id="flowers"></div>
+
+
+<!--
+    ẢNH RƠI
+    LUÔN HIỂN THỊ MẶC ĐỊNH
+    Không bị tắt khi tắt hoa
+-->
+<div id="fallingImages"></div>
+
 
 <canvas id="confetti"></canvas>
 
@@ -1822,10 +1998,6 @@ h1{
 
 <main class="container">
 
-
-<!-- =====================================================
-     HERO
-===================================================== -->
 
 <section class="hero">
 
@@ -1851,10 +2023,6 @@ h1{
 </section>
 
 
-<!-- =====================================================
-     CARD
-===================================================== -->
-
 <section class="glass card">
 
 
@@ -1863,7 +2031,9 @@ h1{
     </div>
 
 
-    <!-- BUTTONS -->
+    <!-- =================================================
+         BUTTONS
+    ================================================= -->
 
     <div class="effect-buttons">
 
@@ -1886,11 +2056,17 @@ h1{
         </button>
 
 
+        <!--
+            CHỈ CÒN NÚT HOA RƠI
+            ẢNH RƠI KHÔNG CÓ NÚT TẮT
+        -->
+
         <button
-            class="effect-btn"
+            class="effect-btn active"
+            id="flowerBtn"
             onclick="toggleFlowers()">
 
-            🌸 Hoa rơi
+            🌸 Tắt hoa rơi
 
         </button>
 
@@ -1918,7 +2094,7 @@ h1{
 
 
     <!-- =================================================
-         🌈 GALLERY
+         GALLERY
     ================================================= -->
 
     <section class="rainbow-gallery">
@@ -1939,8 +2115,6 @@ h1{
 
         <div class="rainbow-stage">
 
-
-            <!-- SVG ĐƯỜNG NỐI -->
 
             <svg
                 class="connection-lines"
@@ -1981,8 +2155,6 @@ h1{
                 </defs>
 
 
-                <!-- 1 → 2 -->
-
                 <path
                     class="connect-main"
                     d="
@@ -2001,8 +2173,6 @@ h1{
                     "
                 />
 
-
-                <!-- 2 → 3 -->
 
                 <path
                     class="connect-main"
@@ -2023,8 +2193,6 @@ h1{
                 />
 
 
-                <!-- 3 → 4 -->
-
                 <path
                     class="connect-main"
                     d="
@@ -2043,8 +2211,6 @@ h1{
                     "
                 />
 
-
-                <!-- 4 → 5 -->
 
                 <path
                     class="connect-main"
@@ -2067,39 +2233,22 @@ h1{
             </svg>
 
 
-            <!-- ĐIỂM SÁNG -->
-
             <div class="connection-point point-1"></div>
-
             <div class="connection-point point-2"></div>
-
             <div class="connection-point point-3"></div>
-
             <div class="connection-point point-4"></div>
-
             <div class="connection-point point-5"></div>
 
 
-            <!-- TIA SÁNG -->
-
             <div class="flying-light fly-1"></div>
-
             <div class="flying-light fly-2"></div>
-
             <div class="flying-light fly-3"></div>
-
             <div class="flying-light fly-4"></div>
 
 
-            <!-- =================================================
-                 ẢNH 1
-            ================================================= -->
+            <!-- ẢNH 1 -->
 
             <div class="rainbow-photo photo-1">
-
-                <div class="photo-number">
-                    
-                </div>
 
                 <img
                     src="{{ url_for('static', filename='images/' + photos[0]) }}"
@@ -2117,10 +2266,6 @@ h1{
 
             <div class="rainbow-photo photo-2">
 
-                <div class="photo-number">
-                    
-                </div>
-
                 <img
                     src="{{ url_for('static', filename='images/' + photos[1]) }}"
                     alt="Ảnh tốt nghiệp 2"
@@ -2136,10 +2281,6 @@ h1{
             <!-- ẢNH 3 -->
 
             <div class="rainbow-photo photo-3">
-
-                <div class="photo-number">
-                    
-                </div>
 
                 <img
                     src="{{ url_for('static', filename='images/' + photos[2]) }}"
@@ -2157,10 +2298,6 @@ h1{
 
             <div class="rainbow-photo photo-4">
 
-                <div class="photo-number">
-                    
-                </div>
-
                 <img
                     src="{{ url_for('static', filename='images/' + photos[3]) }}"
                     alt="Ảnh tốt nghiệp 4"
@@ -2176,10 +2313,6 @@ h1{
             <!-- ẢNH 5 -->
 
             <div class="rainbow-photo photo-5">
-
-                <div class="photo-number">
-                    
-                </div>
 
                 <img
                     src="{{ url_for('static', filename='images/' + photos[4]) }}"
@@ -2198,9 +2331,9 @@ h1{
     </section>
 
 
-    <!-- =====================================================
-         💌 LỜI CHÚC KHÓA MẬT KHẨU
-    ===================================================== -->
+    <!-- =================================================
+         MESSAGE
+    ================================================= -->
 
     <div class="message-lock">
 
@@ -2221,7 +2354,7 @@ h1{
             <br>
 
             <span>
-                🔐 Nhập tên vào đây nhé
+                🔐 Nhập mật khẩu để mở lời chúc
             </span>
 
         </div>
@@ -2230,7 +2363,6 @@ h1{
         <div
             class="password-area"
             id="passwordArea">
-
 
             <input
                 type="password"
@@ -2243,7 +2375,6 @@ h1{
                 "
             >
 
-
             <button
                 onclick="unlockMessage()">
 
@@ -2253,7 +2384,6 @@ h1{
 
 
             <div id="messageError"></div>
-
 
         </div>
 
@@ -2300,11 +2430,7 @@ h1{
 const stars =
     document.getElementById("stars");
 
-for(
-    let i=0;
-    i<100;
-    i++
-){
+for(let i=0;i<100;i++){
 
     const s =
         document.createElement("span");
@@ -2329,38 +2455,94 @@ for(
 
 
 /* =========================================================
-   🌸 HOA
+   🌸 HOA RƠI
+   CHỈ HOA MỚI CÓ NÚT BẬT / TẮT
 ========================================================= */
 
 const flowers =
     document.getElementById("flowers");
 
-const flowerTypes=[
+
+/* =========================================================
+   🖼️ ẢNH RƠI
+   ẢNH LUÔN BẬT
+========================================================= */
+
+const fallingImagesContainer =
+    document.getElementById("fallingImages");
+
+
+/*
+    Đặt 10 ảnh trong:
+
+    static/images/falling/
+
+    f1.jpg
+    f2.jpg
+    ...
+    f10.jpg
+*/
+
+const fallingImages = [
+
+    "{{ url_for('static', filename='images/falling/f1.jpg') }}",
+
+    "{{ url_for('static', filename='images/falling/f6.jpg') }}",
+
+    "{{ url_for('static', filename='images/falling/f2.jpg') }}",
+
+    "{{ url_for('static', filename='images/falling/f7.jpg') }}",
+
+    "{{ url_for('static', filename='images/falling/f3.jpg') }}",
+
+    "{{ url_for('static', filename='images/falling/f8.jpg') }}",
+
+    "{{ url_for('static', filename='images/falling/f4.jpg') }}",
+
+    "{{ url_for('static', filename='images/falling/f9.jpg') }}",
+
+    "{{ url_for('static', filename='images/falling/f5.jpg') }}",
+
+    "{{ url_for('static', filename='images/falling/f10.jpg') }}"
+
+];
+
+
+/* =========================================================
+   🌸 LOẠI HOA
+========================================================= */
+
+const flowerTypes = [
+
     "🌸",
     "🌹",
     "🌺",
     "🌷",
     "🌼",
     "💮",
-    "✨",
-    "🌻"
+    "🌻",
+    "🌿",
+    "✨"
+
 ];
 
-for(
-    let i=0;
-    i<50;
-    i++
-){
+
+/* =========================================================
+   TẠO HOA
+========================================================= */
+
+function createFallingFlower(){
 
     const f =
         document.createElement("span");
 
-    f.className="flower";
+    f.className =
+        "falling-flower";
 
     f.innerText =
         flowerTypes[
             Math.floor(
-                Math.random()*
+                Math.random() *
                 flowerTypes.length
             )
         ];
@@ -2369,20 +2551,213 @@ for(
         Math.random()*100+"%";
 
     f.style.fontSize =
-        (18+Math.random()*28)+"px";
+        (18 + Math.random()*28)+"px";
 
     f.style.animationDuration =
-        (6+Math.random()*10)+"s";
+        (7 + Math.random()*9)+"s";
 
     f.style.animationDelay =
         (-Math.random()*15)+"s";
 
+
     f.style.setProperty(
-        "--move",
+        "--move1",
         (Math.random()*300-150)+"px"
     );
 
+    f.style.setProperty(
+        "--move2",
+        (Math.random()*500-250)+"px"
+    );
+
+    f.style.setProperty(
+        "--move3",
+        (Math.random()*350-175)+"px"
+    );
+
+    f.style.setProperty(
+        "--move4",
+        (Math.random()*600-300)+"px"
+    );
+
     flowers.appendChild(f);
+
+}
+
+
+/* =========================================================
+   🖼️ TẠO ẢNH RƠI
+   KHÔNG XOAY
+========================================================= */
+
+function createFallingImage(){
+
+    const img =
+        document.createElement("img");
+
+    img.className =
+        "falling-image";
+
+
+    /* Chọn ngẫu nhiên ảnh */
+
+    const randomImage =
+        fallingImages[
+            Math.floor(
+                Math.random() *
+                fallingImages.length
+            )
+        ];
+
+    img.src =
+        randomImage;
+
+    img.alt =
+        "Ảnh rơi";
+
+
+    /* Vị trí ngang */
+
+    img.style.left =
+        Math.random()*100+"%";
+
+
+    /* Kích thước */
+
+    const size =
+        45 + Math.random()*40;
+
+    img.style.width =
+        size+"px";
+
+    img.style.height =
+        size+"px";
+
+
+    /* Tốc độ */
+
+    img.style.animationDuration =
+        (7 + Math.random()*10)+"s";
+
+
+    /*
+        Delay âm để khi mở trang
+        ảnh đã xuất hiện sẵn
+    */
+
+    img.style.animationDelay =
+        (-Math.random()*18)+"s";
+
+
+    /* Đường bay */
+
+    img.style.setProperty(
+        "--move1",
+        (Math.random()*300-150)+"px"
+    );
+
+    img.style.setProperty(
+        "--move2",
+        (Math.random()*500-250)+"px"
+    );
+
+    img.style.setProperty(
+        "--move3",
+        (Math.random()*400-200)+"px"
+    );
+
+    img.style.setProperty(
+        "--move4",
+        (Math.random()*600-300)+"px"
+    );
+
+
+    /*
+        KHÔNG CÓ:
+
+        img.style.transform =
+            rotate(...)
+
+        và animation imageFalling
+        cũng KHÔNG có rotate().
+
+        => ẢNH GIỮ NGUYÊN HƯỚNG
+    */
+
+
+    fallingImagesContainer.appendChild(img);
+
+}
+
+
+/* =========================================================
+   🌸 TẠO HOA
+========================================================= */
+
+for(let i=0;i<50;i++){
+
+    createFallingFlower();
+
+}
+
+
+/* =========================================================
+   🖼️ TẠO ẢNH
+   ẢNH LUÔN CÓ TỪ ĐẦU
+========================================================= */
+
+for(let i=0;i<30;i++){
+
+    createFallingImage();
+
+}
+
+
+/* =========================================================
+   🌸 TOGGLE HOA
+   CHỈ TẮT/BẬT HOA
+========================================================= */
+
+let flowersVisible=true;
+
+
+function toggleFlowers(){
+
+    flowersVisible =
+        !flowersVisible;
+
+
+    flowers.style.display =
+        flowersVisible
+            ? "block"
+            : "none";
+
+
+    const btn =
+        document.getElementById(
+            "flowerBtn"
+        );
+
+
+    if(flowersVisible){
+
+        btn.textContent =
+            "🌸 Tắt hoa rơi";
+
+        btn.classList.add(
+            "active"
+        );
+
+    }else{
+
+        btn.textContent =
+            "🌸 Bật hoa rơi";
+
+        btn.classList.remove(
+            "active"
+        );
+
+    }
 
 }
 
@@ -2397,11 +2772,14 @@ const canvas =
 const ctx =
     canvas.getContext("2d");
 
+
 function resize(){
 
-    canvas.width=innerWidth;
+    canvas.width =
+        innerWidth;
 
-    canvas.height=innerHeight;
+    canvas.height =
+        innerHeight;
 
 }
 
@@ -2412,17 +2790,15 @@ window.addEventListener(
     resize
 );
 
+
 let pieces=[];
+
 
 function createConfetti(){
 
     pieces=[];
 
-    for(
-        let i=0;
-        i<280;
-        i++
-    ){
+    for(let i=0;i<280;i++){
 
         pieces.push({
 
@@ -2453,6 +2829,7 @@ function createConfetti(){
 
 }
 
+
 function drawConfetti(){
 
     ctx.clearRect(
@@ -2461,6 +2838,7 @@ function drawConfetti(){
         canvas.width,
         canvas.height
     );
+
 
     pieces.forEach(
         p=>{
@@ -2503,12 +2881,14 @@ function drawConfetti(){
         }
     );
 
+
     pieces =
         pieces.filter(
             p =>
                 p.y <
                 innerHeight+50
         );
+
 
     if(pieces.length){
 
@@ -2531,11 +2911,14 @@ const fwCanvas =
 const fw =
     fwCanvas.getContext("2d");
 
+
 function resizeFW(){
 
-    fwCanvas.width=innerWidth;
+    fwCanvas.width =
+        innerWidth;
 
-    fwCanvas.height=innerHeight;
+    fwCanvas.height =
+        innerHeight;
 
 }
 
@@ -2546,9 +2929,11 @@ window.addEventListener(
     resizeFW
 );
 
+
 let fireworks=[];
 
 let sparks=[];
+
 
 function randomColor(){
 
@@ -2560,19 +2945,20 @@ function randomColor(){
 
 }
 
+
 function launchOneFirework(
 
-    x=
-        innerWidth*
+    x =
+        innerWidth *
         (
-            .15+
+            .15 +
             .7*Math.random()
         ),
 
-    y=
-        innerHeight*
+    y =
+        innerHeight *
         (
-            .18+
+            .18 +
             .35*Math.random()
         )
 
@@ -2596,13 +2982,10 @@ function launchOneFirework(
 
 }
 
+
 function launchFireworks(){
 
-    for(
-        let i=0;
-        i<9;
-        i++
-    ){
+    for(let i=0;i<9;i++){
 
         setTimeout(
             () =>
@@ -2611,6 +2994,7 @@ function launchFireworks(){
         );
 
     }
+
 
     if(!window.fwRunning){
 
@@ -2622,17 +3006,15 @@ function launchFireworks(){
 
     }
 
+
     createConfetti();
 
 }
 
+
 function explode(f){
 
-    for(
-        let i=0;
-        i<90;
-        i++
-    ){
+    for(let i=0;i<90;i++){
 
         const a =
             Math.random()*
@@ -2670,6 +3052,7 @@ function explode(f){
 
 }
 
+
 function drawFireworks(){
 
     fw.clearRect(
@@ -2679,8 +3062,10 @@ function drawFireworks(){
         fwCanvas.height
     );
 
+
     fw.globalCompositeOperation =
         "lighter";
+
 
     fireworks.forEach(
         (f,i)=>{
@@ -2701,6 +3086,7 @@ function drawFireworks(){
 
             fw.fill();
 
+
             if(
                 f.y<=f.target
             ){
@@ -2717,6 +3103,7 @@ function drawFireworks(){
         }
     );
 
+
     sparks.forEach(
         (s,i)=>{
 
@@ -2732,11 +3119,13 @@ function drawFireworks(){
 
             s.life--;
 
+
             fw.globalAlpha =
                 Math.max(
                     0,
                     s.life/90
                 );
+
 
             fw.beginPath();
 
@@ -2752,6 +3141,7 @@ function drawFireworks(){
 
             fw.fill();
 
+
             if(s.life<=0){
 
                 sparks.splice(
@@ -2764,10 +3154,13 @@ function drawFireworks(){
         }
     );
 
+
     fw.globalAlpha=1;
+
 
     fw.globalCompositeOperation =
         "source-over";
+
 
     if(
         fireworks.length ||
@@ -2795,25 +3188,6 @@ function drawFireworks(){
 
 
 /* =========================================================
-   🌸 TOGGLE HOA
-========================================================= */
-
-let flowersVisible=true;
-
-function toggleFlowers(){
-
-    flowersVisible =
-        !flowersVisible;
-
-    flowers.style.display =
-        flowersVisible
-            ? "block"
-            : "none";
-
-}
-
-
-/* =========================================================
    🎵 MUSIC
 ========================================================= */
 
@@ -2827,6 +3201,7 @@ const configuredMusic =
         else ''
     )|tojson }};
 
+
 let audio=null;
 
 let audioCtx=null;
@@ -2834,6 +3209,7 @@ let audioCtx=null;
 let musicTimer=null;
 
 let musicPlaying=false;
+
 
 const melody=[
 
@@ -2857,12 +3233,14 @@ const melody=[
 
 ];
 
+
 function toggleMusic(){
 
     const btn =
         document.getElementById(
             "musicBtn"
         );
+
 
     if(musicPlaying){
 
@@ -2874,6 +3252,7 @@ function toggleMusic(){
 
         }
 
+
         if(audioCtx){
 
             audioCtx.close();
@@ -2882,31 +3261,40 @@ function toggleMusic(){
 
         }
 
+
         clearTimeout(
             musicTimer
         );
 
+
         musicPlaying=false;
+
 
         btn.textContent =
             "🎵 Phát nhạc";
+
 
         btn.classList.remove(
             "active"
         );
 
+
         return;
 
     }
 
+
     musicPlaying=true;
+
 
     btn.textContent =
         "⏸️ Tắt nhạc";
 
+
     btn.classList.add(
         "active"
     );
+
 
     if(configuredMusic){
 
@@ -2931,10 +3319,12 @@ function toggleMusic(){
 
 }
 
+
 function playMelody(index){
 
     if(!musicPlaying)
         return;
+
 
     if(!audioCtx){
 
@@ -2946,6 +3336,7 @@ function playMelody(index){
 
     }
 
+
     const [
         freq,
         dur
@@ -2955,30 +3346,36 @@ function playMelody(index){
             melody.length
         ];
 
+
     const osc =
         audioCtx.createOscillator();
 
     const gain =
         audioCtx.createGain();
 
+
     osc.type="sine";
 
     osc.frequency.value=freq;
+
 
     gain.gain.setValueAtTime(
         .0001,
         audioCtx.currentTime
     );
 
+
     gain.gain.exponentialRampToValueAtTime(
         .12,
         audioCtx.currentTime+.02
     );
 
+
     gain.gain.exponentialRampToValueAtTime(
         .0001,
         audioCtx.currentTime+dur
     );
+
 
     osc.connect(gain);
 
@@ -2986,13 +3383,16 @@ function playMelody(index){
         audioCtx.destination
     );
 
+
     osc.start();
+
 
     osc.stop(
         audioCtx.currentTime+
         dur+
         .03
     );
+
 
     musicTimer =
         setTimeout(
@@ -3007,18 +3407,11 @@ function playMelody(index){
 
 
 /* =========================================================
-   🔐 MẬT KHẨU LỜI CHÚC
+   🔐 MẬT KHẨU
 ========================================================= */
 
-/*
-    🔐 ĐỔI MẬT KHẨU TẠI ĐÂY
-
-    Ví dụ:
-    const MESSAGE_PASSWORD = "Mai2026";
-
-*/
-
-const MESSAGE_PASSWORD = "NgocMai";
+const MESSAGE_PASSWORD =
+    "NgocMai";
 
 
 function unlockMessage(){
@@ -3044,10 +3437,6 @@ function unlockMessage(){
         );
 
 
-    /* ================================
-       ĐÚNG MẬT KHẨU
-    ================================= */
-
     if(
         input.value ===
         MESSAGE_PASSWORD
@@ -3056,29 +3445,23 @@ function unlockMessage(){
         error.textContent="";
 
 
-        /* Ẩn phong bì */
+        locked.style.display =
+            "none";
 
-        locked.style.display="none";
-
-
-        /* Ẩn ô nhập mật khẩu */
 
         document.getElementById(
             "passwordArea"
-        ).style.display="none";
+        ).style.display =
+            "none";
 
 
-        /* Hiện lời chúc */
+        content.classList.add(
+            "show"
+        );
 
-        content.classList.add("show");
-
-
-        /* Pháo giấy */
 
         createConfetti();
 
-
-        /* Pháo hoa */
 
         setTimeout(
             () => {
@@ -3089,13 +3472,8 @@ function unlockMessage(){
             500
         );
 
-
     }
 
-
-    /* ================================
-       SAI MẬT KHẨU
-    ================================= */
 
     else{
 
@@ -3127,7 +3505,7 @@ function unlockMessage(){
 
 
 /* =========================================================
-   🎉 HIỆU ỨNG KHI MỞ TRANG
+   🎉 KHI MỞ TRANG
 ========================================================= */
 
 setTimeout(
