@@ -467,7 +467,7 @@ body::before {
 
     pointer-events: none;
 
-    z-index: 2;
+    z-index: 100;
 }
 
 .falling-item {
@@ -521,6 +521,21 @@ body::before {
     box-shadow:
         0 5px 20px rgba(0,0,0,.5),
         0 0 15px rgba(212,175,55,.4);
+
+    /* Ảnh rơi có thể bấm để xem lớn */
+    pointer-events: auto;
+    cursor: pointer;
+
+    z-index: 101;
+
+    transition:
+        transform .2s ease,
+        filter .2s ease;
+}
+
+.falling-image:hover {
+    filter:
+        drop-shadow(0 0 12px rgba(212,175,55,.9));
 }
 
 @keyframes fallingDown {
@@ -4370,7 +4385,27 @@ function createFallingImage() {
             )
         ];
 
-    img.alt = "Ảnh rơi";
+    img.alt = "Ảnh rơi - bấm để xem";
+
+    /* BẤM VÀO ẢNH ĐANG RƠI -> MỞ ẢNH LỚN */
+    function showFallingImage(event) {
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        openFallingImage(this.src);
+
+    }
+
+    // Hỗ trợ cả chuột và cảm ứng điện thoại
+    img.addEventListener("click", showFallingImage);
+    img.addEventListener("pointerup", function(event) {
+
+        if (event.pointerType === "touch" || event.pointerType === "pen") {
+            showFallingImage.call(this, event);
+        }
+
+    });
 
     img.style.left =
         Math.random() * 100 + "%";
@@ -5768,6 +5803,34 @@ function openPhoto(index) {
 
     document.body.style.overflow =
         "hidden";
+
+}
+
+
+function openFallingImage(src) {
+
+    const image =
+        document.getElementById("lightboxImage");
+
+    const number =
+        document.getElementById("lightboxNumber");
+
+    const caption =
+        document.getElementById("lightboxCaption");
+
+    image.src = src;
+
+    number.textContent = "FALLING MEMORY ✨";
+
+    caption.textContent =
+        "💖 ";
+
+    const box =
+        document.getElementById("photoLightbox");
+
+    box.classList.add("show");
+
+    document.body.style.overflow = "hidden";
 
 }
 
