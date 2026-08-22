@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -2108,48 +2108,56 @@
                 display: none;
             }
 
+            /* MOBILE: giữ nguyên vòng cung + đường nối cầu vồng */
             .rainbow-stage {
-                height: auto;
-
-                display: flex;
-
-                flex-direction: column;
-
-                align-items: center;
-
-                gap: 35px;
-
-                padding:
-                    20px 0 30px;
+                position: relative;
+                display: block;
+                width: 100%;
+                height: min(82vw, 360px);
+                min-height: 270px;
+                padding: 0;
+                overflow: visible;
             }
 
-            .connection-lines,
-            .connection-point,
+            .connection-lines {
+                display: block;
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 2;
+            }
+
+            .connection-point {
+                display: block;
+                width: 11px;
+                height: 11px;
+                z-index: 12;
+            }
+
             .flying-light {
-                display: none;
+                display: block;
+                width: 7px;
+                height: 7px;
+                z-index: 15;
             }
 
             .rainbow-photo {
-                position: relative;
-
-                left: auto !important;
-                right: auto !important;
-                top: auto !important;
-
-                width:
-                    min(78vw, 300px);
-
-                height:
-                    min(78vw, 300px);
-
-                transform:
-                    rotate(0deg) !important;
+                position: absolute;
+                width: min(22vw, 105px);
+                height: min(22vw, 105px);
+                padding: 3px;
+                border-radius: 17px;
+                transform-origin: center;
             }
+
+            .rainbow-photo img { border-radius: 13px; }
 
             .rainbow-photo:hover {
-                transform:
-                    scale(1.05) !important;
+                transform: translateY(-6px) scale(1.08) !important;
             }
+
+            .photo-caption { display: none; }
 
             .falling-image {
                 width: 48px;
@@ -2209,6 +2217,19 @@
                 max-width: 280px;
             }
 
+            .rainbow-stage {
+                height: 270px;
+                min-height: 270px;
+            }
+
+            .rainbow-photo {
+                width: 72px;
+                height: 72px;
+                border-radius: 14px;
+            }
+
+            .rainbow-photo img { border-radius: 11px; }
+
             .rainbow-title h2 {
                 font-size: 24px;
             }
@@ -2249,6 +2270,23 @@
             }
         }
 
+
+        /* =========================================================
+           TYPEWRITER LETTER
+        ========================================================= */
+        .letter-text.typing::after {
+            content: "|";
+            display: inline-block;
+            margin-left: 2px;
+            color: #c65379;
+            font-weight: 700;
+            animation: caretBlink .75s steps(1) infinite;
+        }
+
+        @keyframes caretBlink {
+            0%, 45% { opacity: 1; }
+            46%, 100% { opacity: 0; }
+        }
 
         /* =========================================================
            REDUCE MOTION
@@ -2840,7 +2878,7 @@
 
                         <div class="letter-line"></div>
 
-                        <div class="letter-text">{{ message }}</div>
+                        <div class="letter-text" id="letterText"></div>
 
                         <div class="letter-signature"></div>
 
@@ -3810,6 +3848,8 @@
         const MESSAGE_PASSWORD =
             "2610";
 
+        const LETTER_MESSAGE = {{ message|tojson }};
+        let typingTimer = null;
         let passcode = "";
 
 
@@ -4033,6 +4073,32 @@
 
 
         /* =========================================================
+           ✍️ TYPEWRITER - VIẾT THƯ TỪNG CHỮ
+        ========================================================= */
+        function typeLetter() {
+            const target = document.getElementById("letterText");
+            if (!target) return;
+            if (typingTimer) clearInterval(typingTimer);
+
+            target.textContent = "";
+            target.classList.add("typing");
+
+            const chars = Array.from(LETTER_MESSAGE || "");
+            let index = 0;
+            const speed = 28;
+
+            typingTimer = setInterval(() => {
+                if (index >= chars.length) {
+                    clearInterval(typingTimer);
+                    typingTimer = null;
+                    target.classList.remove("typing");
+                    return;
+                }
+                target.textContent += chars[index++];
+            }, speed);
+        }
+
+        /* =========================================================
            💌 OPEN LETTER
         ========================================================= */
 
@@ -4047,6 +4113,8 @@
             envelope.classList.add(
                 "open"
             );
+
+            setTimeout(typeLetter, 1050);
 
 
             setTimeout(
