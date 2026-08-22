@@ -2193,8 +2193,8 @@ body::before {
     text-align: center;
 
     font-family:
-        "Dancing Script",
-        cursive;
+        "Be Vietnam Pro",
+        sans-serif;
 
     font-size:
         clamp(30px,5vw,46px);
@@ -2228,11 +2228,11 @@ body::before {
     z-index: 4;
 
     font-family:
-        "Caveat",
-        cursive;
+        "Be Vietnam Pro",
+        sans-serif;
 
     font-size:
-        clamp(19px,2.6vw,26px);
+        clamp(17px,2.2vw,22px);
 
     line-height: 1.75;
 
@@ -2256,10 +2256,10 @@ body::before {
     text-align: right;
 
     font-family:
-        "Dancing Script",
-        cursive;
+        "Be Vietnam Pro",
+        sans-serif;
 
-    font-size: 26px;
+    font-size: 18px;
 
     color: #9b7430;
 }
@@ -5664,6 +5664,14 @@ function showFinalScreen() {
     setTimeout(
         launchFireworks,
         2800
+    );
+
+    /* YOU DID IT chỉ hiển thị đúng 5 giây */
+    setTimeout(
+        () => {
+            finalScreen.classList.remove("show");
+        },
+        5000
     );
 
 }
