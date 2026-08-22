@@ -29,7 +29,7 @@ PHOTOS = [
 # 🎵 NHẠC: nếu muốn dùng nhạc MP3 riêng, đặt file vào static/music/
 # rồi ghi tên file, ví dụ: MUSIC_FILE = "graduation.mp3"
 # Để trống ("") thì website dùng nhạc chúc mừng tạo trực tiếp bằng trình duyệt.
-MUSIC_FILE = "tỉnh đê.mp3.mp3"
+MUSIC_FILE = "Đời công nhân.mp3"
 
 app.config["GRADUATE_NAME"] = GRADUATE_NAME
 app.config["GRADUATION_DATE"] = GRADUATION_DATE
